@@ -14,12 +14,12 @@ export interface ModelInfo {
 export const modelCatalog: ModelInfo[] = [
   {
     slug: "gpt-6",
-    name: "GPT-6",
+    name: "GPT-6.1 Sol",
     provider: "OpenAI",
     mark: "OA",
     family: "GPT-6 系列",
     note: "通用 / Codex",
-    aliases: ["GPT-6"],
+    aliases: ["GPT-6", "GPT-6.1 Sol"],
   },
   {
     slug: "gpt-6-astra",
@@ -38,15 +38,6 @@ export const modelCatalog: ModelInfo[] = [
     family: "GPT-5 系列",
     note: "上一代",
     aliases: ["GPT-5.6"],
-  },
-  {
-    slug: "gpt-6-sol",
-    name: "GPT-6 Sol",
-    provider: "OpenAI",
-    mark: "OA",
-    family: "GPT-6 系列",
-    note: "API 价目",
-    aliases: ["GPT-6 Sol"],
   },
   {
     slug: "claude-opus-5-5",
@@ -243,7 +234,6 @@ export const modelContexts: Record<string, string> = {
   "gpt-6": "1M",
   "gpt-6-astra": "1M",
   "gpt-5-6": "400K",
-  "gpt-6-sol": "1M",
   "claude-opus-5-5": "200K",
   "claude-sonnet-5-5": "200K",
   "claude-haiku-5-5": "200K",
