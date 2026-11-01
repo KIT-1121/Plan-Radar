@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { ApiCard } from "@/components/ApiCard";
-import { Icon } from "@/components/Icon";
 import { apiChannels, tokenPrices } from "@/lib/api";
 import {
   apisForModel,
@@ -26,30 +25,11 @@ export default async function ModelApiPage({
 
   return (
     <div className="wrap">
+      <h1 className="visually-hidden">{model.name}</h1>
       <div className="detail-top">
         <a className="link-arrow" href="/api/">
           ← 全部模型
         </a>
-        <a className="link-arrow" href={`/plans/${slug}/`}>
-          在套餐中查看 <Icon name="arrow" className="icon icon-sm" />
-        </a>
-      </div>
-
-      <header className="model-head">
-        <div>
-          <div className="eyebrow">
-            {model.provider} · {model.family}
-          </div>
-          <h1>{model.name}</h1>
-          <p>{model.note}</p>
-        </div>
-      </header>
-
-      <div className="catalog-result">
-        <span>
-          包含该模型的 API 渠道 <b>{channels.length}</b> 个
-        </span>
-        <a href="/api/all/">全部 API</a>
       </div>
 
       {price ? (

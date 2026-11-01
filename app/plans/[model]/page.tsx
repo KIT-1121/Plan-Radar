@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { Icon } from "@/components/Icon";
 import { PlanCard } from "@/components/PlanCard";
 import {
   getModel,
@@ -35,30 +34,11 @@ export default async function ModelPlansPage({
 
   return (
     <div className="wrap">
+      <h1 className="visually-hidden">{model.name}</h1>
       <div className="detail-top">
         <a className="link-arrow" href="/plans/">
           ← 全部模型
         </a>
-        <a className="link-arrow" href={`/api/${slug}/`}>
-          在 API 中查看 <Icon name="arrow" className="icon icon-sm" />
-        </a>
-      </div>
-
-      <header className="model-head">
-        <div>
-          <div className="eyebrow">
-            {model.provider} · {model.family}
-          </div>
-          <h1>{model.name}</h1>
-          <p>{model.note}</p>
-        </div>
-      </header>
-
-      <div className="catalog-result">
-        <span>
-          包含该模型的套餐 <b>{plans.length}</b> 个
-        </span>
-        <a href="/plans/all/">全部套餐</a>
       </div>
 
       {plans.length > 0 ? (

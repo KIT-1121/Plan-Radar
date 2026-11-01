@@ -751,7 +751,7 @@ h1, h2, h3, p { margin: 0; }
 @media (min-width: 1900px) {
   .plan-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-.plan-groups { display: flex; flex-direction: column; gap: 16px; }
+.plan-groups { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
 .plan-group-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
 .plan-card.compact { padding: 22px; border-radius: 16px; }
 .plan-card.compact .plan-top { margin-bottom: 16px; }
