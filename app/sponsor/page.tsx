@@ -75,15 +75,10 @@ export default function SponsorPage() {
 
       <div className="wrap">
         <div className="correction">
-          <div>
-            <h3>内容错误，联系作者</h3>
-            <p>官网改价、额度调整、模型上下线，欢迎邮件告诉我。会尽快核对。</p>
-          </div>
-          <div className="correction-actions">
-            <a className="btn secondary small" href="mailto:hello@plan-radar.dev">
-              <Icon name="mail" className="icon icon-sm" /> 发邮件
-            </a>
-          </div>
+          <h3>如果错误，请联系作者</h3>
+          <a className="btn secondary small" href="mailto:hello@plan-radar.dev">
+            <Icon name="mail" className="icon icon-sm" /> 发邮件
+          </a>
         </div>
       </div>
     </>
