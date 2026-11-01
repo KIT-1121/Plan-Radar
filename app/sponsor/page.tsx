@@ -6,7 +6,7 @@ export default function SponsorPage() {
       <section className="support-hero">
         <div className="wrap support-hero-grid">
           <div className="support-hero-copy">
-            <div className="eyebrow">Support</div>
+            <div className="eyebrow">赞助</div>
             <h1 className="display" style={{ marginTop: 20 }}>
               不卖套餐，
               <br />
@@ -48,26 +48,6 @@ export default function SponsorPage() {
                   <p>赞助用于服务器、数据核验和下一版开发。</p>
                 </div>
               </div>
-              <div className="sponsor-list">
-                <a className="sponsor-item" href="#">
-                  <span>
-                    <Icon name="heart" className="icon icon-sm" /> 爱发电
-                  </span>
-                  <span>按月 / 一次性</span>
-                </a>
-                <a className="sponsor-item" href="#">
-                  <span>
-                    <Icon name="coffee" className="icon icon-sm" /> Buy Me a Coffee
-                  </span>
-                  <span>$3 起</span>
-                </a>
-                <a className="sponsor-item" href="#">
-                  <span>
-                    <Icon name="star" className="icon icon-sm" /> GitHub Sponsors
-                  </span>
-                  <span>公开透明</span>
-                </a>
-              </div>
             </div>
           </aside>
         </div>
@@ -77,7 +57,7 @@ export default function SponsorPage() {
         <div className="correction">
           <h3>如果错误，请联系作者</h3>
           <a className="btn secondary small" href="mailto:hello@plan-radar.dev">
-            <Icon name="mail" className="icon icon-sm" /> 发邮件
+            <Icon name="mail" className="icon icon-sm" /> 站长邮件
           </a>
         </div>
       </div>
