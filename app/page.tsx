@@ -36,7 +36,7 @@ export default function HomePage() {
           </div>
 
           <div className="updates">
-            {updates.map((update) => (
+            {updates.slice(0, 5).map((update) => (
               <a className="update-row" href={update.href} key={update.id}>
                 <span className="update-date">{update.date}</span>
                 <span className="update-provider">{update.provider}</span>
