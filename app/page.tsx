@@ -48,7 +48,7 @@ export default function HomePage() {
               <div className="eyebrow">Changelog</div>
               <h2 className="section-title">最近更新</h2>
             </div>
-            <a className="link-arrow" href="/plans/">
+            <a className="link-arrow" href="/plans/all/">
               全部套餐 <Icon name="arrow" className="icon icon-sm" />
             </a>
           </div>

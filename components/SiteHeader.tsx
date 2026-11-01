@@ -27,11 +27,15 @@ export function SiteHeader() {
         <nav className="nav">
           {items.map((item) => {
             const target = item.href.replace(/\/+$/, "") || "/";
+            const active =
+              target === "/"
+                ? path === "/"
+                : path === target || path.startsWith(`${target}/`);
             return (
               <a
                 key={item.href}
                 href={item.href}
-                className={path === target ? "active" : undefined}
+                className={active ? "active" : undefined}
               >
                 {item.label}
               </a>

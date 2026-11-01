@@ -16,6 +16,8 @@ export interface ApiChannel {
   specs: ApiSpec[];
   source: string;
   updated: string;
+  coversAll?: boolean;
+  modelSlugs?: string[];
 }
 
 export const apiChannels: ApiChannel[] = [
@@ -36,6 +38,7 @@ export const apiChannels: ApiChannel[] = [
     ],
     source: "https://opencode.ai/v2/docs/console/models/",
     updated: "11/01",
+    coversAll: true,
   },
   {
     id: "commandcode-provider",
@@ -54,6 +57,7 @@ export const apiChannels: ApiChannel[] = [
     ],
     source: "https://commandcode.ai/pricing",
     updated: "11/01",
+    coversAll: true,
   },
   {
     id: "deepseek-api",
@@ -72,10 +76,12 @@ export const apiChannels: ApiChannel[] = [
     ],
     source: "https://platform.deepseek.com/",
     updated: "11/01",
+    modelSlugs: ["deepseek-v4-1-flash"],
   },
 ];
 
 export interface TokenPrice {
+  slug: string;
   model: string;
   input: string;
   output: string;
@@ -85,36 +91,42 @@ export interface TokenPrice {
 
 export const tokenPrices: TokenPrice[] = [
   {
+    slug: "deepseek-v4-1-flash",
     model: "DeepSeek V4.1 Flash",
     input: "$0.30",
     output: "$1.20",
     cached: "$0.006",
   },
   {
+    slug: "glm-5-3",
     model: "GLM-5.3",
     input: "$1.40",
     output: "$4.40",
     cached: "$0.26",
   },
   {
+    slug: "kimi-k3",
     model: "Kimi K3",
     input: "$3.00",
     output: "$15.00",
     cached: "$0.30",
   },
   {
+    slug: "claude-sonnet-5-5",
     model: "Claude Sonnet 5.5",
     input: "$2.00",
     output: "$10.00",
     cached: "$0.20",
   },
   {
+    slug: "gpt-6-sol",
     model: "GPT-6 Sol",
     input: "$2.00",
     output: "$10.00",
     cached: "$0.20",
   },
   {
+    slug: "gemini-4-argon",
     model: "Gemini 4 Argon",
     input: "$2.00",
     output: "$10.00",
