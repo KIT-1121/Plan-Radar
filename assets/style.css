@@ -840,9 +840,53 @@ h1, h2, h3, p { margin: 0; }
 
 /* ---------- sponsor ---------- */
 
-.support-hero { padding: 92px 0 54px; }
+.support-hero { padding: 88px 0 60px; }
 .support-hero .display { max-width: 820px; }
 .support-hero .lead { margin-top: 24px; }
+
+.support-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(420px, 560px);
+  gap: 80px;
+  align-items: start;
+}
+.support-hero-copy .display { max-width: 760px; }
+.support-hero-copy .lead { max-width: 640px; }
+
+.support-panel {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 26px;
+  background: #fff;
+}
+.support-panel-top {
+  padding: 30px 30px 28px;
+  background: var(--ink);
+  color: #fff;
+}
+.support-panel-bottom { padding: 24px 30px 26px; }
+.support-panel-head { display: flex; align-items: flex-start; gap: 14px; }
+.support-panel-head .support-icon { flex-shrink: 0; }
+.support-panel h3 { font-size: 20px; font-weight: 550; letter-spacing: -0.025em; }
+.support-panel p {
+  margin-top: 8px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.support-panel-top p { color: rgba(255, 255, 255, 0.62); }
+.support-panel-top .support-icon { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.support-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.support-panel-actions .btn { background: #fff; border-color: #fff; color: var(--ink); }
+.support-panel-actions .btn:hover { background: #f1f1ec; }
+.support-panel-link { font-size: 10px; color: rgba(255, 255, 255, 0.48); }
+.support-panel-bottom .sponsor-list { margin-top: 16px; }
 
 .support-grid {
   display: grid;
@@ -934,6 +978,17 @@ h1, h2, h3, p { margin: 0; }
   .hero-stat b { font-size: 40px; }
   .update-text { font-size: 15px; }
   .step-title { font-size: 21px; }
+  .support-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(560px, 1.2fr);
+  }
+  .support-panel { display: grid; grid-template-columns: 1fr 1fr; }
+  .support-panel-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .support-panel-bottom { display: flex; flex-direction: column; justify-content: center; }
 }
 
 /* ---------- responsive ---------- */
@@ -963,6 +1018,7 @@ h1, h2, h3, p { margin: 0; }
   .duel-card:last-child { border-left: 0; border-top: 1px solid var(--line); }
   .vs { padding: 12px 0; }
   .support-grid { grid-template-columns: 1fr; }
+  .support-hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .section-head { flex-direction: column; align-items: flex-start; }
   .section-head p { max-width: 520px; }
 }
@@ -994,6 +1050,8 @@ h1, h2, h3, p { margin: 0; }
   .step + .step { padding-left: 0; border-left: 0; }
   .toolbar { flex-direction: column; align-items: flex-start; }
   .correction { flex-direction: column; align-items: flex-start; }
+  .support-panel-top { padding: 24px 24px 22px; }
+  .support-panel-bottom { padding: 20px 24px 22px; }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
   .duel-card { padding: 26px; min-height: 0; }
   .duel-price { font-size: 40px; }

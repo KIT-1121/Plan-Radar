@@ -13,7 +13,7 @@ AI 套餐比价站。把国内与国外 AI 编程套餐的月费、额度、模�
 | `cn.html` | 国内套餐 | 6 个套餐的详情卡：价格 / 额度 / 模型 / 限制 |
 | `global.html` | 国外套餐 | 6 个套餐的详情卡；可切表格 |
 | `models.html` | 按模型比价 | DeepSeek V4.1 Flash 的 6 个渠道，官方价 vs 套餐价 |
-| `sponsor.html` | Star / 赞助 | GitHub、赞助渠道、价格纠错 |
+| `sponsor.html` | Star / 赞助 | GitHub、赞助渠道、内容纠错 |
 
 ## 两种视图
 
