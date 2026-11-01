@@ -350,6 +350,10 @@ export const cnPlans: Plan[] = [
 
 export const allPlans: Plan[] = [...globalPlans, ...cnPlans];
 
+export function getPlanById(id: string) {
+  return allPlans.find((plan) => plan.id === id);
+}
+
 export const planFilters: PlanFilter[] = [
   { key: "all", label: "全部", count: 12 },
   { key: "usd", label: "可折算", count: 3 },

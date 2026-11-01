@@ -14,9 +14,11 @@ export interface ModelRow extends ModelInfo {
 interface ModelTableProps {
   rows: ModelRow[];
   mode: "plans" | "api";
+  allHref?: string;
+  allLabel?: string;
 }
 
-export function ModelTable({ rows, mode }: ModelTableProps) {
+export function ModelTable({ rows, mode, allHref, allLabel }: ModelTableProps) {
   const [query, setQuery] = useState("");
   const keyword = query.trim().toLowerCase();
 
@@ -32,7 +34,7 @@ export function ModelTable({ rows, mode }: ModelTableProps) {
 
   return (
     <>
-      <div className="catalog-top catalog-top-left">
+      <div className="catalog-top catalog-top-left model-table-top">
         <div className="catalog-search catalog-search-wide">
           <Icon name="search" />
           <input
@@ -53,6 +55,11 @@ export function ModelTable({ rows, mode }: ModelTableProps) {
             </button>
           ) : null}
         </div>
+        {allHref && allLabel ? (
+          <a className="btn secondary small" href={allHref}>
+            {allLabel} <Icon name="arrow" className="icon icon-sm" />
+          </a>
+        ) : null}
       </div>
 
       <div className="model-table-wrap">

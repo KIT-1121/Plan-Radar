@@ -1,16 +1,32 @@
-import { PlanExplorer } from "@/components/PlanExplorer";
-import { allPlans, planFilters } from "@/lib/plans";
+import { Icon } from "@/components/Icon";
+import { allPlans } from "@/lib/plans";
 
 export default function AllPlansPage() {
   return (
     <div className="wrap">
-      <h1 className="visually-hidden">全部套餐</h1>
-      <PlanExplorer
-        plans={allPlans}
-        filters={planFilters}
-        ratioLabel="折算"
-        note="倍数只用于同币种美元额度；积分、请求数、窗口额度不跨口径比较。"
-      />
+      <div className="detail-top">
+        <a className="back-arrow" href="/plans/" aria-label="返回模型列表">
+          <Icon name="arrow-left" />
+        </a>
+      </div>
+
+      <header className="all-plans-head">
+        <div className="eyebrow">套餐</div>
+        <h1>全部套餐</h1>
+        <p>{allPlans.length} 个套餐，点卡片查看完整详情。</p>
+      </header>
+
+      <div className="all-plan-grid">
+        {allPlans.map((plan) => (
+          <a
+            className="all-plan-card"
+            href={`/plans/plan/${plan.id}/`}
+            key={plan.id}
+          >
+            {plan.name}
+          </a>
+        ))}
+      </div>
     </div>
   );
 }
