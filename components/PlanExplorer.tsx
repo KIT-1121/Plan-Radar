@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import type { Plan, PlanFilter } from "@/lib/plans";
 import { Icon } from "./Icon";
 import { PlanCard } from "./PlanCard";
@@ -10,6 +10,20 @@ interface PlanExplorerProps {
   filters: PlanFilter[];
   ratioLabel: string;
   note: string;
+  tabs?: ReactNode;
+}
+
+function searchText(plan: Plan) {
+  return [
+    plan.name,
+    plan.provider,
+    plan.tag,
+    plan.quotaLabel,
+    ...plan.models.map((model) => model.name),
+    ...plan.specs.map((spec) => `${spec.label} ${spec.value}`),
+  ]
+    .join(" ")
+    .toLowerCase();
 }
 
 export function PlanExplorer({
@@ -17,30 +31,119 @@ export function PlanExplorer({
   filters,
   ratioLabel,
   note,
+  tabs,
 }: PlanExplorerProps) {
+  const [query, setQuery] = useState("");
+  const [provider, setProvider] = useState("all");
   const [filter, setFilter] = useState<"all" | Plan["kind"]>("all");
   const [view, setView] = useState<"cards" | "table">("cards");
 
+  const providers = useMemo(() => {
+    const counts = new Map<string, number>();
+    plans.forEach((plan) => {
+      counts.set(plan.provider, (counts.get(plan.provider) ?? 0) + 1);
+    });
+    return Array.from(counts, ([name, count]) => ({ name, count }));
+  }, [plans]);
+
+  const keyword = query.trim().toLowerCase();
   const visible = useMemo(
-    () => (filter === "all" ? plans : plans.filter((plan) => plan.kind === filter)),
-    [filter, plans],
+    () =>
+      plans.filter((plan) => {
+        if (provider !== "all" && plan.provider !== provider) return false;
+        if (filter !== "all" && plan.kind !== filter) return false;
+        if (keyword && !searchText(plan).includes(keyword)) return false;
+        return true;
+      }),
+    [plans, provider, filter, keyword],
   );
+
+  const active = query !== "" || provider !== "all" || filter !== "all";
+
+  function reset() {
+    setQuery("");
+    setProvider("all");
+    setFilter("all");
+  }
 
   return (
     <>
-      <div className="toolbar">
-        <div className="chips">
-          {filters.map((item) => (
+      <div className="catalog-top">
+        <div className="catalog-search">
+          <Icon name="search" />
+          <input
+            type="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="搜索套餐、供应商、模型…"
+            aria-label="搜索套餐、供应商、模型"
+          />
+          {query ? (
             <button
-              key={item.key}
               type="button"
-              className={filter === item.key ? "chip active" : "chip"}
-              onClick={() => setFilter(item.key)}
+              className="catalog-clear"
+              onClick={() => setQuery("")}
+              aria-label="清空搜索"
             >
-              {item.label} <span className="n">{item.count}</span>
+              <Icon name="x" className="icon icon-sm" />
             </button>
-          ))}
+          ) : null}
         </div>
+        {tabs ? <div className="catalog-actions">{tabs}</div> : null}
+      </div>
+
+      <div className="tag-groups">
+        <div className="tag-row">
+          <span className="tag-label">供应商</span>
+          <div className="chips">
+            <button
+              type="button"
+              className={provider === "all" ? "chip active" : "chip"}
+              onClick={() => setProvider("all")}
+            >
+              全部
+            </button>
+            {providers.map((item) => (
+              <button
+                key={item.name}
+                type="button"
+                className={provider === item.name ? "chip active" : "chip"}
+                onClick={() =>
+                  setProvider(provider === item.name ? "all" : item.name)
+                }
+              >
+                {item.name} <span className="n">{item.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="tag-row">
+          <span className="tag-label">额度类型</span>
+          <div className="chips">
+            {filters.map((item) => (
+              <button
+                key={item.key}
+                type="button"
+                className={filter === item.key ? "chip active" : "chip"}
+                onClick={() => setFilter(item.key)}
+              >
+                {item.label} <span className="n">{item.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="catalog-result">
+        <span>
+          显示 <b>{visible.length}</b> / {plans.length} 个套餐
+          {active ? (
+            <button type="button" className="catalog-reset" onClick={reset}>
+              清空筛选
+            </button>
+          ) : null}
+        </span>
 
         <div className="view-toggle">
           <button
@@ -126,7 +229,7 @@ export function PlanExplorer({
 
       <p className="note">{note}</p>
       {visible.length === 0 ? (
-        <div className="empty">没有符合筛选的套餐。</div>
+        <div className="empty">没有找到匹配的套餐。</div>
       ) : null}
     </>
   );

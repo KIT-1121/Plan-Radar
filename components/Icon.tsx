@@ -8,7 +8,9 @@ export type IconName =
   | "star"
   | "coffee"
   | "heart"
-  | "mail";
+  | "mail"
+  | "search"
+  | "x";
 
 const paths: Record<IconName, ReactNode> = {
   radar: (
@@ -52,6 +54,18 @@ const paths: Record<IconName, ReactNode> = {
     <>
       <rect x="3" y="5" width="18" height="14" rx="2" />
       <path d="m3 7 9 6 9-6" />
+    </>
+  ),
+  search: (
+    <>
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-3.5-3.5" />
+    </>
+  ),
+  x: (
+    <>
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
     </>
   ),
 };
