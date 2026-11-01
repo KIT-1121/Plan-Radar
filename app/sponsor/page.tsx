@@ -3,10 +3,10 @@ import { Icon } from "@/components/Icon";
 export default function SponsorPage() {
   return (
     <>
-      <section className="support-hero">
-        <div className="wrap support-hero-grid">
+      <section className="support-hero support-hero-centered">
+        <div className="wrap support-hero-centered-inner">
           <div className="support-hero-copy">
-            <h1 className="display" style={{ marginTop: 20 }}>
+            <h1 className="display">
               不卖套餐，
               <br />
               只帮你少花冤枉钱。
