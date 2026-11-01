@@ -607,6 +607,14 @@ h1, h2, h3, p { margin: 0; }
   font-size: 10px;
   color: var(--muted);
 }
+.model-dir-count { display: flex; align-items: center; gap: 12px; }
+.model-dir-count a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink-2);
+}
+.model-dir-count a:hover { color: var(--ink); }
 .model-groups { display: flex; flex-direction: column; gap: 36px; margin-top: 18px; }
 .model-group-head {
   display: flex;
@@ -1355,6 +1363,8 @@ h1, h2, h3, p { margin: 0; }
   .catalog-result { flex-direction: column; align-items: flex-start; gap: 10px; }
   .model-grid { grid-template-columns: 1fr; }
   .model-groups { gap: 28px; }
+  .model-dir-caption { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .model-dir-count { gap: 10px; }
   .detail-top { flex-wrap: wrap; padding-top: 28px; }
   .model-head { gap: 12px; }
   .model-head h1 { font-size: 32px; }

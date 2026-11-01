@@ -46,7 +46,7 @@ export function ModelDirectory({
 
   return (
     <>
-      <div className="catalog-top">
+      <div className="catalog-top catalog-top-left">
         <div className="catalog-search">
           <Icon name="search" />
           <input
@@ -67,16 +67,18 @@ export function ModelDirectory({
             </button>
           ) : null}
         </div>
-        <a className="btn secondary small" href={allHref}>
-          {allLabel} <Icon name="arrow" className="icon icon-sm" />
-        </a>
       </div>
 
       <div className="model-dir-caption">
         <span className="eyebrow">
           {mode === "plans" ? "选择模型 · 看套餐" : "选择模型 · 看 API"}
         </span>
-        <span>{visibleCount} 个模型</span>
+        <span className="model-dir-count">
+          {visibleCount} 个模型
+          <a href={allHref}>
+            {allLabel} <Icon name="arrow" className="icon icon-sm" />
+          </a>
+        </span>
       </div>
 
       <div className="model-groups">
