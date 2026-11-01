@@ -78,7 +78,7 @@ h1, h2, h3, p { margin: 0; }
   display: flex;
   align-items: center;
   gap: 40px;
-  height: 84px;
+  height: 76px;
 }
 
 .brand {
@@ -1383,7 +1383,7 @@ h1, h2, h3, p { margin: 0; }
 
 @media (max-width: 720px) {
   .wrap { padding: 0 20px; }
-  .header-inner { height: 70px; gap: 18px; }
+  .header-inner { height: 64px; gap: 18px; }
   .brand { font-size: 16px; gap: 8px; }
   .brand-mark { width: 30px; height: 30px; border-radius: 9px; }
   .brand-mark svg { width: 15px; height: 15px; }
