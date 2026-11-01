@@ -5,40 +5,22 @@ import { updates } from "@/lib/plans";
 export default function HomePage() {
   return (
     <>
-      <section className="hero">
-        <div className="wrap hero-grid">
-          <div>
-            <div className="eyebrow">AI 套餐比价 · 每日更新</div>
-            <h1 className="display" style={{ marginTop: 22 }}>
-              同样的 <em>$10</em>，
-              <br />
-              哪家给得更多？
-            </h1>
-            <p className="lead">把 AI 编程套餐的月费和额度放在一张桌上。</p>
-            <div className="hero-actions">
-              <a className="btn primary" href="/plans/">
-                看套餐 <Icon name="arrow" />
-              </a>
-              <a className="btn secondary" href="/api/">
-                看 API
-              </a>
-            </div>
+      <section className="hero hero-centered">
+        <div className="wrap hero-centered-inner">
+          <h1 className="display">
+            同样的 <em>$10</em>，
+            <br />
+            哪家给得更多？
+          </h1>
+          <p className="lead">把 AI 编程套餐的月费和额度放在一张桌上。</p>
+          <div className="hero-actions">
+            <a className="btn primary" href="/plans/">
+              看套餐 <Icon name="arrow" />
+            </a>
+            <a className="btn secondary" href="/api/">
+              看 API
+            </a>
           </div>
-
-          <aside className="hero-aside">
-            <div className="hero-stat">
-              <b>12</b>
-              <span>个套餐</span>
-            </div>
-            <div className="hero-stat">
-              <b>3</b>
-              <span>个 API</span>
-            </div>
-            <div className="hero-stat">
-              <b>11.01</b>
-              <span>最后核对</span>
-            </div>
-          </aside>
         </div>
       </section>
 
