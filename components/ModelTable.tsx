@@ -16,9 +16,16 @@ interface ModelTableProps {
   mode: "plans" | "api";
   allHref?: string;
   allLabel?: string;
+  summary?: string;
 }
 
-export function ModelTable({ rows, mode, allHref, allLabel }: ModelTableProps) {
+export function ModelTable({
+  rows,
+  mode,
+  allHref,
+  allLabel,
+  summary,
+}: ModelTableProps) {
   const [query, setQuery] = useState("");
   const keyword = query.trim().toLowerCase();
 
@@ -61,6 +68,8 @@ export function ModelTable({ rows, mode, allHref, allLabel }: ModelTableProps) {
           </a>
         ) : null}
       </div>
+
+      {summary ? <p className="catalog-summary">{summary}</p> : null}
 
       <div className="model-table-wrap">
         <div className={`model-table model-table-${mode}`}>

@@ -253,6 +253,10 @@ a[data-href] { cursor: pointer; }
   padding: 0 26px;
   font-size: 14px;
 }
+.hero-centered .hero-meta {
+  justify-content: center;
+  margin-top: 20px;
+}
 .hero-aside {
   border-top: 1px solid var(--line);
 }
@@ -751,7 +755,8 @@ a[data-href] { cursor: pointer; }
   cursor: pointer;
 }
 
-.model-table-wrap { margin-top: 28px; overflow-x: auto; }
+.model-table-wrap { margin-top: 20px; overflow-x: auto; }
+.catalog-summary { margin-top: 14px; font-size: 10.5px; color: var(--muted); }
 .model-table { min-width: 860px; }
 .model-table-plans { min-width: 860px; }
 .model-table-head,

@@ -25,6 +25,7 @@ export default function PlansPage() {
         mode="plans"
         allHref="/plans/all/"
         allLabel="全部套餐"
+        summary={`全站 ${modelCatalog.length} 个模型 · ${allPlans.length} 个套餐`}
       />
     </div>
   );

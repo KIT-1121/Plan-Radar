@@ -1,6 +1,8 @@
 import { Icon } from "@/components/Icon";
+import { apiChannels } from "@/lib/api";
 import { briefs } from "@/lib/briefs";
-import { updates } from "@/lib/plans";
+import { modelCatalog } from "@/lib/catalog";
+import { allPlans, updates } from "@/lib/plans";
 
 export default function HomePage() {
   return (
@@ -20,6 +22,13 @@ export default function HomePage() {
             <a className="btn secondary" href="/api/">
               看 API
             </a>
+          </div>
+          <div className="hero-meta">
+            <span>{modelCatalog.length} 个模型</span>
+            <span className="dot" />
+            <span>{allPlans.length} 个套餐</span>
+            <span className="dot" />
+            <span>{apiChannels.length} 个 API 渠道</span>
           </div>
         </div>
       </section>

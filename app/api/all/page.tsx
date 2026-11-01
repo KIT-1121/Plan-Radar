@@ -1,6 +1,7 @@
 import { ApiCard } from "@/components/ApiCard";
 import { Icon } from "@/components/Icon";
 import { apiChannels, tokenPrices } from "@/lib/api";
+import { modelCatalog } from "@/lib/catalog";
 
 export default function AllApiPage() {
   return (
@@ -10,6 +11,10 @@ export default function AllApiPage() {
           ← 按模型浏览
         </a>
       </div>
+
+      <p className="catalog-summary">
+        全站 {modelCatalog.length} 个模型 · {apiChannels.length} 个 API 渠道
+      </p>
 
       <div className="api-grid" style={{ marginTop: 26 }}>
         {apiChannels.map((channel) => (
