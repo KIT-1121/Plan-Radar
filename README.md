@@ -1,6 +1,6 @@
 # Plan-Radar
 
-AI 套餐比价站。把国内与国外 AI 编程套餐的月费、额度、模型和限制放在一起，
+AI 套餐比价站。把 AI 编程套餐的月费、额度、模型和限制放在一起，
 用来回答一个简单问题：**同样的钱，哪家给得更多？**
 
 当前是 **Next.js 16 + TypeScript** 实现，构建为静态站点（`out/`），
@@ -11,16 +11,16 @@ AI 套餐比价站。把国内与国外 AI 编程套餐的月费、额度、模�
 | 路由 | 页面 | 内容 |
 | --- | --- | --- |
 | `/` | 首页 | 网站说明、最近更新、只看三件事 |
-| `/cn/` | 国内套餐 | 6 个套餐的详情卡：价格 / 额度 / 模型 / 限制 |
-| `/global/` | 国外套餐 | 6 个套餐的详情卡；可切表格 |
-| `/models/` | 按模型比价 | DeepSeek V4.1 Flash 的 6 个渠道，官方价 vs 套餐价 |
+| `/plans/` | 套餐 | 12 个订阅套餐的详情卡：价格 / 额度 / 模型 / 限制 |
+| `/api/` | API | 3 个 API 渠道 + 官方 token 价目表 |
+| `/models/` | 按模型比价 | DeepSeek V4.1 Flash 的套餐与 API 渠道对比 |
 | `/sponsor/` | Star / 赞助 | GitHub、赞助渠道、内容纠错 |
 
-## 两种视图
+## 三种视图
 
-- **按套餐**：一张卡看一个套餐。不同套餐字段不同，例如 OpenCode 有 5h / 周 / 月
-  三窗口，Copilot 只有请求数。
-- **按模型**：一个模型看所有套餐 / API 渠道。例如 DeepSeek V4.1 Flash：
+- **套餐**：订阅制。国内与国外不再分页，统一按额度类型筛选。
+- **API**：按 token 计费或按量中转，单独成页。
+- **按模型**：一个模型跨套餐与 API 对比。例如 DeepSeek V4.1 Flash：
   官方 API $0.30 / $1.20 每 1M tokens；OpenCode Go 与 CommandCode GOAT 都是
   $10 → $100 额度，等于官方价的 10%。
 
@@ -61,6 +61,7 @@ server {
 价格数据在：
 
 - `lib/plans.ts`：套餐、价格、额度、限制、模型
+- `lib/api.ts`：API 渠道与 token 价目表
 - `lib/models.ts`：按模型比价的数据
 
 当前是静态数据，最后核对 2026-11-01。GLM 的 `US$18` 取自官方
@@ -71,8 +72,8 @@ server {
 ```text
 .
 ├── app/                 # Next.js App Router 页面
-├── components/          # Header / Footer / PlanCard / PlanExplorer / Icon
-├── lib/                 # 套餐与模型数据
+├── components/          # Header / Footer / PlanCard / ApiCard / PlanExplorer / Icon
+├── lib/                 # 套餐、API、模型数据
 ├── prototype/           # 早期静态原型（设计参考）
 ├── screenshots/         # 构建后页面截图
 ├── next.config.mjs      # output: "export"

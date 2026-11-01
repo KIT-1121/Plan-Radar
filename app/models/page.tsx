@@ -92,10 +92,7 @@ export default function ModelsPage() {
                     <span className="provider-mark">{offer.mark}</span>
                     <span>
                       <b>{offer.channel}</b>
-                      <span>
-                        {offer.provider}{" "}
-                        <span className="region-tag">{offer.region}</span>
-                      </span>
+                      <span>{offer.provider}</span>
                     </span>
                   </div>
                 </td>

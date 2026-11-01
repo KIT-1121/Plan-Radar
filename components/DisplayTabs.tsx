@@ -1,15 +1,15 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-
-export function DisplayTabs({ mode }: { mode: "plans" | "models" }) {
-  const pathname = usePathname();
-  const plansHref = pathname.startsWith("/cn") ? "/cn/" : "/global/";
-
+export function DisplayTabs({
+  mode,
+}: {
+  mode: "plans" | "api" | "models";
+}) {
   return (
     <div className="display-tabs">
-      <a className={mode === "plans" ? "active" : undefined} href={plansHref}>
+      <a className={mode === "plans" ? "active" : undefined} href="/plans/">
         按套餐
+      </a>
+      <a className={mode === "api" ? "active" : undefined} href="/api/">
+        按 API
       </a>
       <a className={mode === "models" ? "active" : undefined} href="/models/">
         按模型

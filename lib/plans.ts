@@ -338,17 +338,15 @@ export const cnPlans: Plan[] = [
   },
 ];
 
-export const globalFilters: PlanFilter[] = [
-  { key: "all", label: "全部", count: 6 },
+export const allPlans: Plan[] = [...globalPlans, ...cnPlans];
+
+export const planFilters: PlanFilter[] = [
+  { key: "all", label: "全部", count: 12 },
   { key: "usd", label: "可折算", count: 3 },
+  { key: "credits", label: "积分", count: 5 },
+  { key: "free", label: "免费", count: 1 },
   { key: "window", label: "按窗口", count: 2 },
   { key: "request", label: "按请求", count: 1 },
-];
-
-export const cnFilters: PlanFilter[] = [
-  { key: "all", label: "全部", count: 6 },
-  { key: "credits", label: "积分制", count: 5 },
-  { key: "free", label: "免费", count: 1 },
 ];
 
 export interface Update {
@@ -365,27 +363,27 @@ export const updates: Update[] = [
     provider: "OpenCode",
     strong: "OpenCode Go",
     text: "新增 Gemini 4 Argon，模型池到 30+ 个",
-    href: "/global/",
+    href: "/plans/",
   },
   {
     date: "11.01",
     provider: "CommandCode",
     strong: "GOAT",
     text: "保持 $10 / $100 额度，新增 Ling 3.1 Flash",
-    href: "/global/",
+    href: "/plans/",
   },
   {
     date: "10.31",
     provider: "Trae",
     strong: "会员 Lite / Pro / Pro+",
     text: "调整为 ¥49 / ¥99 / ¥239",
-    href: "/cn/",
+    href: "/plans/",
   },
   {
     date: "10.28",
     provider: "GLM",
     strong: "GLM Coding",
     text: "额度改为 5h + 周双窗口",
-    href: "/cn/",
+    href: "/plans/",
   },
 ];

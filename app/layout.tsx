@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Plan-Radar · AI 套餐比价",
-  description: "把国内外 AI 编程套餐的月费和额度放在一张桌上。",
+  description: "把 AI 编程套餐的月费和额度放在一张桌上。",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

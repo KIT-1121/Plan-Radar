@@ -5,8 +5,8 @@ import { Icon } from "./Icon";
 
 const items = [
   { href: "/", label: "首页" },
-  { href: "/cn/", label: "国内套餐" },
-  { href: "/global/", label: "国外套餐" },
+  { href: "/plans/", label: "套餐" },
+  { href: "/api/", label: "API" },
   { href: "/sponsor/", label: "Star / 赞助" },
 ];
 

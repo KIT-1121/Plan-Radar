@@ -13,13 +13,13 @@ export default function HomePage() {
               <br />
               哪家给得更多？
             </h1>
-            <p className="lead">把国内外 AI 编程套餐的月费和额度放在一张桌上。</p>
+            <p className="lead">把 AI 编程套餐的月费和额度放在一张桌上。</p>
             <div className="hero-actions">
-              <a className="btn primary" href="/global/">
-                看国外套餐 <Icon name="arrow" />
+              <a className="btn primary" href="/plans/">
+                看套餐 <Icon name="arrow" />
               </a>
-              <a className="btn secondary" href="/cn/">
-                看国内套餐
+              <a className="btn secondary" href="/api/">
+                看 API
               </a>
             </div>
           </div>
@@ -30,8 +30,8 @@ export default function HomePage() {
               <span>个套餐</span>
             </div>
             <div className="hero-stat">
-              <b>8</b>
-              <span>家供应商</span>
+              <b>3</b>
+              <span>个 API</span>
             </div>
             <div className="hero-stat">
               <b>11.01</b>
@@ -48,7 +48,7 @@ export default function HomePage() {
               <div className="eyebrow">Changelog</div>
               <h2 className="section-title">最近更新</h2>
             </div>
-            <a className="link-arrow" href="/global/">
+            <a className="link-arrow" href="/plans/">
               全部套餐 <Icon name="arrow" className="icon icon-sm" />
             </a>
           </div>

@@ -18,7 +18,6 @@ export interface Offer {
   channel: string;
   provider: string;
   mark: string;
-  region: string;
   type: string;
   price: string;
   quota: string;
@@ -33,7 +32,6 @@ export const deepseekOffers: Offer[] = [
     channel: "OpenCode Go",
     provider: "OpenCode",
     mark: "OC",
-    region: "国外",
     type: "订阅",
     price: "$10 / 月",
     quota: "$100 / 月",
@@ -46,7 +44,6 @@ export const deepseekOffers: Offer[] = [
     channel: "CommandCode GOAT",
     provider: "CommandCode",
     mark: "CC",
-    region: "国外",
     type: "订阅",
     price: "$10 / 月",
     quota: "$100 / 月",
@@ -59,7 +56,6 @@ export const deepseekOffers: Offer[] = [
     channel: "CommandCode Go",
     provider: "CommandCode",
     mark: "CC",
-    region: "国外",
     type: "订阅",
     price: "$1 / 月",
     quota: "$10 / 月",
@@ -72,7 +68,6 @@ export const deepseekOffers: Offer[] = [
     channel: "OpenCode Console",
     provider: "OpenCode",
     mark: "OC",
-    region: "国外",
     type: "按量",
     price: "—",
     quota: "按 token 计费",
@@ -85,7 +80,6 @@ export const deepseekOffers: Offer[] = [
     channel: "CommandCode Provider",
     provider: "CommandCode",
     mark: "CC",
-    region: "国外",
     type: "按量",
     price: "$15 / 月 + 按量",
     quota: "按 token 计费",
@@ -98,7 +92,6 @@ export const deepseekOffers: Offer[] = [
     channel: "DeepSeek 官方 API",
     provider: "DeepSeek",
     mark: "DS",
-    region: "国内",
     type: "按量",
     price: "—",
     quota: "按 token 计费",
