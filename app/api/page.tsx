@@ -19,12 +19,7 @@ export default function ApiPage() {
   return (
     <div className="wrap">
       <h1 className="visually-hidden">API</h1>
-      <ModelTable
-        rows={rows}
-        mode="api"
-        allHref="/api/all/"
-        allLabel="全部 API"
-      />
+      <ModelTable rows={rows} mode="api" />
     </div>
   );
 }

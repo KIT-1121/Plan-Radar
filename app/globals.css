@@ -629,14 +629,6 @@ h1, h2, h3, p { margin: 0; }
 .model-row .num { font-size: 12.5px; font-variant-numeric: tabular-nums; }
 .row-arrow { display: flex; justify-content: flex-end; color: var(--line-2); transition: color 0.16s ease; }
 .model-row:hover .row-arrow { color: var(--ink); }
-.model-dir-all {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 28px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-}
-.model-dir-all .link-arrow { font-size: 12px; }
 
 .detail-top {
   display: flex;
@@ -1197,8 +1189,10 @@ h1, h2, h3, p { margin: 0; }
   font-size: 11px;
   color: var(--muted);
 }
-.footer-links { display: flex; gap: 20px; }
-.footer-links a:hover { color: var(--ink); }
+.footer-inner.footer-compact {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 
 @media (min-width: 1900px) {
   .hero .display { font-size: 92px; }

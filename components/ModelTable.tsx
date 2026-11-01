@@ -14,16 +14,9 @@ export interface ModelRow extends ModelInfo {
 interface ModelTableProps {
   rows: ModelRow[];
   mode: "plans" | "api";
-  allHref: string;
-  allLabel: string;
 }
 
-export function ModelTable({
-  rows,
-  mode,
-  allHref,
-  allLabel,
-}: ModelTableProps) {
+export function ModelTable({ rows, mode }: ModelTableProps) {
   const [query, setQuery] = useState("");
   const keyword = query.trim().toLowerCase();
 
@@ -101,12 +94,6 @@ export function ModelTable({
       {visible.length === 0 ? (
         <div className="empty">没有找到匹配的模型。</div>
       ) : null}
-
-      <div className="model-dir-all">
-        <a className="link-arrow" href={allHref}>
-          {allLabel} <Icon name="arrow" className="icon icon-sm" />
-        </a>
-      </div>
     </>
   );
 }

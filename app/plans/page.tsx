@@ -20,12 +20,7 @@ export default function PlansPage() {
   return (
     <div className="wrap">
       <h1 className="visually-hidden">套餐</h1>
-      <ModelTable
-        rows={rows}
-        mode="plans"
-        allHref="/plans/all/"
-        allLabel="全部套餐"
-      />
+      <ModelTable rows={rows} mode="plans" />
     </div>
   );
 }
