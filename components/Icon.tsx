@@ -3,6 +3,7 @@ import type { ReactNode, SVGProps } from "react";
 export type IconName =
   | "radar"
   | "arrow"
+  | "arrow-left"
   | "external"
   | "github"
   | "star"
@@ -25,6 +26,12 @@ const paths: Record<IconName, ReactNode> = {
     <>
       <path d="M4 12h15" />
       <path d="m13 6 6 6-6 6" />
+    </>
+  ),
+  "arrow-left": (
+    <>
+      <path d="M20 12H5" />
+      <path d="m11 18-6-6 6-6" />
     </>
   ),
   external: (

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { Icon } from "@/components/Icon";
 import { PlanCard } from "@/components/PlanCard";
 import {
   getModel,
@@ -36,8 +37,8 @@ export default async function ModelPlansPage({
     <div className="wrap">
       <h1 className="visually-hidden">{model.name}</h1>
       <div className="detail-top">
-        <a className="link-arrow" href="/plans/">
-          ← 全部模型
+        <a className="back-arrow" href="/plans/" aria-label="返回模型列表">
+          <Icon name="arrow-left" />
         </a>
       </div>
 

@@ -24,6 +24,7 @@ export interface Plan {
   priceUnit: string;
   quotaValue: string;
   quotaLabel: string;
+  tokenEstimate?: string;
   multiplier?: string;
   ratio?: string;
   ratioFree?: boolean;
@@ -209,6 +210,7 @@ export const cnPlans: Plan[] = [
     priceUnit: "起 / 月",
     quotaValue: "2,000",
     quotaLabel: "积分 / 5h",
+    tokenEstimate: "≈ 200 万 tokens",
     ratio: "111 积分/$",
     specs: [
       { label: "5h 额度", value: "2,000 积分" },
@@ -232,6 +234,7 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "2,000",
     quotaLabel: "积分 / 月",
+    tokenEstimate: "≈ 200 万 tokens",
     ratio: "40.8 积分/元",
     specs: [
       { label: "积分 / 月", value: "2,000" },
@@ -255,6 +258,7 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "4,000",
     quotaLabel: "积分 / 月",
+    tokenEstimate: "≈ 400 万 tokens",
     ratio: "40.4 积分/元",
     specs: [
       { label: "积分 / 月", value: "4,000" },
@@ -278,6 +282,7 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "12,000",
     quotaLabel: "积分 / 月",
+    tokenEstimate: "≈ 1,200 万 tokens",
     ratio: "50.2 积分/元",
     specs: [
       { label: "积分 / 月", value: "12,000" },
@@ -301,6 +306,7 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "40,000",
     quotaLabel: "积分 / 月",
+    tokenEstimate: "≈ 4,000 万 tokens",
     ratio: "57.2 积分/元",
     specs: [
       { label: "积分 / 月", value: "40,000" },

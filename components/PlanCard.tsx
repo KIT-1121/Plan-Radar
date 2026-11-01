@@ -32,6 +32,14 @@ export function PlanCard({
       <div className="quota">
         <span className="quota-value">{plan.quotaValue}</span>
         <span className="quota-label">{plan.quotaLabel}</span>
+        {plan.tokenEstimate ? (
+          <span
+            className="quota-estimate"
+            title="按 1 积分 ≈ 1K tokens 估算"
+          >
+            （{plan.tokenEstimate}）
+          </span>
+        ) : null}
         {plan.multiplier ? (
           <span className="mult">{plan.multiplier}</span>
         ) : plan.ratio ? (

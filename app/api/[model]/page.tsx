@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ApiCard } from "@/components/ApiCard";
+import { Icon } from "@/components/Icon";
 import { apiChannels, tokenPrices } from "@/lib/api";
 import {
   apisForModel,
@@ -27,8 +28,8 @@ export default async function ModelApiPage({
     <div className="wrap">
       <h1 className="visually-hidden">{model.name}</h1>
       <div className="detail-top">
-        <a className="link-arrow" href="/api/">
-          ← 全部模型
+        <a className="back-arrow" href="/api/" aria-label="返回模型列表">
+          <Icon name="arrow-left" />
         </a>
       </div>
 
