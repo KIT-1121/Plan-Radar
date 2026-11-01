@@ -239,6 +239,34 @@ export const modelCatalog: ModelInfo[] = [
   },
 ];
 
+export const modelContexts: Record<string, string> = {
+  "gpt-6": "1M",
+  "gpt-6-astra": "1M",
+  "gpt-5-6": "400K",
+  "gpt-6-sol": "1M",
+  "claude-opus-5-5": "200K",
+  "claude-sonnet-5-5": "200K",
+  "claude-haiku-5-5": "200K",
+  "gemini-4-argon": "1M",
+  "deepseek-v4-1-flash": "1M",
+  "deepseek-v4-pro": "1M",
+  "glm-5-3": "200K",
+  "glm-5-3-flash": "200K",
+  "glm-5-2": "128K",
+  "kimi-k3": "1M",
+  "kimi-k3-1-pro": "1M",
+  "kimi-k2-7-code": "256K",
+  "qwen3-8-max": "1M",
+  "qwen3-8-flash": "1M",
+  "qwen3-7-plus": "128K",
+  "seed-2-1": "256K",
+  "grok-4-7": "500K",
+  "minimax-m3": "1M",
+  "minimax-m3-1-flash": "1M",
+  hy3: "256K",
+  "ling-3-1-flash": "128K",
+};
+
 export function getModel(slug: string) {
   return modelCatalog.find((model) => model.slug === slug);
 }
