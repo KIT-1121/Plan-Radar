@@ -355,41 +355,113 @@ export const planFilters: PlanFilter[] = [
   { key: "request", label: "按请求", count: 1 },
 ];
 
+export type UpdateKind = "plan" | "api";
+
 export interface Update {
+  id: string;
   date: string;
+  kind: UpdateKind;
   provider: string;
   strong: string;
   text: string;
+  summary: string;
+  details: string[];
   href: string;
+  related: string;
+  source: string;
 }
 
 export const updates: Update[] = [
   {
+    id: "opencode-go-gemini",
     date: "11.01",
+    kind: "plan",
     provider: "OpenCode",
     strong: "OpenCode Go",
     text: "新增 Gemini 4 Argon，模型池到 30+ 个",
-    href: "/plans/all/",
+    summary:
+      "OpenCode Go 仍是 $10/月、含 $100 DeepSeek V4.1 Flash 额度，模型池扩到 30+ 个。",
+    details: [
+      "套餐：$10/月，含 $100 DeepSeek V4.1 Flash 额度。",
+      "变化：新增 Gemini 4 Argon；模型池到 30+ 个。",
+      "倍率：10×（$100 ÷ $10）。",
+    ],
+    href: "/updates/#opencode-go-gemini",
+    related: "/plans/deepseek-v4-1-flash/",
+    source: "https://opencode.ai/v2/docs/console/go/",
   },
   {
+    id: "commandcode-goat-ling",
     date: "11.01",
+    kind: "plan",
     provider: "CommandCode",
     strong: "GOAT",
     text: "保持 $10 / $100 额度，新增 Ling 3.1 Flash",
-    href: "/plans/all/",
+    summary:
+      "GOAT 维持 $10/月、$100 额度，模型增加到 36 个，新增 Ling 3.1 Flash。",
+    details: [
+      "套餐：$10/月，$100 额度。",
+      "模型：36 个；新增 Ling 3.1 Flash。",
+      "请求估算：75K / 月；支持 API。",
+    ],
+    href: "/updates/#commandcode-goat-ling",
+    related: "/plans/ling-3-1-flash/",
+    source: "https://commandcode.ai/pricing",
   },
   {
+    id: "trae-pricing-1031",
     date: "10.31",
+    kind: "plan",
     provider: "Trae",
     strong: "会员 Lite / Pro / Pro+",
     text: "调整为 ¥49 / ¥99 / ¥239",
-    href: "/plans/all/",
+    summary:
+      "Trae 会员三档价格调整，积分额度按档位分别是 2,000 / 4,000 / 12,000。",
+    details: [
+      "Lite：¥49/月，2,000 积分/月。",
+      "Pro：¥99/月，4,000 积分/月。",
+      "Pro+：¥239/月，12,000 积分/月。",
+      "Ultra 仍为 ¥699/月，40,000 积分/月。",
+    ],
+    href: "/updates/#trae-pricing-1031",
+    related: "/plans/seed-2-1/",
+    source: "https://www.trae.cn/pricing",
   },
   {
+    id: "glm-window-1028",
     date: "10.28",
+    kind: "plan",
     provider: "GLM",
     strong: "GLM Coding",
     text: "额度改为 5h + 周双窗口",
-    href: "/plans/all/",
+    summary:
+      "GLM Coding Lite 起价 US$18/月，额度拆成 5 小时窗口和周窗口。",
+    details: [
+      "Lite：US$18/月起。",
+      "额度：2,000 积分/5h，10,000 积分/周。",
+      "模型：GLM-5.3 / GLM-5.3-Flash。",
+    ],
+    href: "/updates/#glm-window-1028",
+    related: "/plans/glm-5-3/",
+    source: "https://docs.z.ai/devpack/overview",
+  },
+  {
+    id: "api-deepseek-price-1101",
+    date: "11.01",
+    kind: "api",
+    provider: "OpenCode Console",
+    strong: "DeepSeek V4.1 Flash",
+    text: "API 价目核对：$0.30 / $1.20，缓存读 $0.006",
+    summary:
+      "按量价与缓存读价格完成核对，OpenCode Console 仍按 token 计费。",
+    details: [
+      "输入：$0.30 / 1M tokens。",
+      "输出：$1.20 / 1M tokens。",
+      "缓存读：$0.006 / 1M tokens。",
+      "渠道：OpenCode Console 按量计费。",
+    ],
+    href: "/updates/#api-deepseek-price-1101",
+    related: "/api/deepseek-v4-1-flash/",
+    source: "https://opencode.ai/v2/docs/console/models/",
   },
 ];

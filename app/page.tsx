@@ -1,4 +1,5 @@
 import { Icon } from "@/components/Icon";
+import { briefs } from "@/lib/briefs";
 import { updates } from "@/lib/plans";
 
 export default function HomePage() {
@@ -45,21 +46,16 @@ export default function HomePage() {
         <div className="wrap">
           <div className="section-head">
             <div>
-              <div className="eyebrow">Changelog</div>
               <h2 className="section-title">最近更新</h2>
             </div>
-            <a className="link-arrow" href="/plans/all/">
-              全部套餐 <Icon name="arrow" className="icon icon-sm" />
+            <a className="link-arrow" href="/updates/">
+              全部动态 <Icon name="arrow" className="icon icon-sm" />
             </a>
           </div>
 
           <div className="updates">
             {updates.map((update) => (
-              <a
-                className="update-row"
-                href={update.href}
-                key={`${update.date}-${update.provider}`}
-              >
+              <a className="update-row" href={update.href} key={update.id}>
                 <span className="update-date">{update.date}</span>
                 <span className="update-provider">{update.provider}</span>
                 <span className="update-text">
@@ -78,29 +74,32 @@ export default function HomePage() {
         <div className="wrap">
           <div className="section-head">
             <div>
-              <div className="eyebrow">How it works</div>
-              <h2 className="section-title">只看三件事</h2>
+              <div className="eyebrow">科技简报</div>
+              <h2 className="section-title">日报 · 周刊 · 月刊</h2>
             </div>
+            <p>每天看变化，每周看趋势，每月看回顾。</p>
           </div>
 
-          <div className="steps">
-            <div className="step">
-              <div className="step-num">01</div>
-              <div className="step-title">月费</div>
-              <p className="step-desc">官网当前价格。按年付或首月优惠会单独标注。</p>
-            </div>
-            <div className="step">
-              <div className="step-num">02</div>
-              <div className="step-title">额度</div>
-              <p className="step-desc">
-                套餐里到底包含多少用量。美元额度、积分、请求数分开算。
-              </p>
-            </div>
-            <div className="step">
-              <div className="step-num">03</div>
-              <div className="step-title">倍数</div>
-              <p className="step-desc">额度 ÷ 月费。只在同币种额度时计算，不跨口径硬比。</p>
-            </div>
+          <div className="brief-grid">
+            {briefs.map((brief) => (
+              <article className="brief-card" key={brief.key}>
+                <div className="brief-top">
+                  <span className="brief-label">{brief.label}</span>
+                  <span className="brief-count">{brief.items.length} 条</span>
+                </div>
+                <h3>{brief.title}</h3>
+                <p className="brief-desc">{brief.description}</p>
+                <div className="brief-list">
+                  {brief.items.map((item) => (
+                    <a className="brief-item" href={item.href} key={item.title}>
+                      <span className="brief-date">{item.date}</span>
+                      <b>{item.title}</b>
+                      <span className="brief-summary">{item.summary}</span>
+                    </a>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
