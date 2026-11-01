@@ -867,6 +867,18 @@ h1, h2, h3, p { margin: 0; }
 .support-panel-bottom { padding: 24px 30px 26px; }
 .support-panel-head { display: flex; align-items: flex-start; gap: 14px; }
 .support-panel-head .support-icon { flex-shrink: 0; }
+.support-panel-btn {
+  margin-left: auto;
+  flex-shrink: 0;
+  background: #fff;
+  border-color: #fff;
+  color: var(--ink);
+}
+.support-panel-btn:hover {
+  background: #f1f1ec;
+  border-color: #f1f1ec;
+  color: var(--ink);
+}
 .support-panel h3 { font-size: 20px; font-weight: 550; letter-spacing: -0.025em; }
 .support-panel p {
   margin-top: 8px;

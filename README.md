@@ -14,7 +14,7 @@ AI 套餐比价站。把 AI 编程套餐的月费、额度、模型和限制放�
 | `/plans/` | 套餐 | 12 个订阅套餐的详情卡：价格 / 额度 / 模型 / 限制 |
 | `/api/` | API | 3 个 API 渠道 + 官方 token 价目表 |
 | `/models/` | 按模型比价 | DeepSeek V4.1 Flash 的套餐与 API 渠道对比 |
-| `/sponsor/` | Star / 赞助 | GitHub、赞助渠道、内容纠错 |
+| `/sponsor/` | 赞助 | GitHub、赞助渠道、内容纠错 |
 
 ## 三种视图
 

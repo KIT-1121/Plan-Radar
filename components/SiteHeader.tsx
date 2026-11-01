@@ -7,7 +7,7 @@ const items = [
   { href: "/", label: "首页" },
   { href: "/plans/", label: "套餐" },
   { href: "/api/", label: "API" },
-  { href: "/sponsor/", label: "Star / 赞助" },
+  { href: "/sponsor/", label: "赞助" },
 ];
 
 export function SiteHeader() {
@@ -38,15 +38,6 @@ export function SiteHeader() {
             );
           })}
         </nav>
-
-        <a
-          className="header-cta"
-          href="https://github.com/KIT-1121/Plan-Radar"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Icon name="github" className="icon icon-sm" /> GitHub
-        </a>
       </div>
     </header>
   );

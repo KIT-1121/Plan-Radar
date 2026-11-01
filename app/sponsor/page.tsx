@@ -27,19 +27,14 @@ export default function SponsorPage() {
                   <h3>给个 Star</h3>
                   <p>Star 是继续更新的最大动力。</p>
                 </div>
-              </div>
-              <div className="support-panel-actions">
                 <a
-                  className="btn small"
+                  className="btn small support-panel-btn"
                   href="https://github.com/KIT-1121/Plan-Radar"
                   target="_blank"
                   rel="noreferrer"
                 >
                   <Icon name="star" /> 去 GitHub
                 </a>
-                <span className="support-panel-link">
-                  github.com/KIT-1121/Plan-Radar
-                </span>
               </div>
             </div>
 
