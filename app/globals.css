@@ -1071,6 +1071,11 @@ h1, h2, h3, p { margin: 0; }
 
 /* ---------- table ---------- */
 
+.api-detail-table { margin-top: 20px; }
+.api-detail-table .price-table td { font-size: 12px; }
+.channel-cell b { display: block; font-size: 13px; font-weight: 550; color: var(--ink); }
+.channel-cell span { display: block; margin-top: 2px; font-size: 10px; color: var(--muted); }
+
 .table-wrap {
   border: 1px solid var(--line);
   border-radius: var(--radius);

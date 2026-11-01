@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { ApiCard } from "@/components/ApiCard";
 import { Icon } from "@/components/Icon";
 import { apiChannels, tokenPrices } from "@/lib/api";
 import {
@@ -33,34 +32,53 @@ export default async function ModelApiPage({
         </a>
       </div>
 
-      {price ? (
-        <div className="token-strip">
-          <div>
-            <span>输入 / 1M</span>
-            <b>{price.input}</b>
+      {price && channels.length > 0 ? (
+        <>
+          <div className="table-wrap api-detail-table">
+            <table className="price-table">
+              <thead>
+                <tr>
+                  <th>渠道</th>
+                  <th>输入 / 1M</th>
+                  <th>输出 / 1M</th>
+                  <th>缓存命中 / 1M</th>
+                  <th>计费</th>
+                  <th>官网</th>
+                </tr>
+              </thead>
+              <tbody>
+                {channels.map((channel) => (
+                  <tr key={channel.id}>
+                    <td>
+                      <div className="channel-cell">
+                        <b>{channel.name}</b>
+                        <span>{channel.provider}</span>
+                      </div>
+                    </td>
+                    <td className="strong">{price.input}</td>
+                    <td className="strong">{price.output}</td>
+                    <td>{price.cached}</td>
+                    <td>{channel.billing} · {channel.markup}</td>
+                    <td className="r">
+                      <a
+                        className="link-arrow"
+                        href={channel.source}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        官网 <Icon name="external" className="icon icon-sm" />
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <div>
-            <span>输出 / 1M</span>
-            <b>{price.output}</b>
-          </div>
-          <div>
-            <span>缓存读 / 1M</span>
-            <b>{price.cached}</b>
-          </div>
-        </div>
-      ) : (
-        <p className="note">该模型暂无公开 token 价目，具体价格以渠道官网为准。</p>
-      )}
-
-      {channels.length > 0 ? (
-        <div className="api-grid">
-          {channels.map((channel) => (
-            <ApiCard key={channel.id} channel={channel} />
-          ))}
-        </div>
-      ) : (
-        <div className="empty">暂无提供该模型的 API 渠道。</div>
-      )}
+          <p className="note">
+            价格按标准时段展示；高峰 / 低谷价以各渠道官网为准。
+          </p>
+        </>
+      ) : null}
     </div>
   );
 }
