@@ -33,7 +33,7 @@ export function ModelTable({ rows, mode }: ModelTableProps) {
   return (
     <>
       <div className="catalog-top catalog-top-left">
-        <div className="catalog-search">
+        <div className="catalog-search catalog-search-wide">
           <Icon name="search" />
           <input
             type="search"
