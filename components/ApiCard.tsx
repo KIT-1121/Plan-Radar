@@ -3,7 +3,7 @@ import { Icon } from "./Icon";
 
 export function ApiCard({ channel }: { channel: ApiChannel }) {
   return (
-    <article className="plan-card api-card">
+    <article className="plan-card api-card" data-provider={channel.provider}>
       <div className="plan-top">
         <span className="provider-mark">{channel.mark}</span>
         <span className="provider-name">{channel.provider}</span>

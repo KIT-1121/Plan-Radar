@@ -3,7 +3,7 @@ import { Icon } from "./Icon";
 
 export function PlanCard({ plan }: { plan: Plan }) {
   return (
-    <article className="plan-card">
+    <article className="plan-card" data-provider={plan.provider}>
       <div className="plan-top">
         <span className="provider-mark">{plan.mark}</span>
         <span className="provider-name">{plan.provider}</span>

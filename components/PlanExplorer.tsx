@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState } from "react";
 import type { Plan, PlanFilter } from "@/lib/plans";
 import { Icon } from "./Icon";
 import { PlanCard } from "./PlanCard";
@@ -10,7 +10,6 @@ interface PlanExplorerProps {
   filters: PlanFilter[];
   ratioLabel: string;
   note: string;
-  tabs?: ReactNode;
 }
 
 function searchText(plan: Plan) {
@@ -31,20 +30,17 @@ export function PlanExplorer({
   filters,
   ratioLabel,
   note,
-  tabs,
 }: PlanExplorerProps) {
   const [query, setQuery] = useState("");
   const [provider, setProvider] = useState("all");
   const [filter, setFilter] = useState<"all" | Plan["kind"]>("all");
   const [view, setView] = useState<"cards" | "table">("cards");
+  const [filtersOpen, setFiltersOpen] = useState(false);
 
-  const providers = useMemo(() => {
-    const counts = new Map<string, number>();
-    plans.forEach((plan) => {
-      counts.set(plan.provider, (counts.get(plan.provider) ?? 0) + 1);
-    });
-    return Array.from(counts, ([name, count]) => ({ name, count }));
-  }, [plans]);
+  const providers = useMemo(
+    () => Array.from(new Set(plans.map((plan) => plan.provider))),
+    [plans],
+  );
 
   const keyword = query.trim().toLowerCase();
   const visible = useMemo(
@@ -68,7 +64,7 @@ export function PlanExplorer({
 
   return (
     <>
-      <div className="catalog-top">
+      <div className="catalog-top catalog-top-left">
         <div className="catalog-search">
           <Icon name="search" />
           <input
@@ -89,51 +85,65 @@ export function PlanExplorer({
             </button>
           ) : null}
         </div>
-        {tabs ? <div className="catalog-actions">{tabs}</div> : null}
+        <button
+          type="button"
+          className="filter-toggle"
+          aria-expanded={filtersOpen}
+          aria-controls="plan-filters"
+          aria-label={filtersOpen ? "收起筛选条件" : "展开筛选条件"}
+          title={filtersOpen ? "收起筛选" : "展开筛选"}
+          onClick={() => setFiltersOpen((open) => !open)}
+        >
+          <span
+            className={filtersOpen ? "filter-triangle open" : "filter-triangle"}
+          />
+        </button>
       </div>
 
-      <div className="tag-groups">
-        <div className="tag-row">
-          <span className="tag-label">供应商</span>
-          <div className="chips">
-            <button
-              type="button"
-              className={provider === "all" ? "chip active" : "chip"}
-              onClick={() => setProvider("all")}
-            >
-              全部
-            </button>
-            {providers.map((item) => (
+      {filtersOpen ? (
+        <div className="tag-groups" id="plan-filters">
+          <div className="tag-row">
+            <span className="tag-label">供应商</span>
+            <div className="chips">
               <button
-                key={item.name}
                 type="button"
-                className={provider === item.name ? "chip active" : "chip"}
-                onClick={() =>
-                  setProvider(provider === item.name ? "all" : item.name)
-                }
+                className={provider === "all" ? "chip active" : "chip"}
+                onClick={() => setProvider("all")}
               >
-                {item.name} <span className="n">{item.count}</span>
+                全部
               </button>
-            ))}
+              {providers.map((name) => (
+                <button
+                  key={name}
+                  type="button"
+                  className={provider === name ? "chip active" : "chip"}
+                  onClick={() =>
+                    setProvider(provider === name ? "all" : name)
+                  }
+                >
+                  {name}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div className="tag-row">
-          <span className="tag-label">额度类型</span>
-          <div className="chips">
-            {filters.map((item) => (
-              <button
-                key={item.key}
-                type="button"
-                className={filter === item.key ? "chip active" : "chip"}
-                onClick={() => setFilter(item.key)}
-              >
-                {item.label} <span className="n">{item.count}</span>
-              </button>
-            ))}
+          <div className="tag-row">
+            <span className="tag-label">额度类型</span>
+            <div className="chips">
+              {filters.map((item) => (
+                <button
+                  key={item.key}
+                  type="button"
+                  className={filter === item.key ? "chip active" : "chip"}
+                  onClick={() => setFilter(item.key)}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      ) : null}
 
       <div className="catalog-result">
         <span>
