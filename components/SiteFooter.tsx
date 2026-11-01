@@ -8,7 +8,7 @@ export function SiteFooter() {
   const isSponsor = path === "/sponsor";
 
   return (
-    <footer className="site-footer">
+    <footer className={isSponsor ? "site-footer sponsor-footer" : "site-footer"}>
       <div
         className={`wrap footer-inner${isSponsor ? "" : " footer-compact"}`}
       >

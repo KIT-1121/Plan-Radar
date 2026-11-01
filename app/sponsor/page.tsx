@@ -6,7 +6,6 @@ export default function SponsorPage() {
       <section className="support-hero">
         <div className="wrap support-hero-grid">
           <div className="support-hero-copy">
-            <div className="eyebrow">赞助</div>
             <h1 className="display" style={{ marginTop: 20 }}>
               不卖套餐，
               <br />
