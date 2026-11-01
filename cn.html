@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国内 AI 套餐 · Plan-Radar</title>
+<meta name="description" content="国内 AI 编程套餐的月费、积分、模型与限制。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-5.5-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.3 1.2a11.4 11.4 0 0 0-6 0C6.9 2.8 5.9 3.1 5.9 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.5 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+      Plan-Radar
+    </a>
+    <nav class="nav">
+      <a data-page="index.html" href="index.html">首页</a>
+      <a data-page="cn.html" href="cn.html">国内套餐</a>
+      <a data-page="global.html" href="global.html">国外套餐</a>
+      <a data-page="sponsor.html" href="sponsor.html">Star / 赞助</a>
+    </nav>
+    <a class="header-cta" href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">
+      <svg class="icon icon-sm"><use href="#i-github"/></svg> GitHub
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-head page-head-row">
+      <div>
+        <div class="eyebrow">Domestic · 6 plans</div>
+        <h1 class="display">国内 AI 套餐</h1>
+        <p class="lead">按套餐看：人民币、美元、积分混着来。按官网原币种展示，不硬换算。</p>
+      </div>
+      <div class="display-tabs">
+        <a class="active" href="cn.html">按套餐</a>
+        <a href="models.html?region=cn">按模型</a>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="chips" data-filter-group>
+        <button class="chip active" data-filter="all">全部 <span class="n">6</span></button>
+        <button class="chip" data-filter="credits">积分制 <span class="n">5</span></button>
+        <button class="chip" data-filter="free">免费 <span class="n">1</span></button>
+      </div>
+      <div class="view-toggle">
+        <button class="active" data-view="cards">卡片</button>
+        <button data-view="table">表格</button>
+      </div>
+    </div>
+
+    <div data-cards>
+      <div class="plan-grid">
+        <article class="plan-card" data-kind="credits">
+          <div class="plan-top">
+            <span class="provider-mark">GL</span>
+            <span class="provider-name">智谱</span>
+            <span class="tag">5h 窗口</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">GLM Coding Lite</h3>
+            <div class="price">US$18<span>起 / 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">2,000</span>
+            <span class="quota-label">积分 / 5h</span>
+            <span class="ratio">111 积分/$</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>5h 额度</span><b>2,000 积分</b></div>
+            <div class="pd-spec"><span>周额度</span><b>10,000 积分</b></div>
+            <div class="pd-spec"><span>模型</span><b>GLM-5.3 系</b></div>
+            <div class="pd-spec"><span>积分倍率</span><b>6.9 / 24</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">GLM-5.3</span>
+            <span class="model-chip">GLM-5.3-Flash</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://docs.z.ai/devpack/overview" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="credits">
+          <div class="plan-top">
+            <span class="provider-mark">TR</span>
+            <span class="provider-name">字节跳动</span>
+            <span class="tag">积分</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Trae 会员 Lite</h3>
+            <div class="price">¥49<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">2,000</span>
+            <span class="quota-label">积分 / 月</span>
+            <span class="ratio">40.8 积分/元</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>积分 / 月</span><b>2,000</b></div>
+            <div class="pd-spec"><span>并发</span><b>2 个</b></div>
+            <div class="pd-spec"><span>模型折扣</span><b>5 折</b></div>
+            <div class="pd-spec"><span>签到</span><b>+3,000</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">Seed-2.1</span>
+            <span class="model-chip">GLM</span>
+            <span class="model-chip">DeepSeek V4.1</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://www.trae.cn/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="credits">
+          <div class="plan-top">
+            <span class="provider-mark">TR</span>
+            <span class="provider-name">字节跳动</span>
+            <span class="tag">积分</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Trae 会员 Pro</h3>
+            <div class="price">¥99<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">4,000</span>
+            <span class="quota-label">积分 / 月</span>
+            <span class="ratio">40.4 积分/元</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>积分 / 月</span><b>4,000</b></div>
+            <div class="pd-spec"><span>并发</span><b>10 个</b></div>
+            <div class="pd-spec"><span>模型折扣</span><b>5 折</b></div>
+            <div class="pd-spec"><span>签到</span><b>+3,000</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">Seed-2.1</span>
+            <span class="model-chip">GLM</span>
+            <span class="model-chip">DeepSeek V4.1</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://www.trae.cn/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="credits">
+          <div class="plan-top">
+            <span class="provider-mark">TR</span>
+            <span class="provider-name">字节跳动</span>
+            <span class="tag">积分</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Trae 会员 Pro+</h3>
+            <div class="price">¥239<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">12,000</span>
+            <span class="quota-label">积分 / 月</span>
+            <span class="ratio">50.2 积分/元</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>积分 / 月</span><b>12,000</b></div>
+            <div class="pd-spec"><span>并发</span><b>10 个</b></div>
+            <div class="pd-spec"><span>模型折扣</span><b>5 折</b></div>
+            <div class="pd-spec"><span>签到</span><b>+3,000</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">Seed-2.1</span>
+            <span class="model-chip">GLM</span>
+            <span class="model-chip">DeepSeek V4.1</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://www.trae.cn/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="credits">
+          <div class="plan-top">
+            <span class="provider-mark">TR</span>
+            <span class="provider-name">字节跳动</span>
+            <span class="tag">积分</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Trae 会员 Ultra</h3>
+            <div class="price">¥699<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">40,000</span>
+            <span class="quota-label">积分 / 月</span>
+            <span class="ratio">57.2 积分/元</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>积分 / 月</span><b>40,000</b></div>
+            <div class="pd-spec"><span>并发</span><b>20 个</b></div>
+            <div class="pd-spec"><span>模型折扣</span><b>5 折</b></div>
+            <div class="pd-spec"><span>签到</span><b>+3,000</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">Seed-2.1</span>
+            <span class="model-chip">GLM</span>
+            <span class="model-chip">DeepSeek V4.1</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://www.trae.cn/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="free">
+          <div class="plan-top">
+            <span class="provider-mark">QW</span>
+            <span class="provider-name">阿里</span>
+            <span class="tag">免费</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Qwen Code</h3>
+            <div class="price">¥0<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">2,000</span>
+            <span class="quota-label">请求 / 天</span>
+            <span class="ratio free">免费</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>请求 / 天</span><b>2,000</b></div>
+            <div class="pd-spec"><span>模型</span><b>Qwen3.8</b></div>
+            <div class="pd-spec"><span>上下文</span><b>256K</b></div>
+            <div class="pd-spec"><span>价格</span><b>免费</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">Qwen3.8</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://qwen.ai/" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div data-table hidden>
+      <div class="table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>套餐</th>
+              <th>月费</th>
+              <th>额度</th>
+              <th>积分效率</th>
+              <th>更新</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-kind="credits">
+              <td><div class="plan-cell"><span class="provider-mark">GL</span><span><b>GLM Coding Lite</b><span>智谱</span></span></div></td>
+              <td class="strong">US$18</td><td>2,000 积分 / 5h</td><td>111 积分/$</td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://docs.z.ai/devpack/overview" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="credits">
+              <td><div class="plan-cell"><span class="provider-mark">TR</span><span><b>Trae 会员 Lite</b><span>字节跳动</span></span></div></td>
+              <td class="strong">¥49</td><td>2,000 积分 / 月</td><td>40.8 积分/元</td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://www.trae.cn/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="credits">
+              <td><div class="plan-cell"><span class="provider-mark">TR</span><span><b>Trae 会员 Pro</b><span>字节跳动</span></span></div></td>
+              <td class="strong">¥99</td><td>4,000 积分 / 月</td><td>40.4 积分/元</td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://www.trae.cn/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="credits">
+              <td><div class="plan-cell"><span class="provider-mark">TR</span><span><b>Trae 会员 Pro+</b><span>字节跳动</span></span></div></td>
+              <td class="strong">¥239</td><td>12,000 积分 / 月</td><td>50.2 积分/元</td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://www.trae.cn/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="credits">
+              <td><div class="plan-cell"><span class="provider-mark">TR</span><span><b>Trae 会员 Ultra</b><span>字节跳动</span></span></div></td>
+              <td class="strong">¥699</td><td>40,000 积分 / 月</td><td>57.2 积分/元</td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://www.trae.cn/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="free">
+              <td><div class="plan-cell"><span class="provider-mark">QW</span><span><b>Qwen Code</b><span>阿里</span></span></div></td>
+              <td class="strong">¥0</td><td>2,000 请求 / 天</td><td><span class="ratio free">免费</span></td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://qwen.ai/" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="note">积分不是钱。GLM 与 Trae 的积分体系不同，不能跨供应商比较；这里只展示同一套餐内的「积分 ÷ 价格」。首批收录智谱、字节、阿里，Kimi / MiniMax 正在核验。</p>
+    <div class="empty" data-empty hidden>没有符合筛选的套餐。</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>Plan-Radar · 价格来自官网，最后核对 2026.11.01</span>
+    <div class="footer-links">
+      <a href="sponsor.html">Star / 赞助</a>
+      <a href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

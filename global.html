@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国外 AI 套餐 · Plan-Radar</title>
+<meta name="description" content="国外 AI 编程套餐的月费、额度、模型与限制。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-5.5-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.3 1.2a11.4 11.4 0 0 0-6 0C6.9 2.8 5.9 3.1 5.9 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.5 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+      Plan-Radar
+    </a>
+    <nav class="nav">
+      <a data-page="index.html" href="index.html">首页</a>
+      <a data-page="cn.html" href="cn.html">国内套餐</a>
+      <a data-page="global.html" href="global.html">国外套餐</a>
+      <a data-page="sponsor.html" href="sponsor.html">Star / 赞助</a>
+    </nav>
+    <a class="header-cta" href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">
+      <svg class="icon icon-sm"><use href="#i-github"/></svg> GitHub
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-head page-head-row">
+      <div>
+        <div class="eyebrow">Global · 6 plans</div>
+        <h1 class="display">国外 AI 套餐</h1>
+        <p class="lead">按套餐看：月费、额度、模型、窗口与请求限制。额度都按官网口径展示。</p>
+      </div>
+      <div class="display-tabs">
+        <a class="active" href="global.html">按套餐</a>
+        <a href="models.html?region=global">按模型</a>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="chips" data-filter-group>
+        <button class="chip active" data-filter="all">全部 <span class="n">6</span></button>
+        <button class="chip" data-filter="usd">可折算 <span class="n">3</span></button>
+        <button class="chip" data-filter="window">按窗口 <span class="n">2</span></button>
+        <button class="chip" data-filter="request">按请求 <span class="n">1</span></button>
+      </div>
+      <div class="view-toggle">
+        <button class="active" data-view="cards">卡片</button>
+        <button data-view="table">表格</button>
+      </div>
+    </div>
+
+    <div data-cards>
+      <div class="plan-grid">
+        <article class="plan-card" data-kind="usd">
+          <div class="plan-top">
+            <span class="provider-mark">OC</span>
+            <span class="provider-name">OpenCode</span>
+            <span class="tag">美元额度</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">OpenCode Go</h3>
+            <div class="price">$10<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">$100</span>
+            <span class="quota-label">DeepSeek V4.1 Flash 额度</span>
+            <span class="mult">10×</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>5h 窗口</span><b>$20（20%）</b></div>
+            <div class="pd-spec"><span>周窗口</span><b>$50（50%）</b></div>
+            <div class="pd-spec"><span>月额度</span><b>$100（100%）</b></div>
+            <div class="pd-spec"><span>请求估算</span><b>43K / 5h</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">DeepSeek V4.1 Flash <b>$100</b></span>
+            <span class="model-chip">GLM-5.3 <b>$15</b></span>
+            <span class="model-chip">Kimi K3 <b>$15</b></span>
+            <span class="model-chip more">+28 个</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://opencode.ai/v2/docs/console/go/" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="usd">
+          <div class="plan-top">
+            <span class="provider-mark">CC</span>
+            <span class="provider-name">CommandCode</span>
+            <span class="tag">美元额度</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">GOAT</h3>
+            <div class="price">$10<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">$100</span>
+            <span class="quota-label">DeepSeek V4.1 Flash 额度</span>
+            <span class="mult">10×</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>月额度</span><b>$100</b></div>
+            <div class="pd-spec"><span>模型</span><b>36 个</b></div>
+            <div class="pd-spec"><span>请求估算</span><b>75K / 月</b></div>
+            <div class="pd-spec"><span>API</span><b>支持</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">DeepSeek V4.1 Flash <b>$100</b></span>
+            <span class="model-chip">GLM-5.3 Flash <b>$100</b></span>
+            <span class="model-chip">Ling 3.1 Flash <b>$100</b></span>
+            <span class="model-chip more">+33 个</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://commandcode.ai/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="usd">
+          <div class="plan-top">
+            <span class="provider-mark">CC</span>
+            <span class="provider-name">CommandCode</span>
+            <span class="tag">美元额度</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Go</h3>
+            <div class="price">$1<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">$10</span>
+            <span class="quota-label">DeepSeek V4.1 Flash 额度</span>
+            <span class="mult">10×</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>月额度</span><b>$10</b></div>
+            <div class="pd-spec"><span>模型</span><b>28 个</b></div>
+            <div class="pd-spec"><span>请求估算</span><b>9K / 月</b></div>
+            <div class="pd-spec"><span>API</span><b>支持</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">DeepSeek V4.1 Flash <b>$10</b></span>
+            <span class="model-chip">GLM-5.2 <b>$10</b></span>
+            <span class="model-chip">Qwen 3.8 27B <b>$10</b></span>
+            <span class="model-chip more">+19 个</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://commandcode.ai/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="window">
+          <div class="plan-top">
+            <span class="provider-mark">AN</span>
+            <span class="provider-name">Anthropic</span>
+            <span class="tag">按窗口</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Claude Max 5×</h3>
+            <div class="price">$100<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">5× Pro</span>
+            <span class="quota-label">额度</span>
+            <span class="ratio">不可折算</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>5h 窗口</span><b>5× Pro</b></div>
+            <div class="pd-spec"><span>周窗口</span><b>有</b></div>
+            <div class="pd-spec"><span>模型</span><b>6 个</b></div>
+            <div class="pd-spec"><span>并发</span><b>有</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">Opus 5.5</span>
+            <span class="model-chip">Sonnet 5.5</span>
+            <span class="model-chip">Haiku 5.5</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://claude.com/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="window">
+          <div class="plan-top">
+            <span class="provider-mark">OA</span>
+            <span class="provider-name">OpenAI</span>
+            <span class="tag">按窗口</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">ChatGPT Plus</h3>
+            <div class="price">$20<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">Codex</span>
+            <span class="quota-label">额度</span>
+            <span class="ratio">不可折算</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>5h 窗口</span><b>有</b></div>
+            <div class="pd-spec"><span>模型</span><b>GPT-6</b></div>
+            <div class="pd-spec"><span>Codex</span><b>支持</b></div>
+            <div class="pd-spec"><span>并发</span><b>有</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">GPT-6</span>
+            <span class="model-chip">GPT-6 Astra</span>
+            <span class="model-chip">GPT-5.6</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://chatgpt.com/pricing" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+
+        <article class="plan-card" data-kind="request">
+          <div class="plan-top">
+            <span class="provider-mark">GH</span>
+            <span class="provider-name">GitHub</span>
+            <span class="tag">按请求</span>
+          </div>
+          <div class="pd-title-row">
+            <h3 class="plan-name">Copilot Pro+</h3>
+            <div class="price">$39<span>/ 月</span></div>
+          </div>
+          <div class="quota">
+            <span class="quota-value">1,800</span>
+            <span class="quota-label">高级请求 / 月</span>
+            <span class="ratio">不可折算</span>
+          </div>
+          <div class="pd-specs">
+            <div class="pd-spec"><span>请求 / 月</span><b>1,800</b></div>
+            <div class="pd-spec"><span>模型</span><b>多模型</b></div>
+            <div class="pd-spec"><span>IDE</span><b>集成</b></div>
+            <div class="pd-spec"><span>超额</span><b>加购</b></div>
+          </div>
+          <div class="pd-models">
+            <span class="model-chip">GPT-6</span>
+            <span class="model-chip">Claude</span>
+            <span class="model-chip">Gemini</span>
+          </div>
+          <div class="plan-foot">
+            <span>更新 11/01</span>
+            <a href="https://github.com/features/copilot/plans" target="_blank" rel="noreferrer">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div data-table hidden>
+      <div class="table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>套餐</th>
+              <th>月费</th>
+              <th>额度</th>
+              <th>折算</th>
+              <th>更新</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-kind="usd">
+              <td><div class="plan-cell"><span class="provider-mark">OC</span><span><b>OpenCode Go</b><span>OpenCode</span></span></div></td>
+              <td class="strong">$10</td><td>$100 DeepSeek V4.1 Flash</td><td><span class="mult">10×</span></td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://opencode.ai/v2/docs/console/go/" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="usd">
+              <td><div class="plan-cell"><span class="provider-mark">CC</span><span><b>CommandCode GOAT</b><span>CommandCode</span></span></div></td>
+              <td class="strong">$10</td><td>$100 DeepSeek V4.1 Flash</td><td><span class="mult">10×</span></td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://commandcode.ai/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="usd">
+              <td><div class="plan-cell"><span class="provider-mark">CC</span><span><b>CommandCode Go</b><span>CommandCode</span></span></div></td>
+              <td class="strong">$1</td><td>$10 DeepSeek V4.1 Flash</td><td><span class="mult">10×</span></td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://commandcode.ai/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="window">
+              <td><div class="plan-cell"><span class="provider-mark">AN</span><span><b>Claude Max 5×</b><span>Anthropic</span></span></div></td>
+              <td class="strong">$100</td><td>5× Pro / 5h 窗口</td><td><span class="ratio">按窗口</span></td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://claude.com/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="window">
+              <td><div class="plan-cell"><span class="provider-mark">OA</span><span><b>ChatGPT Plus</b><span>OpenAI</span></span></div></td>
+              <td class="strong">$20</td><td>Codex / 5h 窗口</td><td><span class="ratio">按窗口</span></td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://chatgpt.com/pricing" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+            <tr data-kind="request">
+              <td><div class="plan-cell"><span class="provider-mark">GH</span><span><b>Copilot Pro+</b><span>GitHub</span></span></div></td>
+              <td class="strong">$39</td><td>1,800 高级请求 / 月</td><td><span class="ratio">按请求</span></td><td>11/01</td>
+              <td class="r"><a class="link-arrow" href="https://github.com/features/copilot/plans" target="_blank">官网 <svg class="icon icon-sm"><use href="#i-external"/></svg></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="note">倍数 = 额度 ÷ 月费，只在同币种额度时计算。Claude、ChatGPT、Copilot 的额度是窗口或请求数，不参与折算。首批收录 5 家供应商，Cursor / Windsurf 正在核验。</p>
+    <div class="empty" data-empty hidden>没有符合筛选的套餐。</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>Plan-Radar · 价格来自官网，最后核对 2026.11.01</span>
+    <div class="footer-links">
+      <a href="sponsor.html">Star / 赞助</a>
+      <a href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

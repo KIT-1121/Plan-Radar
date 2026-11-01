@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>按模型比价 · Plan-Radar</title>
+<meta name="description" content="同一个模型，不同套餐和 API 渠道的实际单价。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-5.5-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.3 1.2a11.4 11.4 0 0 0-6 0C6.9 2.8 5.9 3.1 5.9 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.5 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+      Plan-Radar
+    </a>
+    <nav class="nav">
+      <a data-page="index.html" href="index.html">首页</a>
+      <a data-page="cn.html" href="cn.html">国内套餐</a>
+      <a data-page="global.html" href="global.html">国外套餐</a>
+      <a data-page="sponsor.html" href="sponsor.html">Star / 赞助</a>
+    </nav>
+    <a class="header-cta" href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">
+      <svg class="icon icon-sm"><use href="#i-github"/></svg> GitHub
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="page-head page-head-row">
+      <div>
+        <div class="eyebrow">By model · DeepSeek V4.1 Flash</div>
+        <h1 class="display">按模型比价</h1>
+        <p class="lead">同一个模型，不同套餐和 API 渠道的实际单价。先看 DeepSeek V4.1 Flash。</p>
+      </div>
+      <div class="display-tabs">
+        <a href="global.html" data-back-plans>按套餐</a>
+        <a class="active" href="models.html">按模型</a>
+      </div>
+    </div>
+
+    <div class="chips" style="margin-top:26px">
+      <button class="chip active">DeepSeek V4.1 Flash <span class="n">6</span></button>
+      <span class="chip disabled">GLM-5.3 <span class="n">待核验</span></span>
+      <span class="chip disabled">Kimi K3 <span class="n">待核验</span></span>
+      <span class="chip disabled">Claude Sonnet 5.5 <span class="n">待核验</span></span>
+      <span class="chip disabled">GPT-6 <span class="n">待核验</span></span>
+    </div>
+
+    <div class="model-summary">
+      <div>
+        <span>官方 API 参考价</span>
+        <b>$0.30 / $1.20</b>
+        <small>输入 / 输出，每 1M tokens</small>
+      </div>
+      <div>
+        <span>最低套餐价</span>
+        <b>官方 10%</b>
+        <small>OpenCode Go / CommandCode GOAT</small>
+      </div>
+      <div>
+        <span>覆盖渠道</span>
+        <b>6 个</b>
+        <small>3 个订阅 · 3 个按量</small>
+      </div>
+    </div>
+
+    <div class="bar-list">
+      <div class="bar-row">
+        <span class="bar-label">官方 API</span>
+        <div class="bar-track"><i class="bar-fill" style="width:100%"></i></div>
+        <span class="bar-val">100%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">OpenCode Console</span>
+        <div class="bar-track"><i class="bar-fill" style="width:100%"></i></div>
+        <span class="bar-val">100%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">OpenCode Go</span>
+        <div class="bar-track"><i class="bar-fill accent" style="width:10%"></i></div>
+        <span class="bar-val">10%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">CommandCode GOAT</span>
+        <div class="bar-track"><i class="bar-fill accent" style="width:10%"></i></div>
+        <span class="bar-val">10%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">CommandCode Go</span>
+        <div class="bar-track"><i class="bar-fill accent" style="width:10%"></i></div>
+        <span class="bar-val">10%</span>
+      </div>
+    </div>
+
+    <div class="section-head" style="margin-top:52px">
+      <div>
+        <div class="eyebrow">Offers</div>
+        <h2 class="section-title">6 个渠道</h2>
+      </div>
+      <p>订阅把额度打包；按量按 token 计费。实际单价都相对官方 API。</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>渠道</th>
+            <th>类型</th>
+            <th>月费</th>
+            <th>DeepSeek V4.1 Flash 额度</th>
+            <th>折算</th>
+            <th>实际单价</th>
+            <th>限制</th>
+            <th>更新</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="plan-cell"><span class="provider-mark">OC</span><span><b>OpenCode Go</b><span>OpenCode <span class="region-tag">国外</span></span></span></div></td>
+            <td>订阅</td><td class="strong">$10 / 月</td><td>$100 / 月</td><td><span class="mult">10×</span></td><td class="strong">官方 10%</td><td>5h / 周 / 月</td><td>11/01</td>
+          </tr>
+          <tr>
+            <td><div class="plan-cell"><span class="provider-mark">CC</span><span><b>CommandCode GOAT</b><span>CommandCode <span class="region-tag">国外</span></span></span></div></td>
+            <td>订阅</td><td class="strong">$10 / 月</td><td>$100 / 月</td><td><span class="mult">10×</span></td><td class="strong">官方 10%</td><td>月额度</td><td>11/01</td>
+          </tr>
+          <tr>
+            <td><div class="plan-cell"><span class="provider-mark">CC</span><span><b>CommandCode Go</b><span>CommandCode <span class="region-tag">国外</span></span></span></div></td>
+            <td>订阅</td><td class="strong">$1 / 月</td><td>$10 / 月</td><td><span class="mult">10×</span></td><td class="strong">官方 10%</td><td>月额度</td><td>11/01</td>
+          </tr>
+          <tr>
+            <td><div class="plan-cell"><span class="provider-mark">OC</span><span><b>OpenCode Console</b><span>OpenCode <span class="region-tag">国外</span></span></span></div></td>
+            <td>按量</td><td class="strong">—</td><td>按 token 计费</td><td><span class="ratio">1×</span></td><td>官方 100%</td><td>无窗口</td><td>11/01</td>
+          </tr>
+          <tr>
+            <td><div class="plan-cell"><span class="provider-mark">CC</span><span><b>CommandCode Provider</b><span>CommandCode <span class="region-tag">国外</span></span></span></div></td>
+            <td>按量</td><td class="strong">$15 / 月 + 按量</td><td>按 token 计费</td><td><span class="ratio">1×</span></td><td>官方 100%</td><td>无窗口</td><td>11/01</td>
+          </tr>
+          <tr>
+            <td><div class="plan-cell"><span class="provider-mark">DS</span><span><b>DeepSeek 官方 API</b><span>DeepSeek <span class="region-tag">国内</span></span></span></div></td>
+            <td>按量</td><td class="strong">—</td><td>按 token 计费</td><td><span class="ratio">1×</span></td><td>官方 100%</td><td>无窗口</td><td>11/01</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="note">$100 额度 ÷ $10 月费 = 10×，相当于官方 API 的 1 折。官方参考价按 OpenCode Console 的 DeepSeek V4.1 Flash 按量价（$0.30 / $1.20 每 1M tokens）计算；套餐额度以官网为准。</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>Plan-Radar · 价格来自官网，最后核对 2026.11.01</span>
+    <div class="footer-links">
+      <a href="sponsor.html">Star / 赞助</a>
+      <a href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

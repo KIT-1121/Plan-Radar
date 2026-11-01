@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plan-Radar · AI 套餐比价</title>
+<meta name="description" content="把国内外 AI 编程套餐的月费和额度放在一张桌上。">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-radar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-5.5-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.3 1.2a11.4 11.4 0 0 0-6 0C6.9 2.8 5.9 3.1 5.9 3.1a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.5 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><path d="M12 12 18.4 7.2"/><circle cx="16.8" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></svg></span>
+      Plan-Radar
+    </a>
+    <nav class="nav">
+      <a data-page="index.html" href="index.html">首页</a>
+      <a data-page="cn.html" href="cn.html">国内套餐</a>
+      <a data-page="global.html" href="global.html">国外套餐</a>
+      <a data-page="sponsor.html" href="sponsor.html">Star / 赞助</a>
+    </nav>
+    <a class="header-cta" href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">
+      <svg class="icon icon-sm"><use href="#i-github"/></svg> GitHub
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">AI 套餐比价 · 每日更新</div>
+        <h1 class="display" style="margin-top:22px">同样的 <em>$10</em>，<br>哪家给得更多？</h1>
+        <p class="lead">把国内外 AI 编程套餐的月费和额度放在一张桌上。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="global.html">看国外套餐 <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn secondary" href="cn.html">看国内套餐</a>
+        </div>
+      </div>
+      <aside class="hero-aside">
+        <div class="hero-stat"><b>12</b><span>个套餐</span></div>
+        <div class="hero-stat"><b>8</b><span>家供应商</span></div>
+        <div class="hero-stat"><b>11.01</b><span>最后核对</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Changelog</div>
+          <h2 class="section-title">最近更新</h2>
+        </div>
+        <a class="link-arrow" href="global.html">全部套餐 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="updates">
+        <a class="update-row" href="global.html">
+          <span class="update-date">11.01</span>
+          <span class="update-provider">OpenCode</span>
+          <span class="update-text"><b>OpenCode Go</b> 新增 Gemini 4 Argon，模型池到 30+ 个</span>
+          <span class="update-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="update-row" href="global.html">
+          <span class="update-date">11.01</span>
+          <span class="update-provider">CommandCode</span>
+          <span class="update-text"><b>GOAT</b> 保持 $10 / $100 额度，新增 Ling 3.1 Flash</span>
+          <span class="update-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="update-row" href="cn.html">
+          <span class="update-date">10.31</span>
+          <span class="update-provider">Trae</span>
+          <span class="update-text"><b>会员 Lite / Pro / Pro+</b> 调整为 ¥49 / ¥99 / ¥239</span>
+          <span class="update-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+        <a class="update-row" href="cn.html">
+          <span class="update-date">10.28</span>
+          <span class="update-provider">GLM</span>
+          <span class="update-text"><b>GLM Coding</b> 额度改为 5h + 周双窗口</span>
+          <span class="update-arrow"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">How it works</div>
+          <h2 class="section-title">只看三件事</h2>
+        </div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div class="step-title">月费</div>
+          <p class="step-desc">官网当前价格。按年付或首月优惠会单独标注。</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div class="step-title">额度</div>
+          <p class="step-desc">套餐里到底包含多少用量。美元额度、积分、请求数分开算。</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div class="step-title">倍数</div>
+          <p class="step-desc">额度 ÷ 月费。只在同币种额度时计算，不跨口径硬比。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>Plan-Radar · 价格来自官网，最后核对 2026.11.01</span>
+    <div class="footer-links">
+      <a href="sponsor.html">Star / 赞助</a>
+      <a href="https://github.com/KIT-1121/Plan-Radar" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
