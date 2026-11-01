@@ -52,31 +52,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section tight">
+      <section className="section tight" aria-label="AI 科技新闻">
         <div className="wrap">
-          <div className="section-head">
-            <div>
-              <div className="eyebrow">科技简报</div>
-              <h2 className="section-title">日报 · 周刊 · 月刊</h2>
-            </div>
-            <p>每天看变化，每周看趋势，每月看回顾。</p>
-          </div>
-
           <div className="brief-grid">
             {briefs.map((brief) => (
               <article className="brief-card" key={brief.key}>
-                <div className="brief-top">
-                  <span className="brief-label">{brief.label}</span>
-                  <span className="brief-count">{brief.items.length} 条</span>
-                </div>
-                <h3>{brief.title}</h3>
-                <p className="brief-desc">{brief.description}</p>
+                <span className="brief-label">{brief.label}</span>
                 <div className="brief-list">
                   {brief.items.map((item) => (
-                    <a className="brief-item" href={item.href} key={item.title}>
+                    <a
+                      className="brief-item"
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      key={item.title}
+                    >
                       <span className="brief-date">{item.date}</span>
                       <b>{item.title}</b>
                       <span className="brief-summary">{item.summary}</span>
+                      <span className="brief-source">{item.source} ↗</span>
                     </a>
                   ))}
                 </div>

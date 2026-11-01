@@ -3,13 +3,12 @@ export interface BriefItem {
   title: string;
   summary: string;
   href: string;
+  source: string;
 }
 
 export interface Brief {
   key: string;
   label: string;
-  title: string;
-  description: string;
   items: BriefItem[];
 }
 
@@ -17,78 +16,81 @@ export const briefs: Brief[] = [
   {
     key: "daily",
     label: "日报",
-    title: "今天的 AI 编程市场",
-    description: "每天 3 条套餐、额度、模型变化。",
     items: [
       {
-        date: "11.01",
-        title: "OpenCode Go 模型池到 30+ 个",
-        summary: "新增 Gemini 4 Argon，$10/$100 额度不变。",
-        href: "/updates/#opencode-go-gemini",
-      },
-      {
-        date: "11.01",
-        title: "CommandCode GOAT 新增 Ling 3.1 Flash",
-        summary: "仍是 $10/$100，模型增加到 36 个。",
-        href: "/updates/#commandcode-goat-ling",
+        date: "10.31",
+        title: "Apple：不会为了 AI 而 AI",
+        summary: "新任 CEO John Ternus 为 Apple 的 AI 节奏辩护，强调产品体验优先。",
+        href: "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
+        source: "TechCrunch",
       },
       {
         date: "10.31",
-        title: "Trae 三档会员调价",
-        summary: "Lite ¥49 / Pro ¥99 / Pro+ ¥239。",
-        href: "/updates/#trae-pricing-1031",
+        title: "OpenAI 下调新一轮融资目标",
+        summary: "最新一轮融资不及预期，市场对 AI 高估值和高支出的耐心在变化。",
+        href: "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+        source: "TechCrunch",
+      },
+      {
+        date: "10.30",
+        title: "Google 的太空 AI 服务器传回第一段回应",
+        summary: "搭载 TPU 的卫星在轨运行 Gemma 4，并生成了一首关于太空的俳句。",
+        href: "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+        source: "The Verge",
       },
     ],
   },
   {
     key: "weekly",
     label: "周刊",
-    title: "本周的三个变化",
-    description: "把一周的价格和额度放在一起看。",
     items: [
       {
         date: "本周",
-        title: "编程套餐的 $10/$100 额度战",
-        summary: "OpenCode Go、CommandCode GOAT 都是 $10 换 $100，折算 10×。",
-        href: "/plans/all/",
+        title: "AI 支出繁荣出现裂缝",
+        summary: "大科技公司继续投入数千亿美元，但债务、负现金流和投资者疑虑开始上升。",
+        href: "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+        source: "TechCrunch",
       },
       {
         date: "本周",
-        title: "GLM 改成 5h + 周双窗口",
-        summary: "2,000 积分/5h、10,000 积分/周，额度口径更细。",
-        href: "/plans/glm-5-3/",
+        title: "Anthropic IPO 或获高收益垃圾评级",
+        summary: "信用评级机构预计其融资成本上升，AI 公司的高支出模式受到审视。",
+        href: "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+        source: "TechCrunch",
       },
       {
         date: "本周",
-        title: "DeepSeek V4.1 Flash 成为默认额度单位",
-        summary: "多个套餐用 $100 额度对标同一条价格线。",
-        href: "/plans/deepseek-v4-1-flash/",
+        title: "四大 AI 公司支持新的抓取退出标准",
+        summary: "OpenAI、Google、微软、Anthropic 支持统一的 robots.txt AI 训练偏好信号。",
+        href: "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+        source: "The Verge",
       },
     ],
   },
   {
     key: "monthly",
     label: "月刊",
-    title: "10 月回顾",
-    description: "调价、上新、API 价格，一个月看一次。",
     items: [
       {
         date: "10 月",
-        title: "会员调价与模型池扩张",
-        summary: "Trae 三档调价，OpenCode 扩模型，CommandCode 增 Ling。",
-        href: "/updates/",
+        title: "AI 数据中心进入选举政治",
+        summary: "缅因州参议院选战围绕数据中心的水、电和气候影响展开。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1021080/maine-senate-race-susan-collins-ai-data-centers",
+        source: "The Verge",
       },
       {
         date: "10 月",
-        title: "API 按量价保持稳定",
-        summary: "DeepSeek V4.1 Flash $0.30/$1.20，缓存读 $0.006。",
-        href: "/api/deepseek-v4-1-flash/",
+        title: "Apple Intelligence 进入中国",
+        summary: "随 iOS 27.3 推出，首批包含通知摘要、实时翻译、视觉智能等功能。",
+        href: "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
+        source: "The Verge",
       },
       {
         date: "10 月",
-        title: "积分套餐的 token 估算",
-        summary: "Trae / GLM 用积分计价，统一换算还需要官方口径。",
-        href: "/plans/all/",
+        title: "AI 算力上天",
+        summary: "Google Project Suncatcher 把 TPU 和 Gemma 4 送上轨道，探索太空数据中心。",
+        href: "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+        source: "The Verge",
       },
     ],
   },

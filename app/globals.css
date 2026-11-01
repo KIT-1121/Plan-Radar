@@ -439,15 +439,7 @@ h1, h2, h3, p { margin: 0; }
   font-size: 10px;
   color: var(--muted);
 }
-.brief-count { font-size: 10px; color: var(--muted); }
-.brief-card h3 {
-  margin-top: 16px;
-  font-size: 18px;
-  font-weight: 550;
-  letter-spacing: -0.02em;
-}
-.brief-desc { margin-top: 6px; font-size: 11.5px; color: var(--muted); }
-.brief-list { margin-top: 16px; }
+.brief-list { margin-top: 14px; }
 .brief-item { display: block; padding: 12px 0; border-top: 1px solid var(--line); }
 .brief-item:first-child { border-top: 0; padding-top: 0; }
 .brief-date {
@@ -470,6 +462,12 @@ h1, h2, h3, p { margin: 0; }
   font-size: 10.5px;
   line-height: 1.6;
   color: var(--muted);
+}
+.brief-source {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  color: #a2a29a;
 }
 
 /* ---------- updates page ---------- */
