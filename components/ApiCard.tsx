@@ -3,9 +3,8 @@ import { Icon } from "./Icon";
 
 export function ApiCard({ channel }: { channel: ApiChannel }) {
   return (
-    <article className="plan-card api-card" data-provider={channel.provider}>
+    <article className="plan-card api-card">
       <div className="plan-top">
-        <span className="provider-mark">{channel.mark}</span>
         <span className="provider-name">{channel.provider}</span>
         <span className="tag">按量</span>
       </div>

@@ -303,7 +303,6 @@ h1, h2, h3, p { margin: 0; }
   gap: 10px;
   margin-bottom: 26px;
 }
-.duel-top .provider-mark { width: 32px; height: 32px; border-radius: 9px; font-size: 10px; }
 .duel-provider { font-size: 12.5px; color: var(--muted); }
 .duel-name {
   font-size: 22px;
@@ -653,7 +652,6 @@ h1, h2, h3, p { margin: 0; }
   gap: 16px;
   margin: 30px 0 8px;
 }
-.model-head .provider-mark { width: 44px; height: 44px; font-size: 12px; }
 .model-head h1 {
   margin-top: 4px;
   font-size: 44px;
@@ -753,6 +751,22 @@ h1, h2, h3, p { margin: 0; }
 @media (min-width: 1900px) {
   .plan-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
+.plan-groups { display: flex; flex-direction: column; gap: 16px; }
+.plan-group-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.plan-card.compact { padding: 22px; border-radius: 16px; }
+.plan-card.compact .plan-top { margin-bottom: 16px; }
+.plan-card.compact .plan-name { font-size: 18px; }
+.plan-card.compact .pd-title-row .price { font-size: 28px; }
+.plan-card.compact .quota { margin-top: 14px; padding: 12px 14px; border-radius: 12px; }
+.plan-card.compact .quota-value { font-size: 20px; }
+.plan-card.compact .pd-specs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+  margin-top: 14px;
+  padding-top: 12px;
+}
+.plan-card.compact .pd-spec b { font-size: 13px; }
+.plan-card.compact .plan-foot { margin-top: 14px; padding-top: 12px; }
 .plan-card {
   display: flex;
   flex-direction: column;
@@ -775,33 +789,11 @@ h1, h2, h3, p { margin: 0; }
   gap: 10px;
   margin-bottom: 22px;
 }
-.provider-mark {
-  width: 32px;
-  height: 32px;
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  border-radius: 10px;
-  background: #f3f3ee;
-  color: #3c3c36;
-  font-size: 9.5px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
 .provider-name {
   font-size: 12px;
   color: #6c6c64;
   letter-spacing: -0.01em;
 }
-.plan-card[data-provider="OpenCode"] .provider-mark { background: #edf3ff; color: #3457c8; }
-.plan-card[data-provider="CommandCode"] .provider-mark { background: #fff3e7; color: #b45309; }
-.plan-card[data-provider="Anthropic"] .provider-mark { background: #f7f0e8; color: #8a5a2b; }
-.plan-card[data-provider="OpenAI"] .provider-mark { background: #edf7f1; color: #1f7a4d; }
-.plan-card[data-provider="GitHub"] .provider-mark { background: #f3f1f8; color: #5b4b8a; }
-.plan-card[data-provider="智谱"] .provider-mark { background: #eef3ff; color: #2f5fbf; }
-.plan-card[data-provider="字节跳动"] .provider-mark { background: #fff0f3; color: #b4234a; }
-.plan-card[data-provider="阿里"] .provider-mark { background: #fff7e8; color: #a35a00; }
-.plan-card[data-provider="DeepSeek"] .provider-mark { background: #eef6ff; color: #1d4ed8; }
 .tag {
   margin-left: auto;
   padding: 4px 9px;
@@ -970,7 +962,6 @@ h1, h2, h3, p { margin: 0; }
 .price-table .r { text-align: right; }
 .price-table .strong { color: var(--ink); font-weight: 550; }
 .plan-cell { display: flex; align-items: center; gap: 11px; }
-.plan-cell .provider-mark { width: 28px; height: 28px; border-radius: 8px; font-size: 8px; }
 .plan-cell b { display: block; font-size: 13px; font-weight: 550; color: var(--ink); }
 .plan-cell span { display: block; font-size: 10px; color: var(--muted); }
 .plan-cell .region-tag {
@@ -1282,6 +1273,7 @@ h1, h2, h3, p { margin: 0; }
   .support-grid { grid-template-columns: 1fr; }
   .support-hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .api-grid { grid-template-columns: 1fr; }
+  .plan-group-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .section-head { flex-direction: column; align-items: flex-start; }
   .section-head p { max-width: 520px; }
 }
@@ -1298,6 +1290,8 @@ h1, h2, h3, p { margin: 0; }
   .hero-actions { margin-top: 28px; flex-wrap: wrap; }
   .section { padding: 56px 0; }
   .plan-grid { grid-template-columns: 1fr; }
+  .plan-group-row { grid-template-columns: 1fr; }
+  .plan-card.compact { padding: 20px; }
   .pd-specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pd-title-row { align-items: flex-start; flex-direction: column; gap: 12px; }
   .pd-title-row .price { font-size: 32px; }

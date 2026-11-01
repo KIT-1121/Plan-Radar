@@ -197,7 +197,6 @@ export function PlanExplorer({
                 <tr key={plan.id}>
                   <td>
                     <div className="plan-cell">
-                      <span className="provider-mark">{plan.mark}</span>
                       <span>
                         <b>{plan.name}</b>
                         <span>{plan.provider}</span>

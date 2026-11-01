@@ -7,6 +7,7 @@ import {
   plansForModel,
 } from "@/lib/catalog";
 import { allPlans } from "@/lib/plans";
+import type { Plan } from "@/lib/plans";
 
 export function generateStaticParams() {
   return modelCatalog.map((model) => ({ model: model.slug }));
@@ -22,6 +23,15 @@ export default async function ModelPlansPage({
   if (!model) notFound();
 
   const plans = plansForModel(slug, allPlans);
+  const groups: { provider: string; plans: Plan[] }[] = [];
+  plans.forEach((plan) => {
+    let group = groups.find((item) => item.provider === plan.provider);
+    if (!group) {
+      group = { provider: plan.provider, plans: [] };
+      groups.push(group);
+    }
+    group.plans.push(plan);
+  });
 
   return (
     <div className="wrap">
@@ -35,7 +45,6 @@ export default async function ModelPlansPage({
       </div>
 
       <header className="model-head">
-        <span className="provider-mark">{model.mark}</span>
         <div>
           <div className="eyebrow">
             {model.provider} · {model.family}
@@ -53,9 +62,15 @@ export default async function ModelPlansPage({
       </div>
 
       {plans.length > 0 ? (
-        <div className="plan-grid">
-          {plans.map((plan) => (
-            <PlanCard key={plan.id} plan={plan} />
+        <div className="plan-groups">
+          {groups.map((group) => (
+            <div className="plan-group" key={group.provider}>
+              <div className="plan-group-row">
+                {group.plans.map((plan) => (
+                  <PlanCard key={plan.id} plan={plan} compact hideModels />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       ) : (

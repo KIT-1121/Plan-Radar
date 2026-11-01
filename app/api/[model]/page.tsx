@@ -36,7 +36,6 @@ export default async function ModelApiPage({
       </div>
 
       <header className="model-head">
-        <span className="provider-mark">{model.mark}</span>
         <div>
           <div className="eyebrow">
             {model.provider} · {model.family}

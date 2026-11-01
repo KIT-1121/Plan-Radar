@@ -1,11 +1,22 @@
 import type { Plan } from "@/lib/plans";
 import { Icon } from "./Icon";
 
-export function PlanCard({ plan }: { plan: Plan }) {
+export function PlanCard({
+  plan,
+  compact = false,
+  hideModels = false,
+}: {
+  plan: Plan;
+  compact?: boolean;
+  hideModels?: boolean;
+}) {
+  const specs = hideModels
+    ? plan.specs.filter((spec) => spec.label !== "模型")
+    : plan.specs;
+
   return (
-    <article className="plan-card" data-provider={plan.provider}>
+    <article className={compact ? "plan-card compact" : "plan-card"}>
       <div className="plan-top">
-        <span className="provider-mark">{plan.mark}</span>
         <span className="provider-name">{plan.provider}</span>
         <span className="tag">{plan.tag}</span>
       </div>
@@ -31,7 +42,7 @@ export function PlanCard({ plan }: { plan: Plan }) {
       </div>
 
       <div className="pd-specs">
-        {plan.specs.map((spec) => (
+        {specs.map((spec) => (
           <div className="pd-spec" key={spec.label}>
             <span>{spec.label}</span>
             <b>{spec.value}</b>
@@ -39,17 +50,19 @@ export function PlanCard({ plan }: { plan: Plan }) {
         ))}
       </div>
 
-      <div className="pd-models">
-        {plan.models.map((model) => (
-          <span className="model-chip" key={model.name}>
-            {model.name}
-            {model.quota ? <b>{model.quota}</b> : null}
-          </span>
-        ))}
-        {plan.moreModels ? (
-          <span className="model-chip more">{plan.moreModels}</span>
-        ) : null}
-      </div>
+      {!hideModels && plan.models.length > 0 ? (
+        <div className="pd-models">
+          {plan.models.map((model) => (
+            <span className="model-chip" key={model.name}>
+              {model.name}
+              {model.quota ? <b>{model.quota}</b> : null}
+            </span>
+          ))}
+          {plan.moreModels ? (
+            <span className="model-chip more">{plan.moreModels}</span>
+          ) : null}
+        </div>
+      ) : null}
 
       <div className="plan-foot">
         <span>更新 {plan.updated}</span>
