@@ -1,0 +1,20 @@
+[Unit]
+Description=Plan-Radar vote API
+After=network.target
+
+[Service]
+Type=simple
+User=planradar
+Group=planradar
+WorkingDirectory=/opt/plan-radar-vote
+EnvironmentFile=/etc/plan-radar-vote.env
+ExecStart=/usr/bin/python3 /opt/plan-radar-vote/app.py
+Restart=always
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/var/lib/plan-radar-vote
+
+[Install]
+WantedBy=multi-user.target

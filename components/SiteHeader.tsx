@@ -9,6 +9,7 @@ const items = [
   { href: "/", label: "首页" },
   { href: "/plans/", label: "套餐" },
   { href: "/models/", label: "模型" },
+  { href: "/vote/", label: "榜单" },
   { href: "/api/", label: "API" },
   { href: "/sponsor/", label: "赞助" },
 ];
