@@ -38,7 +38,6 @@ export function SiteHeader() {
 
   return (
     <header className={scrolled ? "site-header is-scrolled" : "site-header"}>
-      <span className="scroll-progress" aria-hidden="true" />
       <div className="wrap header-inner">
         <Link className="brand" href="/" prefetch={false}>
           <span className="brand-mark">

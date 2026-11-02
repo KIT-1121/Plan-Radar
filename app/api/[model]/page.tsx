@@ -25,12 +25,19 @@ export default async function ModelApiPage({
 
   return (
     <div className="wrap api-detail-page">
-      <h1 className="visually-hidden">{model.name}</h1>
       <div className="detail-top">
         <a className="back-arrow" href="/api/" aria-label="返回模型列表">
           <Icon name="arrow-left" />
         </a>
       </div>
+
+      <header className="model-plans-head">
+        <div className="eyebrow">
+          {model.provider}，{model.family}
+        </div>
+        <h1>{model.name}</h1>
+        <p>按量计费的公开参考价，每百万 tokens 计价。</p>
+      </header>
 
       {price && channels.length > 0 ? (
         <>
@@ -58,7 +65,7 @@ export default async function ModelApiPage({
                     <td className="strong">{price.input}</td>
                     <td className="strong">{price.output}</td>
                     <td>{price.cached}</td>
-                    <td>{channel.billing} · {channel.markup}</td>
+                    <td>{channel.billing}，{channel.markup}</td>
                     <td className="r">
                       <a
                         className="link-arrow"

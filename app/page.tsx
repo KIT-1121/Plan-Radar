@@ -1,55 +1,84 @@
 import Link from "next/link";
 import { HeroSearch } from "@/components/HeroSearch";
-import { Icon } from "@/components/Icon";
-import { Reveal } from "@/components/Reveal";
 import { briefs, briefsUpdatedAt } from "@/lib/briefs";
-import { updates } from "@/lib/plans";
+import { modelCatalog } from "@/lib/catalog";
+import { allPlans, updates } from "@/lib/plans";
+
+const checkedAt = "2026.11.02";
+
+const tenDollar = allPlans.filter(
+  (plan) => plan.price === "$10" && plan.multiplier,
+);
+const widest = allPlans.filter((plan) => plan.multiplier).slice(0, 3);
+const ledger = tenDollar.length >= 2 ? tenDollar.slice(0, 3) : widest;
 
 export default function HomePage() {
   return (
     <>
-      <section className="hero hero-centered">
-        <div className="hero-atmosphere" aria-hidden="true">
-          <span className="hero-grid-layer" />
-          <span className="hero-bloom bloom-a" />
-          <span className="hero-bloom bloom-b" />
-          <span className="hero-top-fade" />
-        </div>
-        <div className="wrap hero-centered-inner">
-          <Link className="hero-announce" href="/updates/" prefetch={false}>
-            <span className="hero-announce-dot" />
-            Claude 新档位：Max $100 / Ultra $200
-            <span className="hero-announce-arrow">→</span>
-          </Link>
-          <h1 className="display">
-            同样的 <em>$10</em>，
-            <br />
-            哪家给得更多？
-          </h1>
-          <HeroSearch />
-          <div className="hero-actions">
-            <Link className="hero-chip" href="/plans/" prefetch={false}>
-              看套餐 <Icon name="arrow" className="icon icon-sm" />
-            </Link>
-            <Link className="hero-chip" href="/api/" prefetch={false}>
-              看 API <Icon name="arrow" className="icon icon-sm" />
-            </Link>
+      <section className="hero">
+        <div className="wrap hero-inner">
+          <div className="hero-copy">
+            <p className="hero-stamp">
+              <span>最后核对 {checkedAt}</span>
+              <span>{allPlans.length} 个套餐</span>
+              <span>{modelCatalog.length} 个模型</span>
+            </p>
+            <h1 className="display">
+              同样的 <em>$10</em>，<br />
+              哪家给得更多？
+            </h1>
+            <p className="lead">
+              把各家 AI 编程套餐的月费、额度和模型并排放好，同样的钱能买到多少用量，一眼看清。
+            </p>
+            <div className="hero-actions">
+              <HeroSearch />
+              <Link className="hero-chip" href="/plans/" prefetch={false}>
+                看套餐
+              </Link>
+              <Link className="hero-chip" href="/api/" prefetch={false}>
+                看 API
+              </Link>
+            </div>
           </div>
+
+          {ledger.length > 0 ? (
+            <aside className="hero-ledger" aria-label="同价位套餐对比">
+              <div className="ledger-head">
+                <span>
+                  {tenDollar.length >= 2 ? "同样的 $10" : "额度倍数最高"}
+                </span>
+                <span>额度与倍数</span>
+              </div>
+              {ledger.map((plan) => (
+                <div className="ledger-row" key={plan.id}>
+                  <span className="ledger-name">
+                    <b>{plan.name}</b>
+                    <span>{plan.provider}</span>
+                  </span>
+                  <span className="ledger-quota">{plan.quotaValue}</span>
+                  <span className="ledger-mult">{plan.multiplier}</span>
+                </div>
+              ))}
+              <p className="hero-ledger-foot">
+                额度与月费同币种时才计算倍数，其余只展示原始额度。
+              </p>
+            </aside>
+          ) : null}
         </div>
       </section>
 
-      <section className="section soft">
+      <section className="section" aria-labelledby="updates-title">
         <div className="wrap">
-          <Reveal className="section-head">
-            <div>
-              <h2 className="section-title">最近更新</h2>
-            </div>
-            <a className="link-arrow" href="/updates/">
-              全部动态 <Icon name="arrow" className="icon icon-sm" />
-            </a>
-          </Reveal>
+          <div className="section-head">
+            <h2 className="section-title" id="updates-title">
+              最近更新
+            </h2>
+            <Link className="link-arrow" href="/updates/">
+              全部动态
+            </Link>
+          </div>
 
-          <Reveal className="updates">
+          <div className="updates">
             {updates.slice(0, 5).map((update) => (
               <a className="update-row" href={update.href} key={update.id}>
                 <span className="update-date">{update.date}</span>
@@ -57,27 +86,25 @@ export default function HomePage() {
                 <span className="update-text">
                   <b>{update.strong}</b> {update.text}
                 </span>
-                <span className="update-arrow">
-                  <Icon name="arrow" />
-                </span>
               </a>
             ))}
-          </Reveal>
+          </div>
         </div>
       </section>
 
-      <section className="section briefs-section" aria-labelledby="briefs-title">
+      <section
+        className="section briefs-section"
+        aria-labelledby="briefs-title"
+      >
         <div className="wrap">
-          <Reveal className="section-head briefs-head">
-            <div>
-              <h2 className="section-title" id="briefs-title">
-                AI 科技简报
-              </h2>
-            </div>
+          <div className="section-head briefs-head">
+            <h2 className="section-title" id="briefs-title">
+              AI 科技简报
+            </h2>
             <span className="briefs-stamp">更新于 {briefsUpdatedAt}</span>
-          </Reveal>
+          </div>
 
-          <Reveal className="brief-grid">
+          <div className="brief-grid">
             {briefs.map((brief) => (
               <article className="brief-card" key={brief.key}>
                 <div className="brief-top">
@@ -95,16 +122,15 @@ export default function HomePage() {
                       <span className="brief-date">{item.date}</span>
                       <b>{item.title}</b>
                       <span className="brief-summary">{item.summary}</span>
-                      <span className="brief-source">{item.source} ↗</span>
+                      <span className="brief-source">{item.source}</span>
                     </a>
                   ))}
                 </div>
               </article>
             ))}
-          </Reveal>
+          </div>
         </div>
       </section>
     </>
   );
 }
-

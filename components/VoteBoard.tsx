@@ -186,7 +186,7 @@ export function VoteBoard({ candidates, valueRows }: VoteBoardProps) {
               <span className="value-main">
                 <b>{row.name}</b>
                 <span>
-                  {row.provider} · {row.price} / 月 · {row.quota} 额度
+                  {row.provider}，{row.price}/ 月，{row.quota} 额度
                 </span>
               </span>
               <span className="value-ratio">{row.ratio}×</span>
@@ -197,7 +197,7 @@ export function VoteBoard({ candidates, valueRows }: VoteBoardProps) {
         <>
           <div className="vote-summary">
             <span>
-              {active.label} · {votePeriods.find((item) => item.id === period)?.label}
+              {active.label}，{votePeriods.find((item) => item.id === period)?.label}
             </span>
             <span className="vote-total">{totalVotes} 票</span>
           </div>
