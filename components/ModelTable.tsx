@@ -74,11 +74,7 @@ export function ModelTable({
 
       event.preventDefault();
       const next = Math.max(0, Math.min(max, target.scrollTop + delta));
-      const consumed = next - target.scrollTop;
       target.scrollTop = next;
-
-      const leftover = delta - consumed;
-      if (leftover !== 0) window.scrollBy(0, leftover);
     }
 
     target.addEventListener("wheel", onWheel, { passive: false });
