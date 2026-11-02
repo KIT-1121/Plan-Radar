@@ -31,7 +31,7 @@ export default function HomePage() {
               看套餐 <Icon name="arrow" className="icon icon-sm" />
             </a>
             <a className="hero-chip" href="/api/">
-              看 API
+              看 API <Icon name="arrow" className="icon icon-sm" />
             </a>
           </div>
         </div>
