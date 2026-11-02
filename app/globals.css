@@ -2656,3 +2656,121 @@ button:focus-visible {
   .nav a { font-size: 12.5px; }
   .nav a.active { font-size: 13.5px; }
 }
+
+/* ---------- site atmosphere + page motion ---------- */
+
+.site-atmosphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1100px;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1000px 620px at 5% -8%, rgba(203, 218, 241, 0.6), transparent 65%),
+    radial-gradient(900px 560px at 96% -6%, rgba(255, 214, 188, 0.55), transparent 62%);
+  background-repeat: no-repeat;
+}
+body:has(.hero) .site-atmosphere { display: none; }
+
+.site-atmosphere-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(21, 21, 19, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 21, 19, 0.045) 1px, transparent 1px);
+  background-size: 76px 76px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 62% at 50% 0%, #000 0%, transparent 76%);
+  mask-image: radial-gradient(ellipse 80% 62% at 50% 0%, #000 0%, transparent 76%);
+  opacity: 0.4;
+}
+.site-bloom {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.55;
+  animation: bloom-drift 30s ease-in-out infinite alternate;
+}
+.site-bloom-a {
+  width: 760px;
+  height: 620px;
+  left: -12%;
+  top: -18%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(196, 213, 240, 0.7) 0%,
+    rgba(196, 213, 240, 0) 68%
+  );
+}
+.site-bloom-b {
+  width: 800px;
+  height: 640px;
+  right: -14%;
+  top: -16%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 213, 188, 0.65) 0%,
+    rgba(255, 213, 188, 0) 68%
+  );
+  animation-delay: -12s;
+}
+.site-atmosphere-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: linear-gradient(
+    180deg,
+    var(--bg) 0%,
+    rgba(242, 240, 233, 0.85) 40%,
+    rgba(242, 240, 233, 0) 100%
+  );
+}
+
+.page-main {
+  position: relative;
+  z-index: 1;
+  animation: page-in 0.45s ease both;
+}
+.site-footer { position: relative; z-index: 1; }
+
+@keyframes page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes block-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.page-main:not(.page-home) > .wrap > * {
+  animation: block-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.page-main:not(.page-home) > .wrap > *:nth-child(2) { animation-delay: 0.05s; }
+.page-main:not(.page-home) > .wrap > *:nth-child(3) { animation-delay: 0.1s; }
+.page-main:not(.page-home) > .wrap > *:nth-child(4) { animation-delay: 0.15s; }
+.page-main:not(.page-home) > .wrap > *:nth-child(5) { animation-delay: 0.2s; }
+.page-main:not(.page-home) > .wrap > *:nth-child(6) { animation-delay: 0.25s; }
+
+.page-main:not(.page-home) .dir-card,
+.page-main:not(.page-home) .plan-card,
+.page-main:not(.page-home) .api-card {
+  animation: fade-in 0.5s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-bloom,
+  .page-main,
+  .page-main:not(.page-home) > .wrap > *,
+  .page-main:not(.page-home) .dir-card,
+  .page-main:not(.page-home) .plan-card,
+  .page-main:not(.page-home) .api-card {
+    animation: none;
+  }
+}

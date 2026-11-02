@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import { LinkPreviewGuard } from "@/components/LinkPreviewGuard";
+import { PageTransition } from "@/components/PageTransition";
+import { SiteAtmosphere } from "@/components/SiteAtmosphere";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
@@ -33,8 +35,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
+        <SiteAtmosphere />
         <SiteHeader />
-        <main>{children}</main>
+        <PageTransition>{children}</PageTransition>
         <SiteFooter />
         <LinkPreviewGuard />
       </body>
