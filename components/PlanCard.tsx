@@ -35,7 +35,7 @@ export function PlanCard({
         {plan.tokenEstimate ? (
           <span
             className="quota-estimate"
-            title="按 1 积分 ≈ 1K tokens 估算"
+            title={plan.tokenNote ?? "按 1 积分 ≈ 1K tokens 估算"}
           >
             （{plan.tokenEstimate}）
           </span>

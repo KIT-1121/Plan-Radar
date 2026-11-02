@@ -25,6 +25,7 @@ export interface Plan {
   quotaValue: string;
   quotaLabel: string;
   tokenEstimate?: string;
+  tokenNote?: string;
   multiplier?: string;
   ratio?: string;
   ratioFree?: boolean;
@@ -238,17 +239,19 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "2,000",
     quotaLabel: "积分 / 月",
-    tokenEstimate: "≈ 200 万 tokens",
+    tokenEstimate: "≈ 3,330 万 tokens",
+    tokenNote:
+      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "40.8 积分/元",
     specs: [
       { label: "积分 / 月", value: "2,000" },
       { label: "并发", value: "2 个" },
-      { label: "模型折扣", value: "5 折" },
+      { label: "消耗倍率", value: "0.06× 起" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/01",
+    updated: "11/02",
   },
   {
     id: "trae-pro",
@@ -262,17 +265,19 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "4,000",
     quotaLabel: "积分 / 月",
-    tokenEstimate: "≈ 400 万 tokens",
+    tokenEstimate: "≈ 6,670 万 tokens",
+    tokenNote:
+      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "40.4 积分/元",
     specs: [
       { label: "积分 / 月", value: "4,000" },
       { label: "并发", value: "10 个" },
-      { label: "模型折扣", value: "5 折" },
+      { label: "消耗倍率", value: "0.06× 起" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/01",
+    updated: "11/02",
   },
   {
     id: "trae-pro-plus",
@@ -286,17 +291,19 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "12,000",
     quotaLabel: "积分 / 月",
-    tokenEstimate: "≈ 1,200 万 tokens",
+    tokenEstimate: "≈ 2 亿 tokens",
+    tokenNote:
+      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "50.2 积分/元",
     specs: [
       { label: "积分 / 月", value: "12,000" },
       { label: "并发", value: "10 个" },
-      { label: "模型折扣", value: "5 折" },
+      { label: "消耗倍率", value: "0.06× 起" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/01",
+    updated: "11/02",
   },
   {
     id: "trae-ultra",
@@ -310,17 +317,19 @@ export const cnPlans: Plan[] = [
     priceUnit: "/ 月",
     quotaValue: "40,000",
     quotaLabel: "积分 / 月",
-    tokenEstimate: "≈ 4,000 万 tokens",
+    tokenEstimate: "≈ 6.7 亿 tokens",
+    tokenNote:
+      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "57.2 积分/元",
     specs: [
       { label: "积分 / 月", value: "40,000" },
       { label: "并发", value: "20 个" },
-      { label: "模型折扣", value: "5 折" },
+      { label: "消耗倍率", value: "0.06× 起" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/01",
+    updated: "11/02",
   },
   {
     id: "qwen-code",
