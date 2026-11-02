@@ -29,11 +29,9 @@ export default function ModelsPage() {
   return (
     <div className="wrap models-page">
       <header className="models-head">
-        <div className="eyebrow">Models by country</div>
-        <h1 className="display">模型库</h1>
-        <p className="lead">
-          按国家与地区收录的模型目录，共 {rows.length} 个模型、{countries.size} 个国家或地区。
-          价格是各厂商公开 API 的每百万 tokens 参考价，没有公开报价的标为“暂无公开报价”。
+        <h1>模型库</h1>
+        <p>
+          {rows.length} 个模型 · {countries.size} 个国家或地区 · 价格为公开 API 参考价
         </p>
       </header>
 

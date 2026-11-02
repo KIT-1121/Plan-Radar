@@ -2216,17 +2216,22 @@ button:focus-visible {
 
 /* ---------- model directory ---------- */
 
-.models-page { padding-top: 54px; }
+.models-page { padding-top: 40px; }
 .models-head {
-  padding-bottom: 30px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
   border-bottom: 1px solid var(--line);
 }
-.models-head .display {
-  max-width: 900px;
-  margin-top: 10px;
-  font-size: clamp(48px, 6vw, 84px);
+.models-head h1 {
+  font-family: var(--display);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
-.models-head .lead { margin-top: 18px; max-width: 760px; }
+.models-head p { font-size: 13px; color: var(--muted); }
 
 .dir-toolbar {
   display: flex;

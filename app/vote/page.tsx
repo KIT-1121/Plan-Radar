@@ -54,7 +54,6 @@ export default function VotePage() {
   return (
     <div className="wrap vote-page">
       <header className="vote-head">
-        <div className="eyebrow">Community rankings</div>
         <h1 className="display">榜单</h1>
         <p className="lead">
           日榜、周榜、月榜、季榜、年榜，多维度投票。性价比按“额度 ÷ 月费”直接计算；

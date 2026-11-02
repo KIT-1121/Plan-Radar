@@ -20,7 +20,6 @@ export default function AllApiPage() {
 
       <div className="section-head" style={{ marginTop: 52 }}>
         <div>
-          <div className="eyebrow">Token prices</div>
           <h2 className="section-title">官方 API 价目表</h2>
         </div>
       </div>
