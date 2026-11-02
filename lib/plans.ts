@@ -241,12 +241,12 @@ export const cnPlans: Plan[] = [
     quotaLabel: "积分 / 月",
     tokenEstimate: "≈ 3,330 万 tokens",
     tokenNote:
-      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
+      "按 1 积分 ≈ 1K tokens × 限时 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "40.8 积分/元",
     specs: [
       { label: "积分 / 月", value: "2,000" },
       { label: "并发", value: "2 个" },
-      { label: "消耗倍率", value: "0.06× 起" },
+      { label: "消耗倍率", value: "0.06× 起（限时）" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
@@ -267,12 +267,12 @@ export const cnPlans: Plan[] = [
     quotaLabel: "积分 / 月",
     tokenEstimate: "≈ 6,670 万 tokens",
     tokenNote:
-      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
+      "按 1 积分 ≈ 1K tokens × 限时 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "40.4 积分/元",
     specs: [
       { label: "积分 / 月", value: "4,000" },
       { label: "并发", value: "10 个" },
-      { label: "消耗倍率", value: "0.06× 起" },
+      { label: "消耗倍率", value: "0.06× 起（限时）" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
@@ -293,12 +293,12 @@ export const cnPlans: Plan[] = [
     quotaLabel: "积分 / 月",
     tokenEstimate: "≈ 2 亿 tokens",
     tokenNote:
-      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
+      "按 1 积分 ≈ 1K tokens × 限时 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "50.2 积分/元",
     specs: [
       { label: "积分 / 月", value: "12,000" },
       { label: "并发", value: "10 个" },
-      { label: "消耗倍率", value: "0.06× 起" },
+      { label: "消耗倍率", value: "0.06× 起（限时）" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
@@ -319,12 +319,12 @@ export const cnPlans: Plan[] = [
     quotaLabel: "积分 / 月",
     tokenEstimate: "≈ 6.7 亿 tokens",
     tokenNote:
-      "按 1 积分 ≈ 1K tokens × 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
+      "按 1 积分 ≈ 1K tokens × 限时 0.06 消耗倍率（DeepSeek V4.1 Flash）估算；其他模型倍率更高",
     ratio: "57.2 积分/元",
     specs: [
       { label: "积分 / 月", value: "40,000" },
       { label: "并发", value: "20 个" },
-      { label: "消耗倍率", value: "0.06× 起" },
+      { label: "消耗倍率", value: "0.06× 起（限时）" },
       { label: "签到", value: "+3,000" },
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
