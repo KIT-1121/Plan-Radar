@@ -12,31 +12,68 @@ export interface Brief {
   items: BriefItem[];
 }
 
+export const briefsUpdatedAt = "2026.11.02 08:00";
+
 export const briefs: Brief[] = [
   {
     key: "daily",
     label: "日报",
     items: [
       {
-        date: "11.01",
-        title: "AI 先让 CEO 更轻松，其他人呢？",
-        summary: "Equity 讨论 AI 效率红利先落到管理层和股东，普通员工的收益仍不明确。",
+        date: "11.02",
+        title: "OpenAI 想把数据中心改叫「AI 算力园区」",
+        summary:
+          "数据中心越来越不受欢迎，据报道 OpenAI 正考虑换个说法，把数据中心包装成「AI compute campus」。",
+        href: "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.02",
+        title: "AI 让 CEO 更轻松，普通员工呢？",
+        summary:
+          "Equity 播客讨论：为什么高管谈 AI 红利时总显得不接地气，效率收益到底落在谁手里。",
         href: "https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/",
         source: "TechCrunch",
       },
       {
+        date: "11.02",
+        title: "Binance 恢复提现，6.3B 被盗案仍在追查",
+        summary:
+          "交易所称已覆盖绝大部分被盗资产并恢复提现；FBI 指朝鲜黑客组织 TraderTraitor 参与。",
+        href: "https://techcrunch.com/2026/11/01/binance-resumes-withdrawals-following-6-3-billion-breach/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.02",
+        title: "AI 圈最聪明的人都在看这张图",
+        summary:
+          "《华尔街日报》把递归自我改进（RSI）的曲线摆上台面：如果 AI 能改进 AI，进展速度可能超出常规预测。",
+        href: "https://www.wsj.com/tech/ai/ai-anthropic-rsi-recursive-self-improvement-bff4e815",
+        source: "WSJ",
+      },
+      {
         date: "11.01",
-        title: "数据中心成为中期选举议题",
-        summary: "从布鲁克林到加州，数据中心的水、电、气候和审批进入选战。",
-        href: "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
+        title: "苹果新 CEO：不为 AI 而 AI",
+        summary:
+          "苹果新任 CEO 为公司的 AI 路线辩护，称不会为了贴标签而堆功能，体验才是前提。",
+        href: "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
         source: "TechCrunch",
       },
       {
         date: "11.01",
-        title: "Binance 6.3B 被盗案指向朝鲜",
-        summary: "FBI 指朝鲜黑客组织 TraderTraitor 参与；Binance 称已覆盖 95% 被盗资产。",
-        href: "https://www.theverge.com/tech/1024176/north-korea-binance-crypto-heist",
-        source: "The Verge",
+        title: "法官放行 NAACP 诉 xAI 数据中心污染案",
+        summary:
+          "原告指 xAI 违反《清洁空气法》，法院允许这起环境诉讼继续推进。",
+        href: "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.01",
+        title: "OpenAI 据报下调新一轮融资目标",
+        summary:
+          "新一轮融资不及预期，算力开支与估值之间的张力开始显现。",
+        href: "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+        source: "TechCrunch",
       },
     ],
   },
@@ -47,23 +84,42 @@ export const briefs: Brief[] = [
       {
         date: "本周",
         title: "AI 支出繁荣出现裂缝",
-        summary: "大科技公司继续投入数千亿美元，但债务、负现金流和投资者疑虑开始上升。",
+        summary:
+          "大科技公司继续投入数千亿美元，但债务、负现金流和投资者疑虑开始上升。",
         href: "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
         source: "TechCrunch",
       },
       {
         date: "本周",
-        title: "Anthropic IPO 或获高收益垃圾评级",
-        summary: "信用评级机构预计其融资成本上升，AI 公司的高支出模式受到审视。",
+        title: "Anthropic IPO 或获「垃圾级」评级",
+        summary:
+          "信用评级机构预计其融资成本上升，AI 公司的高支出模式受到审视。",
         href: "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
         source: "TechCrunch",
       },
       {
         date: "本周",
-        title: "数据中心成为中期选举议题",
-        summary: "从布鲁克林到加州，数据中心的水、电、气候和审批进入选战。",
-        href: "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
-        source: "TechCrunch",
+        title: "AI 抓取退出标准成形",
+        summary:
+          "OpenAI、Google、微软、Anthropic 同意采用统一信号，允许出版商拒绝被 AI 抓取。",
+        href: "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+        source: "The Verge",
+      },
+      {
+        date: "本周",
+        title: "Google 卫星 AI 服务器首次回传",
+        summary:
+          "Project Suncatcher 的 TPU 卫星在轨启动，Gemma 模型从太空发回首个响应。",
+        href: "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+        source: "The Verge",
+      },
+      {
+        date: "本周",
+        title: "缅因州数据中心争议左右参议院选情",
+        summary:
+          "数据中心的水电、税收与审批问题进入竞选辩论，成为中期选举里最具体的 AI 议题。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1021080/maine-senate-race-susan-collins-ai-data-centers",
+        source: "The Verge",
       },
     ],
   },
@@ -73,24 +129,43 @@ export const briefs: Brief[] = [
     items: [
       {
         date: "10 月",
-        title: "AI 抓取退出标准成形",
-        summary: "OpenAI、Google、微软、Anthropic 支持统一的 robots.txt AI 训练偏好信号。",
-        href: "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
-        source: "The Verge",
-      },
-      {
-        date: "10 月",
         title: "Apple Intelligence 进入中国",
-        summary: "随 iOS 27.3 推出，首批包含通知摘要、实时翻译、视觉智能等功能。",
+        summary:
+          "随 iOS 27.3 推出，首批包含通知摘要、实时翻译、视觉智能等功能。",
         href: "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
         source: "The Verge",
       },
       {
         date: "10 月",
-        title: "AI 算力上天",
-        summary: "Google Project Suncatcher 把 TPU 和 Gemma 4 送上轨道，探索太空数据中心。",
-        href: "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+        title: "教皇呼吁「解除 AI 武装」",
+        summary:
+          "教皇良十四世称「机器是工具，不是人」，主张由人类引导、改变并在必要时拒绝 AI 应用。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1023188/pope-leo-disarm-ai",
         source: "The Verge",
+      },
+      {
+        date: "10 月",
+        title: "Altman：理解数学家的不满，但不会停",
+        summary:
+          "OpenAI 持续向数学界投放 AI 生成结果，Altman 表示同情研究者的处境，却没有放慢的打算。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1023054/altman-cheeky-pint-ai-math-interview",
+        source: "The Verge",
+      },
+      {
+        date: "10 月",
+        title: "星巴克测试 AI 个性化菜单",
+        summary:
+          "免下车场景可能根据用户历史推荐饮品，CEO 称正在探索「个性化数字菜单」。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+        source: "The Verge",
+      },
+      {
+        date: "10 月",
+        title: "数据中心成为中期选举议题",
+        summary:
+          "从布鲁克林到加州，数据中心的水、电、气候和审批进入选战。",
+        href: "https://techcrunch.com/2026/10/31/data-centers-are-now-a-midterm-issue-even-in-brooklyn/",
+        source: "TechCrunch",
       },
     ],
   },

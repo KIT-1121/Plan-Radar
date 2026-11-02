@@ -1,8 +1,6 @@
 import { Icon } from "@/components/Icon";
-import { apiChannels } from "@/lib/api";
-import { briefs } from "@/lib/briefs";
-import { modelCatalog } from "@/lib/catalog";
-import { allPlans, updates } from "@/lib/plans";
+import { briefs, briefsUpdatedAt } from "@/lib/briefs";
+import { updates } from "@/lib/plans";
 
 export default function HomePage() {
   return (
@@ -14,7 +12,6 @@ export default function HomePage() {
             <br />
             哪家给得更多？
           </h1>
-          <p className="lead">把 AI 编程套餐的月费和额度放在一张桌上。</p>
           <div className="hero-actions">
             <a className="btn primary" href="/plans/">
               看套餐 <Icon name="arrow" />
@@ -22,13 +19,6 @@ export default function HomePage() {
             <a className="btn secondary" href="/api/">
               看 API
             </a>
-          </div>
-          <div className="hero-meta">
-            <span>{modelCatalog.length} 个模型</span>
-            <span className="dot" />
-            <span>{allPlans.length} 个套餐</span>
-            <span className="dot" />
-            <span>{apiChannels.length} 个 API 渠道</span>
           </div>
         </div>
       </section>
@@ -61,12 +51,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section tight" aria-label="AI 科技新闻">
+      <section className="section briefs-section" aria-labelledby="briefs-title">
         <div className="wrap">
+          <div className="section-head briefs-head">
+            <div>
+              <h2 className="section-title" id="briefs-title">
+                AI 科技简报
+              </h2>
+              <p className="briefs-sub">
+                日报每天至少 3 条，周刊与月刊各收一份，只留真正影响行业的进展。
+              </p>
+            </div>
+            <span className="briefs-stamp">更新于 {briefsUpdatedAt}</span>
+          </div>
+
           <div className="brief-grid">
             {briefs.map((brief) => (
               <article className="brief-card" key={brief.key}>
-                <span className="brief-label">{brief.label}</span>
+                <div className="brief-top">
+                  <span className="brief-label">{brief.label}</span>
+                  <span className="brief-count">{brief.items.length} 条</span>
+                </div>
                 <div className="brief-list">
                   {brief.items.map((item) => (
                     <a
@@ -74,7 +79,7 @@ export default function HomePage() {
                       href={item.href}
                       target="_blank"
                       rel="noreferrer"
-                      key={item.title}
+                      key={`${item.date}-${item.title}`}
                     >
                       <span className="brief-date">{item.date}</span>
                       <b>{item.title}</b>
