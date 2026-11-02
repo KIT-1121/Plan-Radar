@@ -71,9 +71,6 @@ export default function HomePage() {
               <h2 className="section-title" id="briefs-title">
                 AI 科技简报
               </h2>
-              <p className="briefs-sub">
-                日报每天至少 3 条，周刊与月刊各收一份，只留重要进展。
-              </p>
             </div>
             <span className="briefs-stamp">更新于 {briefsUpdatedAt}</span>
           </Reveal>
@@ -83,7 +80,6 @@ export default function HomePage() {
               <article className="brief-card" key={brief.key}>
                 <div className="brief-top">
                   <span className="brief-label">{brief.label}</span>
-                  <span className="brief-count">{brief.items.length} 条</span>
                 </div>
                 <div className="brief-list">
                   {brief.items.map((item) => (
