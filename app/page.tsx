@@ -12,6 +12,7 @@ export default function HomePage() {
           <span className="hero-grid-layer" />
           <span className="hero-bloom bloom-a" />
           <span className="hero-bloom bloom-b" />
+          <span className="hero-top-fade" />
         </div>
         <div className="wrap hero-centered-inner">
           <a className="hero-announce" href="/updates/">
