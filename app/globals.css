@@ -2091,3 +2091,80 @@ button:focus-visible {
   .brand:hover .brand-mark .icon { animation: none; }
   .header-inner { transition: none; }
 }
+
+/* ---------- scroll motion ---------- */
+
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.site-header.is-scrolled .scroll-progress { opacity: 0.9; }
+
+@keyframes row-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal.is-in .update-row { animation: row-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.reveal.is-in .update-row:nth-child(2) { animation-delay: 0.05s; }
+.reveal.is-in .update-row:nth-child(3) { animation-delay: 0.1s; }
+.reveal.is-in .update-row:nth-child(4) { animation-delay: 0.15s; }
+.reveal.is-in .update-row:nth-child(5) { animation-delay: 0.2s; }
+.reveal.is-in .brief-card { animation: row-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.reveal.is-in .brief-card:nth-child(2) { animation-delay: 0.08s; }
+.reveal.is-in .brief-card:nth-child(3) { animation-delay: 0.16s; }
+
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-progress {
+      animation: scroll-progress linear both;
+      animation-timeline: scroll(root);
+    }
+    .hero-centered-inner {
+      animation: hero-scroll linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 720px;
+    }
+    .hero-grid-layer {
+      animation: hero-grid-scroll linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 720px;
+    }
+    .hero-bloom {
+      animation: bloom-drift 26s ease-in-out infinite alternate,
+        hero-bloom-scroll linear both;
+      animation-timeline: auto, scroll(root);
+      animation-range: normal, 0 720px;
+    }
+  }
+}
+
+@keyframes scroll-progress {
+  to { transform: scaleX(1); }
+}
+@keyframes hero-scroll {
+  to { translate: 0 -52px; }
+}
+@keyframes hero-grid-scroll {
+  to { translate: 0 64px; }
+}
+@keyframes hero-bloom-scroll {
+  to { translate: 0 120px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-progress { animation: none; opacity: 0; }
+  .hero-centered-inner,
+  .hero-grid-layer,
+  .hero-bloom { animation: none; }
+  .reveal.is-in .update-row,
+  .reveal.is-in .brief-card { animation: none; }
+}

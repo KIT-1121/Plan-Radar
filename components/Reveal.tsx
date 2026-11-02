@@ -30,11 +30,12 @@ export function Reveal({
         for (const entry of entries) {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-in");
-            observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove("is-in");
           }
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0 },
     );
 
     observer.observe(element);
