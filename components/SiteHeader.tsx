@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Icon } from "./Icon";
@@ -38,12 +39,12 @@ export function SiteHeader() {
     <header className={scrolled ? "site-header is-scrolled" : "site-header"}>
       <span className="scroll-progress" aria-hidden="true" />
       <div className="wrap header-inner">
-        <a className="brand" href="/">
+        <Link className="brand" href="/" prefetch={false}>
           <span className="brand-mark">
             <Icon name="radar" />
           </span>
           Plan-Radar
-        </a>
+        </Link>
 
         <nav className="nav">
           {items.map((item) => {
@@ -53,13 +54,14 @@ export function SiteHeader() {
                 ? path === "/"
                 : path === target || path.startsWith(`${target}/`);
             return (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
+                prefetch={false}
                 className={active ? "active" : undefined}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
@@ -67,3 +69,4 @@ export function SiteHeader() {
     </header>
   );
 }
+

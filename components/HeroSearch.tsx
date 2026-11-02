@@ -1,17 +1,19 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { Icon } from "./Icon";
 
 export function HeroSearch() {
+  const router = useRouter();
   const [value, setValue] = useState("");
 
   function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const query = value.trim();
-    window.location.href = query
-      ? `/plans/?q=${encodeURIComponent(query)}`
-      : "/plans/";
+    router.push(
+      query ? `/plans/?q=${encodeURIComponent(query)}` : "/plans/",
+    );
   }
 
   return (

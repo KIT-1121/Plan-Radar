@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 function getAnchor(target: EventTarget | null) {
@@ -26,24 +27,13 @@ function restore(anchor: HTMLAnchorElement) {
   anchor.removeAttribute("role");
 }
 
-function open(anchor: HTMLAnchorElement, event: MouseEvent) {
-  const href = anchor.dataset.href;
-  if (!href) return false;
-  const target = anchor.dataset.target;
-  const newTab =
-    target === "_blank" ||
-    event.metaKey ||
-    event.ctrlKey ||
-    event.shiftKey;
-  if (newTab) {
-    window.open(href, target || "_blank", "noopener,noreferrer");
-  } else {
-    window.location.href = href;
-  }
-  return true;
+function isInternal(href: string) {
+  return href.startsWith("/") && !href.startsWith("//");
 }
 
 export function LinkPreviewGuard() {
+  const router = useRouter();
+
   useEffect(() => {
     function handleOver(event: MouseEvent) {
       const anchor = getAnchor(event.target);
@@ -56,6 +46,25 @@ export function LinkPreviewGuard() {
       const related = event.relatedTarget as Node | null;
       if (related && anchor.contains(related)) return;
       restore(anchor);
+    }
+
+    function open(anchor: HTMLAnchorElement, event: MouseEvent) {
+      const href = anchor.dataset.href;
+      if (!href) return;
+      const target = anchor.dataset.target;
+      const newTab =
+        target === "_blank" ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey;
+
+      if (newTab) {
+        window.open(href, target || "_blank", "noopener,noreferrer");
+      } else if (isInternal(href)) {
+        router.push(href);
+      } else {
+        window.location.href = href;
+      }
     }
 
     function handleClick(event: MouseEvent) {
@@ -91,7 +100,7 @@ export function LinkPreviewGuard() {
       document.removeEventListener("auxclick", handleAuxClick, true);
       document.removeEventListener("contextmenu", handleContext, true);
     };
-  }, []);
+  }, [router]);
 
   return null;
 }

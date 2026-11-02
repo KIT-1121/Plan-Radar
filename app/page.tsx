@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HeroSearch } from "@/components/HeroSearch";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
@@ -15,11 +16,11 @@ export default function HomePage() {
           <span className="hero-top-fade" />
         </div>
         <div className="wrap hero-centered-inner">
-          <a className="hero-announce" href="/updates/">
+          <Link className="hero-announce" href="/updates/" prefetch={false}>
             <span className="hero-announce-dot" />
             Claude 新档位：Max $100 / Ultra $200
             <span className="hero-announce-arrow">→</span>
-          </a>
+          </Link>
           <h1 className="display">
             同样的 <em>$10</em>，
             <br />
@@ -27,12 +28,12 @@ export default function HomePage() {
           </h1>
           <HeroSearch />
           <div className="hero-actions">
-            <a className="hero-chip" href="/plans/">
+            <Link className="hero-chip" href="/plans/" prefetch={false}>
               看套餐 <Icon name="arrow" className="icon icon-sm" />
-            </a>
-            <a className="hero-chip" href="/api/">
+            </Link>
+            <Link className="hero-chip" href="/api/" prefetch={false}>
               看 API <Icon name="arrow" className="icon icon-sm" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -106,3 +107,4 @@ export default function HomePage() {
     </>
   );
 }
+

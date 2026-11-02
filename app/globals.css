@@ -132,19 +132,21 @@ a[data-href] { cursor: pointer; }
 .site-header::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 55%;
   z-index: -1;
   pointer-events: none;
-  opacity: 0;
-  background: linear-gradient(
-    105deg,
-    transparent 24%,
-    rgba(255, 255, 255, 0.5) 42%,
-    rgba(255, 255, 255, 0) 60%
-  );
-  background-size: 240% 100%;
-  transition: opacity 0.4s ease;
   opacity: 0.18;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  transition: opacity 0.4s ease;
   animation: glass-sheen 14s ease-in-out infinite;
 }
 .site-header.is-scrolled::after {
@@ -153,8 +155,8 @@ a[data-href] { cursor: pointer; }
 }
 
 @keyframes glass-sheen {
-  0% { background-position: 130% 0; }
-  55%, 100% { background-position: -30% 0; }
+  0% { transform: translateX(-120%); }
+  55%, 100% { transform: translateX(260%); }
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
@@ -373,23 +375,30 @@ body:has(.hero) {
 .hero-bloom {
   position: absolute;
   border-radius: 50%;
-  filter: blur(72px);
-  opacity: 0.6;
+  opacity: 0.7;
   animation: bloom-drift 26s ease-in-out infinite alternate;
 }
 .bloom-a {
-  width: 540px;
-  height: 440px;
-  left: -8%;
-  top: -12%;
-  background: rgba(196, 213, 240, 0.85);
+  width: 720px;
+  height: 600px;
+  left: -10%;
+  top: -16%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(196, 213, 240, 0.82) 0%,
+    rgba(196, 213, 240, 0) 68%
+  );
 }
 .bloom-b {
-  width: 580px;
-  height: 460px;
-  right: -10%;
-  top: -10%;
-  background: rgba(255, 213, 188, 0.85);
+  width: 760px;
+  height: 620px;
+  right: -12%;
+  top: -14%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 213, 188, 0.82) 0%,
+    rgba(255, 213, 188, 0) 68%
+  );
   animation-delay: -9s;
 }
 
@@ -405,13 +414,11 @@ body:has(.hero) {
 @keyframes hero-rise {
   from {
     opacity: 0;
-    transform: translateY(26px);
-    filter: blur(7px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0);
   }
 }
 
