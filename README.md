@@ -21,6 +21,7 @@
 - **Trae** — [trae.cn](https://www.trae.cn/pricing)
 - **GLM Coding** — [docs.z.ai](https://docs.z.ai/devpack/overview)
 - **Claude / ChatGPT / Copilot** — [claude.com](https://claude.com/pricing)、[chatgpt.com](https://chatgpt.com/pricing)、[github.com](https://github.com/features/copilot/plans)
+- **Agent 会员套餐** — Cursor、Devin、Qoder、Kiro、CodeBuddy、WorkBuddy、Factory、Warp、Augment、Zed、JetBrains AI、Google AI、Grok、Replit 等，全部以各家官网定价页为准；`/plans/all/` 的卡片直接跳转官网。
 
 数据仅作比价参考，最终以官网为准。GLM 的 `US$18` 取自官方 “from $18/month”；Qwen Code 的免费额度待核验。
 
