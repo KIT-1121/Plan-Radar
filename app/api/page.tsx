@@ -24,7 +24,6 @@ export default function ApiPage() {
         mode="api"
         allHref="/api/all/"
         allLabel="全部 API"
-        summary={`全站 ${modelCatalog.length} 个模型 · ${apiChannels.length} 个 API 渠道`}
       />
     </div>
   );
