@@ -2085,3 +2085,9 @@ button:focus-visible {
   .hero-announce { font-size: 12px; padding: 7px 12px; margin-bottom: 22px; }
   .site-header.is-scrolled .header-inner { height: 58px; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header::after { animation: none; }
+  .brand:hover .brand-mark .icon { animation: none; }
+  .header-inner { transition: none; }
+}
