@@ -33,7 +33,7 @@ node scripts/fetch-news.mjs --days 3 --per-day 6
 只改 `lib/briefs.ts`：
 
 1. 在日报数组顶部插入新条目（新的在前），保留最近 3 天，确保每天 ≥3 条。
-2. 把 `briefsUpdatedAt` 改成当天，例如 `2026.11.03 08:00`。
+2. 把 `briefsUpdatedAt` 改成当天日期，例如 `2026.11.03`。
 3. 不要动界面结构和 CSS；如确需改样式，先说明原因。
 
 ## 5. 验证

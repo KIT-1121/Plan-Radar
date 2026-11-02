@@ -12,7 +12,7 @@ export interface Brief {
   items: BriefItem[];
 }
 
-export const briefsUpdatedAt = "2026.11.02 08:00";
+export const briefsUpdatedAt = "2026.11.02";
 
 export const briefs: Brief[] = [
   {
