@@ -5,9 +5,10 @@ import { apiChannels, tokenPrices } from "@/lib/api";
 export default function AllApiPage() {
   return (
     <div className="wrap">
+      <h1 className="visually-hidden">全部 API</h1>
       <div className="detail-top">
-        <a className="link-arrow" href="/api/">
-          ← 按模型浏览
+        <a className="back-arrow" href="/api/" aria-label="返回 API 列表">
+          <Icon name="arrow-left" />
         </a>
       </div>
 
@@ -22,7 +23,6 @@ export default function AllApiPage() {
           <div className="eyebrow">Token prices</div>
           <h2 className="section-title">官方 API 价目表</h2>
         </div>
-        <p>每 1M tokens。OpenCode Console 的按量参考价，最后核对 2026.11.02。</p>
       </div>
 
       <div className="table-wrap">
