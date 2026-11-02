@@ -23,3 +23,18 @@
 - **Claude / ChatGPT / Copilot** — [claude.com](https://claude.com/pricing)、[chatgpt.com](https://chatgpt.com/pricing)、[github.com](https://github.com/features/copilot/plans)
 
 数据仅作比价参考，最终以官网为准。GLM 的 `US$18` 取自官方 “from $18/month”；Qwen Code 的免费额度待核验。
+
+## AI 科技简报
+
+首页简报分日报、周刊、月刊，日报保证每个自然日至少 3 条。内容维护在
+[`lib/briefs.ts`](lib/briefs.ts)。
+
+每天更新一次，流程见 [`scripts/daily-briefs.md`](scripts/daily-briefs.md)：
+
+```powershell
+node scripts/fetch-news.mjs --days 3 --per-day 6
+```
+
+脚本从 TechCrunch、The Verge、Google 的 AI RSS 抓素材，按北京时间分组输出标题、
+时间、链接和摘要，再由编辑步骤翻成中文写回 `lib/briefs.ts`。
+
