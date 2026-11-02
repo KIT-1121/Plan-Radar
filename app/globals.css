@@ -2343,3 +2343,21 @@ button:focus-visible {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.model-plans-head {
+  padding: 10px 0 22px;
+  border-bottom: 1px solid var(--line);
+}
+.model-plans-head .eyebrow { margin-bottom: 8px; }
+.model-plans-head h1 {
+  font-family: var(--display);
+  font-size: clamp(38px, 4.6vw, 58px);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.model-plans-head p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
