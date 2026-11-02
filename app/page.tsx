@@ -59,7 +59,7 @@ export default function HomePage() {
                 AI 科技简报
               </h2>
               <p className="briefs-sub">
-                日报每天至少 3 条，周刊与月刊各收一份，只留真正影响行业的进展。
+                日报每天至少 3 条，周刊与月刊各收一份，只留重要进展。
               </p>
             </div>
             <span className="briefs-stamp">更新于 {briefsUpdatedAt}</span>
