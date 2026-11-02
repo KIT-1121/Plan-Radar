@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { TokenPrice } from "@/lib/api";
 import type { ModelInfo } from "@/lib/catalog";
 import { Icon } from "./Icon";
@@ -26,6 +26,35 @@ export function ModelTable({
 }: ModelTableProps) {
   const [query, setQuery] = useState("");
   const keyword = query.trim().toLowerCase();
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const [scrollInfo, setScrollInfo] = useState({
+    overflow: false,
+    thumb: 1,
+    top: 0,
+  });
+
+  const updateScroll = useCallback(() => {
+    const element = wrapRef.current;
+    if (!element) return;
+    const max = element.scrollHeight - element.clientHeight;
+    setScrollInfo({
+      overflow: max > 4,
+      thumb: Math.min(1, element.clientHeight / element.scrollHeight),
+      top: max > 0 ? element.scrollTop / max : 0,
+    });
+  }, []);
+
+  useEffect(() => {
+    const element = wrapRef.current;
+    updateScroll();
+    if (!element) return;
+    element.addEventListener("scroll", updateScroll, { passive: true });
+    window.addEventListener("resize", updateScroll);
+    return () => {
+      element.removeEventListener("scroll", updateScroll);
+      window.removeEventListener("resize", updateScroll);
+    };
+  }, [updateScroll]);
 
   useEffect(() => {
     const fromUrl = new URLSearchParams(window.location.search).get("q");
@@ -41,6 +70,11 @@ export function ModelTable({
         .includes(keyword),
     );
   }, [rows, keyword]);
+
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(updateScroll);
+    return () => window.cancelAnimationFrame(frame);
+  }, [visible.length, updateScroll]);
 
   return (
     <>
@@ -72,8 +106,9 @@ export function ModelTable({
         ) : null}
       </div>
 
-      <div className="model-table-wrap">
-        <div className={`model-table model-table-${mode}`}>
+      <div className="model-table-frame">
+        <div className="model-table-wrap" ref={wrapRef}>
+          <div className={`model-table model-table-${mode}`}>
           <div className="model-table-head">
             <span>模型</span>
             <span>厂商</span>
@@ -105,7 +140,19 @@ export function ModelTable({
               </span>
             </a>
           ))}
+          </div>
         </div>
+
+        {scrollInfo.overflow ? (
+          <div className="model-table-scrollbar" aria-hidden="true">
+            <span
+              style={{
+                height: `${scrollInfo.thumb * 100}%`,
+                top: `${scrollInfo.top * (1 - scrollInfo.thumb) * 100}%`,
+              }}
+            />
+          </div>
+        ) : null}
       </div>
 
       {visible.length === 0 ? (

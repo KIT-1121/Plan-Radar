@@ -1061,13 +1061,49 @@ body:has(.hero) {
   cursor: pointer;
 }
 
-.model-table-wrap { margin-top: 20px; overflow-x: auto; }
-.model-table {
-  min-width: 860px;
-  background: #fff;
+.model-table-wrap {
+  margin-top: 20px;
+  max-height: clamp(420px, calc(100vh - 280px), 760px);
+  overflow-x: auto;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
   border: 1px solid var(--line);
   border-radius: 16px;
-  overflow: hidden;
+  background: #fff;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.model-table-wrap::-webkit-scrollbar { display: none; }
+.model-table-frame { position: relative; }
+.model-table-scrollbar {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 6px;
+  width: 4px;
+  border-radius: 999px;
+  background: rgba(21, 21, 19, 0.07);
+  pointer-events: none;
+}
+.model-table-scrollbar span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-radius: 999px;
+  background: rgba(21, 21, 19, 0.35);
+}
+.model-table-wrap::-webkit-scrollbar { width: 10px; height: 10px; }
+.model-table-wrap::-webkit-scrollbar-thumb {
+  border: 3px solid #fff;
+  border-radius: 999px;
+  background: var(--line-2);
+}
+.model-table-wrap::-webkit-scrollbar-track { background: transparent; }
+.model-table {
+  min-width: 860px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 .model-table-plans { min-width: 860px; }
 .model-table-head,
@@ -1079,6 +1115,9 @@ body:has(.hero) {
   grid-template-columns: minmax(220px, 1.4fr) minmax(90px, 0.65fr) 80px 60px 100px 100px 100px 24px;
 }
 .model-table-head {
+  position: sticky;
+  top: 0;
+  z-index: 2;
   min-height: 48px;
   padding: 0 14px;
   border-bottom: 1px solid var(--line);
@@ -2020,7 +2059,7 @@ body:has(.hero) {
   .tag-row { flex-direction: column; gap: 8px; }
   .tag-label { width: 100%; padding-top: 0; }
   .catalog-result { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .model-table-wrap { margin-top: 24px; }
+  .model-table-wrap { margin-top: 24px; max-height: 70vh; }
   .model-table { min-width: 860px; }
   .model-table-plans { min-width: 860px; }
   .model-row { min-height: 52px; }
