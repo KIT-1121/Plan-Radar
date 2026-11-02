@@ -73,6 +73,13 @@ h1, h2, h3, p { margin: 0; }
 
 ::selection { background: #ffd9cc; }
 
+/* 大标题选中时只变字色，不画方块 */
+.display::selection,
+.display ::selection {
+  background: transparent;
+  color: var(--accent);
+}
+
 .wrap {
   width: 100%;
   max-width: none;
