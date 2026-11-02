@@ -45,15 +45,18 @@ pnpm build
 
 两者都通过后再提交。需要看效果时启动 `pnpm dev`，用浏览器截图核对首屏和简报区。
 
-## 6. 提交
+## 6. 提交并发布
 
 ```powershell
 git add lib/briefs.ts
 git commit -m "chore: daily briefs 2026.11.03"
 git push origin main
+node scripts/deploy.mjs
 ```
 
-推送失败时不要强推；保留改动并报告失败原因。
+`deploy.mjs` 把 `out/` 同步到 `/var/www/plan-radar`，依赖本机
+`~/.ssh/plan_radar_deploy` 免密登录；服务器会保留最近 3 份备份。
+推送或部署失败时不要强推、不要手工覆盖，保留改动并报告原因。
 
 ## 定时执行
 

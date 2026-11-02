@@ -38,3 +38,10 @@ node scripts/fetch-news.mjs --days 3 --per-day 6
 脚本从 TechCrunch、The Verge、Google 的 AI RSS 抓素材，按北京时间分组输出标题、
 时间、链接和摘要，再由编辑步骤翻成中文写回 `lib/briefs.ts`。
 
+发布由 `scripts/deploy.mjs` 完成（整体替换 `/var/www/plan-radar`，保留最近 3 份备份）：
+
+```powershell
+pnpm build
+node scripts/deploy.mjs
+```
+
