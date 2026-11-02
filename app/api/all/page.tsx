@@ -1,7 +1,6 @@
 import { ApiCard } from "@/components/ApiCard";
 import { Icon } from "@/components/Icon";
 import { apiChannels, tokenPrices } from "@/lib/api";
-import { modelCatalog } from "@/lib/catalog";
 
 export default function AllApiPage() {
   return (
@@ -11,10 +10,6 @@ export default function AllApiPage() {
           ← 按模型浏览
         </a>
       </div>
-
-      <p className="catalog-summary">
-        全站 {modelCatalog.length} 个模型 · {apiChannels.length} 个 API 渠道
-      </p>
 
       <div className="api-grid" style={{ marginTop: 26 }}>
         {apiChannels.map((channel) => (
@@ -27,7 +22,7 @@ export default function AllApiPage() {
           <div className="eyebrow">Token prices</div>
           <h2 className="section-title">官方 API 价目表</h2>
         </div>
-        <p>每 1M tokens。OpenCode Console 的按量参考价，最后核对 2026.11.01。</p>
+        <p>每 1M tokens。OpenCode Console 的按量参考价，最后核对 2026.11.02。</p>
       </div>
 
       <div className="table-wrap">

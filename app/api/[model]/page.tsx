@@ -24,7 +24,7 @@ export default async function ModelApiPage({
   const price = tokenPrices.find((item) => item.slug === slug);
 
   return (
-    <div className="wrap">
+    <div className="wrap api-detail-page">
       <h1 className="visually-hidden">{model.name}</h1>
       <div className="detail-top">
         <a className="back-arrow" href="/api/" aria-label="返回模型列表">
@@ -74,9 +74,13 @@ export default async function ModelApiPage({
               </tbody>
             </table>
           </div>
-          <p className="note">
-            价格按标准时段展示；高峰 / 低谷价以各渠道官网为准。
-          </p>
+
+          <div className="api-detail-foot">
+            <p className="api-detail-note">
+              价格按标准时段展示；高峰 / 低谷价以各渠道官网为准。
+            </p>
+            <span className="api-detail-date">最后核对 2026.11.02</span>
+          </div>
         </>
       ) : null}
     </div>

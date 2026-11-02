@@ -75,7 +75,7 @@ export const apiChannels: ApiChannel[] = [
       { label: "加价", value: "无" },
     ],
     source: "https://platform.deepseek.com/",
-    updated: "11/01",
+    updated: "11/02",
     modelSlugs: ["deepseek-v4-1-flash"],
   },
 ];

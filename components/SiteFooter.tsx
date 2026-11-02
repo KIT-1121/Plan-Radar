@@ -6,6 +6,9 @@ export function SiteFooter() {
   const pathname = usePathname();
   const path = pathname.replace(/\/+$/, "") || "/";
   const isSponsor = path === "/sponsor";
+  const isApiModel = /^\/api\/[^/]+$/.test(path) && path !== "/api/all";
+
+  if (isApiModel) return null;
 
   return (
     <footer className={isSponsor ? "site-footer sponsor-footer" : "site-footer"}>
