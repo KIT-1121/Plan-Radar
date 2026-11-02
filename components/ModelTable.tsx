@@ -27,21 +27,21 @@ export function ModelTable({
   const [query, setQuery] = useState("");
   const keyword = query.trim().toLowerCase();
   const wrapRef = useRef<HTMLDivElement>(null);
-  const [scrollInfo, setScrollInfo] = useState({
-    overflow: false,
-    thumb: 1,
-    top: 0,
-  });
+  const thumbRef = useRef<HTMLSpanElement>(null);
+  const [hasOverflow, setHasOverflow] = useState(false);
 
   const updateScroll = useCallback(() => {
     const element = wrapRef.current;
     if (!element) return;
     const max = element.scrollHeight - element.clientHeight;
-    setScrollInfo({
-      overflow: max > 4,
-      thumb: Math.min(1, element.clientHeight / element.scrollHeight),
-      top: max > 0 ? element.scrollTop / max : 0,
-    });
+    const overflow = max > 4;
+    setHasOverflow((current) => (current === overflow ? current : overflow));
+
+    const thumb = thumbRef.current;
+    if (!thumb) return;
+    const ratio = Math.min(1, element.clientHeight / element.scrollHeight);
+    thumb.style.height = `${ratio * 100}%`;
+    thumb.style.top = `${max > 0 ? (element.scrollTop / max) * (1 - ratio) * 100 : 0}%`;
   }, []);
 
   useEffect(() => {
@@ -55,6 +55,35 @@ export function ModelTable({
       window.removeEventListener("resize", updateScroll);
     };
   }, [updateScroll]);
+
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const target: HTMLDivElement = el;
+
+    function onWheel(event: WheelEvent) {
+      if (event.ctrlKey) return;
+      if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+
+      const max = target.scrollHeight - target.clientHeight;
+      if (max <= 4) return;
+
+      let delta = event.deltaY;
+      if (event.deltaMode === 1) delta *= 16;
+      else if (event.deltaMode === 2) delta *= target.clientHeight;
+
+      event.preventDefault();
+      const next = Math.max(0, Math.min(max, target.scrollTop + delta));
+      const consumed = next - target.scrollTop;
+      target.scrollTop = next;
+
+      const leftover = delta - consumed;
+      if (leftover !== 0) window.scrollBy(0, leftover);
+    }
+
+    target.addEventListener("wheel", onWheel, { passive: false });
+    return () => target.removeEventListener("wheel", onWheel);
+  }, []);
 
   useEffect(() => {
     const fromUrl = new URLSearchParams(window.location.search).get("q");
@@ -143,16 +172,12 @@ export function ModelTable({
           </div>
         </div>
 
-        {scrollInfo.overflow ? (
-          <div className="model-table-scrollbar" aria-hidden="true">
-            <span
-              style={{
-                height: `${scrollInfo.thumb * 100}%`,
-                top: `${scrollInfo.top * (1 - scrollInfo.thumb) * 100}%`,
-              }}
-            />
-          </div>
-        ) : null}
+        <div
+          className={`model-table-scrollbar${hasOverflow ? " is-visible" : ""}`}
+          aria-hidden="true"
+        >
+          <span ref={thumbRef} />
+        </div>
       </div>
 
       {visible.length === 0 ? (

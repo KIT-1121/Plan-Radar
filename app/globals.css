@@ -1088,6 +1088,7 @@ body:has(.hero) {
   max-height: clamp(420px, calc(100vh - 280px), 760px);
   overflow-x: auto;
   overflow-y: scroll;
+  overscroll-behavior: contain;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -1105,7 +1106,10 @@ body:has(.hero) {
   border-radius: 999px;
   background: rgba(21, 21, 19, 0.07);
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
 }
+.model-table-scrollbar.is-visible { opacity: 1; }
 .model-table-scrollbar span {
   position: absolute;
   left: 0;
