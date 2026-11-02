@@ -1,3 +1,5 @@
+import { extraTokenPrices } from "./models-extra";
+
 export interface ApiSpec {
   label: string;
   value: string;
@@ -89,7 +91,7 @@ export interface TokenPrice {
   note?: string;
 }
 
-export const tokenPrices: TokenPrice[] = [
+const baseTokenPrices: TokenPrice[] = [
   {
     slug: "gpt-6",
     model: "GPT-6.1 Sol",
@@ -264,4 +266,9 @@ export const tokenPrices: TokenPrice[] = [
     output: "$0.40",
     cached: "$0.01",
   },
+];
+
+export const tokenPrices: TokenPrice[] = [
+  ...baseTokenPrices,
+  ...extraTokenPrices,
 ];

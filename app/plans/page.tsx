@@ -26,6 +26,10 @@ export default function PlansPage() {
         allHref="/plans/all/"
         allLabel="全部套餐"
       />
+      <p className="model-table-footnote">
+        这里只列有套餐的 {rows.length} 个模型；全部 {modelCatalog.length} 个模型（含暂无公开套餐的）见{" "}
+        <a href="/models/">模型库</a>。
+      </p>
     </div>
   );
 }

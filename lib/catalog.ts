@@ -1,5 +1,10 @@
 import type { ApiChannel } from "./api";
 import type { Plan } from "./plans";
+import {
+  extraModelContexts,
+  extraModelCountries,
+  extraModels,
+} from "./models-extra";
 
 export interface ModelInfo {
   slug: string;
@@ -11,7 +16,7 @@ export interface ModelInfo {
   aliases: string[];
 }
 
-export const modelCatalog: ModelInfo[] = [
+const baseModels: ModelInfo[] = [
   {
     slug: "gpt-6",
     name: "GPT-6.1 Sol",
@@ -230,7 +235,45 @@ export const modelCatalog: ModelInfo[] = [
   },
 ];
 
-export const modelContexts: Record<string, string> = {
+const baseCountries: Record<string, string> = {
+  "gpt-6": "美国",
+  "gpt-6-astra": "美国",
+  "gpt-5-6": "美国",
+  "claude-opus-5-5": "美国",
+  "claude-sonnet-5-5": "美国",
+  "claude-haiku-5-5": "美国",
+  "gemini-4-argon": "美国",
+  "deepseek-v4-1-flash": "中国",
+  "deepseek-v4-pro": "中国",
+  "glm-5-3": "中国",
+  "glm-5-3-flash": "中国",
+  "glm-5-2": "中国",
+  "kimi-k3": "中国",
+  "kimi-k3-1-pro": "中国",
+  "kimi-k2-7-code": "中国",
+  "qwen3-8-max": "中国",
+  "qwen3-8-flash": "中国",
+  "qwen3-7-plus": "中国",
+  "seed-2-1": "中国",
+  "grok-4-7": "美国",
+  "minimax-m3": "中国",
+  "minimax-m3-1-flash": "中国",
+  hy3: "中国",
+  "ling-3-1-flash": "中国",
+};
+
+export const modelCatalog: ModelInfo[] = [...baseModels, ...extraModels];
+
+export const modelCountries: Record<string, string> = {
+  ...baseCountries,
+  ...extraModelCountries,
+};
+
+export function getModelCountry(slug: string) {
+  return modelCountries[slug] ?? "其他";
+}
+
+const baseContexts: Record<string, string> = {
   "gpt-6": "1M",
   "gpt-6-astra": "1M",
   "gpt-5-6": "400K",
@@ -255,6 +298,11 @@ export const modelContexts: Record<string, string> = {
   "minimax-m3-1-flash": "1M",
   hy3: "256K",
   "ling-3-1-flash": "128K",
+};
+
+export const modelContexts: Record<string, string> = {
+  ...baseContexts,
+  ...extraModelContexts,
 };
 
 export function getModel(slug: string) {
