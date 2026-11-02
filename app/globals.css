@@ -1074,9 +1074,9 @@ body:has(.hero) {
   overflow-x: auto;
   overflow-y: scroll;
   overscroll-behavior: contain;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  background: #fff;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -1099,13 +1099,6 @@ body:has(.hero) {
   border-radius: 999px;
   background: rgba(21, 21, 19, 0.35);
 }
-.model-table-wrap::-webkit-scrollbar { width: 10px; height: 10px; }
-.model-table-wrap::-webkit-scrollbar-thumb {
-  border: 3px solid #fff;
-  border-radius: 999px;
-  background: var(--line-2);
-}
-.model-table-wrap::-webkit-scrollbar-track { background: transparent; }
 .model-table {
   min-width: 860px;
   background: transparent;
@@ -1127,9 +1120,9 @@ body:has(.hero) {
   z-index: 2;
   min-height: 48px;
   padding: 0 14px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-2);
   border-radius: 0;
-  background: var(--soft);
+  background: var(--bg);
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -1138,12 +1131,12 @@ body:has(.hero) {
 .model-row {
   min-height: 60px;
   padding: 0 14px;
-  border-bottom: 0;
-  border-radius: 8px;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
   color: var(--ink);
   transition: background 0.16s ease;
 }
-.model-row:hover { background: #f8f8f4; }
+.model-row:hover { background: rgba(21, 21, 19, 0.035); }
 .model-row:last-child { border-bottom: 0; }
 .model-cell b { font-size: 17px; font-weight: 550; letter-spacing: -0.02em; }
 .model-row .muted { font-size: 14px; color: var(--muted); }
