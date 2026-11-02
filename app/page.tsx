@@ -1,4 +1,5 @@
 import { Icon } from "@/components/Icon";
+import { Reveal } from "@/components/Reveal";
 import { briefs, briefsUpdatedAt } from "@/lib/briefs";
 import { updates } from "@/lib/plans";
 
@@ -25,16 +26,16 @@ export default function HomePage() {
 
       <section className="section soft">
         <div className="wrap">
-          <div className="section-head">
+          <Reveal className="section-head">
             <div>
               <h2 className="section-title">最近更新</h2>
             </div>
             <a className="link-arrow" href="/updates/">
               全部动态 <Icon name="arrow" className="icon icon-sm" />
             </a>
-          </div>
+          </Reveal>
 
-          <div className="updates">
+          <Reveal className="updates">
             {updates.slice(0, 5).map((update) => (
               <a className="update-row" href={update.href} key={update.id}>
                 <span className="update-date">{update.date}</span>
@@ -47,13 +48,13 @@ export default function HomePage() {
                 </span>
               </a>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="section briefs-section" aria-labelledby="briefs-title">
         <div className="wrap">
-          <div className="section-head briefs-head">
+          <Reveal className="section-head briefs-head">
             <div>
               <h2 className="section-title" id="briefs-title">
                 AI 科技简报
@@ -63,9 +64,9 @@ export default function HomePage() {
               </p>
             </div>
             <span className="briefs-stamp">更新于 {briefsUpdatedAt}</span>
-          </div>
+          </Reveal>
 
-          <div className="brief-grid">
+          <Reveal className="brief-grid">
             {briefs.map((brief) => (
               <article className="brief-card" key={brief.key}>
                 <div className="brief-top">
@@ -90,7 +91,7 @@ export default function HomePage() {
                 </div>
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
       </section>
     </>

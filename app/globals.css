@@ -2,6 +2,21 @@
    Plan-Radar v2 · white, airy price catalogue
    ========================================================================== */
 
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("/fonts/instrument-serif-400-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --bg: #ffffff;
   --soft: #f8f8f5;
@@ -16,8 +31,10 @@
   --green: #0b7a4b;
   --radius: 22px;
   --max: 1120px;
-  --sans: "Inter", "SF Pro Display", "Segoe UI", -apple-system, "PingFang SC",
+  --sans: "Inter", "SF Pro Display", -apple-system, "Segoe UI", "PingFang SC",
     "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --display: "Instrument Serif", "Songti SC", "STSong", "SimSun",
+    "Noto Serif SC", "Source Han Serif SC", serif;
   --mono: "SFMono-Regular", "Consolas", "Liberation Mono", monospace;
 }
 
@@ -165,30 +182,35 @@ a[data-href] { cursor: pointer; }
 /* ---------- typography ---------- */
 
 .eyebrow {
+  font-family: var(--mono);
   font-size: 10.5px;
-  font-weight: 650;
+  font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .display {
+  font-family: var(--display);
   font-size: clamp(46px, 5.8vw, 72px);
   font-weight: 400;
-  line-height: 1.04;
-  letter-spacing: -0.045em;
+  line-height: 1.06;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 .display em {
-  font-style: normal;
+  font-family: var(--display);
+  font-style: italic;
+  letter-spacing: -0.01em;
   color: var(--accent);
 }
 
 .section-title {
-  font-size: clamp(30px, 3.4vw, 40px);
+  font-family: var(--display);
+  font-size: clamp(32px, 3.6vw, 44px);
   font-weight: 400;
   line-height: 1.15;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
@@ -236,13 +258,66 @@ a[data-href] { cursor: pointer; }
 
 /* ---------- hero ---------- */
 
-.hero { padding: 96px 0 80px; }
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 80px;
-  align-items: end;
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 80px;
 }
+.hero > .wrap { position: relative; z-index: 1; }
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 36%;
+  width: min(70vw, 760px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(232, 69, 28, 0.1) 0%,
+    rgba(232, 69, 28, 0.03) 44%,
+    rgba(232, 69, 28, 0) 68%
+  );
+  animation: aura-breathe 14s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  width: min(72vw, 820px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(21, 21, 19, 0.1);
+  animation: radar-spin 90s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes radar-spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes aura-breathe {
+  from { transform: translate(-50%, -50%) scale(0.92); opacity: 0.7; }
+  to { transform: translate(-50%, -53%) scale(1.06); opacity: 1; }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+    filter: blur(7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
 .hero .display { max-width: 980px; }
 .hero .lead { margin-top: 26px; }
 .hero-actions {
@@ -257,20 +332,22 @@ a[data-href] { cursor: pointer; }
   align-items: center;
   text-align: center;
 }
-.hero-centered .display {
-  max-width: 1100px;
-  font-size: clamp(56px, 7vw, 104px);
-  line-height: 1.02;
-}
 .hero-centered .lead {
   margin-top: 28px;
   max-width: 640px;
   font-size: 18px;
   text-align: center;
 }
+.hero-centered .display {
+  max-width: 1100px;
+  font-size: clamp(56px, 7vw, 104px);
+  line-height: 1.04;
+  animation: hero-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
 .hero-centered .hero-actions {
   justify-content: center;
   margin-top: 46px;
+  animation: hero-rise 0.85s 0.16s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .hero-centered .btn {
   height: 50px;
@@ -1456,6 +1533,7 @@ a[data-href] { cursor: pointer; }
   border-top: 1px solid #ecece4;
   background: #f3f3ed;
 }.support-panel-head { display: flex; align-items: flex-start; gap: 14px; }
+.support-panel-head > div { flex: 1 1 auto; min-width: 0; }
 .support-panel-head .support-icon { flex-shrink: 0; }
 .support-panel-btn {
   margin-left: auto;
@@ -1592,14 +1670,6 @@ a[data-href] { cursor: pointer; }
   .support-hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(560px, 1.2fr);
   }
-  .support-panel { display: grid; grid-template-columns: 1fr 1fr; }
-  .support-panel-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.12);
-  }
-  .support-panel-bottom { display: flex; flex-direction: column; justify-content: center; }
 }
 
 /* ---------- api ---------- */
@@ -1752,4 +1822,36 @@ a[data-href] { cursor: pointer; }
   .token-strip { grid-template-columns: 1fr; }
   .token-strip > div { border-right: 0; border-bottom: 1px solid var(--line); }
   .token-strip > div:last-child { border-bottom: 0; }
+}
+
+/* ---------- motion ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after { animation: none; }
+  .hero::before { animation: none; }
+  .hero-centered .display,
+  .hero-centered .hero-actions { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+@media print {
+  .reveal { opacity: 1 !important; transform: none !important; }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
