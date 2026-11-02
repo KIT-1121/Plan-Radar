@@ -1,3 +1,4 @@
+import { HeroSearch } from "@/components/HeroSearch";
 import { Icon } from "@/components/Icon";
 import { Reveal } from "@/components/Reveal";
 import { briefs, briefsUpdatedAt } from "@/lib/briefs";
@@ -7,17 +8,28 @@ export default function HomePage() {
   return (
     <>
       <section className="hero hero-centered">
+        <div className="hero-atmosphere" aria-hidden="true">
+          <span className="hero-grid-layer" />
+          <span className="hero-bloom bloom-a" />
+          <span className="hero-bloom bloom-b" />
+        </div>
         <div className="wrap hero-centered-inner">
+          <a className="hero-announce" href="/updates/">
+            <span className="hero-announce-dot" />
+            Claude 新档位：Max $100 / Ultra $200
+            <span className="hero-announce-arrow">→</span>
+          </a>
           <h1 className="display">
             同样的 <em>$10</em>，
             <br />
             哪家给得更多？
           </h1>
+          <HeroSearch />
           <div className="hero-actions">
-            <a className="btn primary" href="/plans/">
-              看套餐 <Icon name="arrow" />
+            <a className="hero-chip" href="/plans/">
+              看套餐 <Icon name="arrow" className="icon icon-sm" />
             </a>
-            <a className="btn secondary" href="/api/">
+            <a className="hero-chip" href="/api/">
               看 API
             </a>
           </div>

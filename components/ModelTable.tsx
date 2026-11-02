@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { TokenPrice } from "@/lib/api";
 import type { ModelInfo } from "@/lib/catalog";
 import { Icon } from "./Icon";
@@ -26,6 +26,11 @@ export function ModelTable({
 }: ModelTableProps) {
   const [query, setQuery] = useState("");
   const keyword = query.trim().toLowerCase();
+
+  useEffect(() => {
+    const fromUrl = new URLSearchParams(window.location.search).get("q");
+    if (fromUrl) setQuery(fromUrl);
+  }, []);
 
   const visible = useMemo(() => {
     if (!keyword) return rows;
