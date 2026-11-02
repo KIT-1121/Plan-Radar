@@ -14,7 +14,7 @@
 
 ## 数据来源
 
-价格、额度与模型清单来自各套餐官网，最后核对 **2026.11.01**。
+价格、额度与模型清单来自各套餐官网，最后核对 **2026.11.02**。
 
 - **OpenCode** — [opencode.ai](https://opencode.ai/v2/docs/console/go/)
 - **CommandCode** — [commandcode.ai](https://commandcode.ai/pricing)
