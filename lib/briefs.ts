@@ -12,13 +12,45 @@ export interface Brief {
   items: BriefItem[];
 }
 
-export const briefsUpdatedAt = "2026.11.02";
+export const briefsUpdatedAt = "2026.11.03";
 
 export const briefs: Brief[] = [
   {
     key: "daily",
     label: "日报",
     items: [
+      {
+        date: "11.03",
+        title: "Anthropic 警告已接近 RSI 能力",
+        summary:
+          "Anthropic 称已非常接近能自我改进的 RSI，AI 能力可能进入加速期。",
+        href: "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.03",
+        title: "纽约时报等起诉 Brave 抓取内容",
+        summary:
+          "媒体指 Brave 抓取受版权保护内容，并分发给 Anthropic、Perplexity 等客户。",
+        href: "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.03",
+        title: "OpenAI 试点数据中心让电计划",
+        summary:
+          "OpenAI 在佐治亚州试点，极端天气时让出最多 1000 兆瓦电力。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
+        source: "The Verge",
+      },
+      {
+        date: "11.03",
+        title: "OpenAI 合并聊天与工作标签",
+        summary:
+          "ChatGPT 与 Codex 合并用量池，聊天和工作标签不再分开计费。",
+        href: "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
+        source: "TechCrunch",
+      },
       {
         date: "11.02",
         title: "OpenAI 想把数据中心改叫「AI 算力园区」",
@@ -33,14 +65,6 @@ export const briefs: Brief[] = [
         summary:
           "Equity 播客讨论：为什么高管谈 AI 红利时总显得不接地气，效率收益到底落在谁手里。",
         href: "https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.02",
-        title: "Binance 恢复提现，6.3B 被盗案仍在追查",
-        summary:
-          "交易所称已覆盖绝大部分被盗资产并恢复提现；FBI 指朝鲜黑客组织 TraderTraitor 参与。",
-        href: "https://techcrunch.com/2026/11/01/binance-resumes-withdrawals-following-6-3-billion-breach/",
         source: "TechCrunch",
       },
       {
