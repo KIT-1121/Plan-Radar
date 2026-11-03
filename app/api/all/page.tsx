@@ -5,18 +5,14 @@ import { apiChannels, tokenPrices } from "@/lib/api";
 export default function AllApiPage() {
   return (
     <div className="wrap">
+      <h1 className="visually-hidden">全部 API</h1>
       <div className="detail-top">
         <a className="back-arrow" href="/api/" aria-label="返回 API 列表">
           <Icon name="arrow-left" />
         </a>
       </div>
 
-      <header className="models-head">
-        <h1>全部 API</h1>
-        <p>{apiChannels.length} 个渠道，价格按每百万 tokens 计。</p>
-      </header>
-
-      <div className="api-grid">
+      <div className="api-grid" style={{ marginTop: 26 }}>
         {apiChannels.map((channel) => (
           <ApiCard key={channel.id} channel={channel} />
         ))}

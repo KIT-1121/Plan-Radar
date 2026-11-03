@@ -142,6 +142,7 @@ export function ModelTable({
             <span>输入 / 1M</span>
             <span>输出 / 1M</span>
             <span>缓存 / 1M</span>
+            <span />
           </div>
 
           {visible.map((row) => (
@@ -159,6 +160,9 @@ export function ModelTable({
               <span className="num">{row.price?.input ?? "—"}</span>
               <span className="num">{row.price?.output ?? "—"}</span>
               <span className="num">{row.price?.cached ?? "—"}</span>
+              <span className="row-arrow">
+                <Icon name="arrow" className="icon icon-sm" />
+              </span>
             </a>
           ))}
           </div>

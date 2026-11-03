@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { LinkPreviewGuard } from "@/components/LinkPreviewGuard";
 import { PageTransition } from "@/components/PageTransition";
+import { SiteAtmosphere } from "@/components/SiteAtmosphere";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
@@ -17,13 +18,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <link
           rel="preload"
-          href="/fonts/archivo-latin-var.woff2"
+          href="/fonts/instrument-serif-400.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/instrument-serif-400-italic.woff2"
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"
         />
       </head>
       <body>
+        <noscript>
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+        <SiteAtmosphere />
         <SiteHeader />
         <PageTransition>{children}</PageTransition>
         <SiteFooter />

@@ -4,18 +4,12 @@ import { allPlans } from "@/lib/plans";
 export default function AllPlansPage() {
   return (
     <div className="wrap">
+      <h1 className="visually-hidden">全部套餐</h1>
       <div className="detail-top">
         <a className="back-arrow" href="/plans/" aria-label="返回模型列表">
           <Icon name="arrow-left" />
         </a>
       </div>
-
-      <header className="models-head">
-        <h1>全部套餐</h1>
-        <p>
-          共 {allPlans.length} 个套餐，按供应商列出。卡片直接跳转官网定价页。
-        </p>
-      </header>
 
       <div className="all-plan-grid">
         {allPlans.map((plan) => (
@@ -29,7 +23,7 @@ export default function AllPlansPage() {
             <span className="all-plan-copy">
               <b>{plan.name}</b>
               <span>
-                {plan.provider}，{plan.price} {plan.priceUnit}
+                {plan.provider} · {plan.price} {plan.priceUnit}
               </span>
             </span>
             <Icon name="external" className="icon icon-sm" />

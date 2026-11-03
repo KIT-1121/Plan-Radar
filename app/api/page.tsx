@@ -18,10 +18,7 @@ export default function ApiPage() {
 
   return (
     <div className="wrap">
-      <header className="models-head">
-        <h1>API</h1>
-        <p>按模型列出，价格为公开的按量参考价，每百万 tokens 计。</p>
-      </header>
+      <h1 className="visually-hidden">API</h1>
       <ModelTable
         rows={rows}
         mode="api"

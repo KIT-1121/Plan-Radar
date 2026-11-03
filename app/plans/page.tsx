@@ -19,12 +19,7 @@ export default function PlansPage() {
 
   return (
     <div className="wrap">
-      <header className="models-head">
-        <h1>套餐</h1>
-        <p>
-          按模型列出。点一行看包含该模型的套餐与价格，价格为官网公开价。
-        </p>
-      </header>
+      <h1 className="visually-hidden">套餐</h1>
       <ModelTable
         rows={rows}
         mode="plans"
