@@ -1,4 +1,11 @@
+import fs from "node:fs";
+import path from "node:path";
 import { Icon } from "@/components/Icon";
+
+const qrDir = path.join(process.cwd(), "public", "sponsor");
+const hasWechat = fs.existsSync(path.join(qrDir, "wechat.png"));
+const hasAlipay = fs.existsSync(path.join(qrDir, "alipay.png"));
+const hasQr = hasWechat || hasAlipay;
 
 export default function SponsorPage() {
   return (
@@ -12,7 +19,8 @@ export default function SponsorPage() {
               只帮你少花冤枉钱。
             </h1>
             <p className="lead">
-              如果这个站帮你选对了套餐，欢迎给个 Star，或者请作者喝杯咖啡。
+              如果这个站帮你选对了套餐，欢迎给个 Star；
+              {hasQr ? "想请作者喝咖啡，可以扫下面的赞赏码。" : "想请作者喝咖啡，可以邮件联系。"}
             </p>
           </div>
 
@@ -47,6 +55,25 @@ export default function SponsorPage() {
                   <p>赞助用于服务器、数据核验和下一版开发。</p>
                 </div>
               </div>
+
+              {hasQr ? (
+                <div className="support-qr-grid">
+                  {hasWechat ? (
+                    <figure className="support-qr">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/sponsor/wechat.png" alt="微信赞赏码" />
+                      <figcaption>微信赞赏码</figcaption>
+                    </figure>
+                  ) : null}
+                  {hasAlipay ? (
+                    <figure className="support-qr">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src="/sponsor/alipay.png" alt="支付宝赞赏码" />
+                      <figcaption>支付宝赞赏码</figcaption>
+                    </figure>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </aside>
         </div>

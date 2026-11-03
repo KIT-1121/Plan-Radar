@@ -9,7 +9,6 @@ const items = [
   { href: "/", label: "首页" },
   { href: "/plans/", label: "套餐" },
   { href: "/models/", label: "模型" },
-  { href: "/vote/", label: "榜单" },
   { href: "/api/", label: "API" },
   { href: "/sponsor/", label: "赞助" },
 ];
@@ -40,7 +39,7 @@ export function SiteHeader() {
     <header className={scrolled ? "site-header is-scrolled" : "site-header"}>
       <span className="scroll-progress" aria-hidden="true" />
       <div className="wrap header-inner">
-        <Link className="brand" href="/" prefetch={false}>
+        <Link className="brand" href="/">
           <span className="brand-mark">
             <Icon name="radar" />
           </span>
@@ -58,7 +57,6 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                prefetch={false}
                 className={active ? "active" : undefined}
               >
                 {item.label}
