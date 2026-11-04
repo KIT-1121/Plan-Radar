@@ -12,13 +12,45 @@ export interface Brief {
   items: BriefItem[];
 }
 
-export const briefsUpdatedAt = "2026.11.03";
+export const briefsUpdatedAt = "2026.11.04";
 
 export const briefs: Brief[] = [
   {
     key: "daily",
     label: "日报",
     items: [
+      {
+        date: "11.04",
+        title: "Anthropic 推出模型身份验证系统",
+        summary:
+          "FlashProve 可验证一条回答是否真来自声称的模型。",
+        href: "https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.04",
+        title: "数据中心用退役飞机发动机发电",
+        summary:
+          "电网接入要等数年，数据中心转向退役喷气发动机供电。",
+        href: "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.04",
+        title: "Ballistic 募资 4.9 亿美元投 AI 安全",
+        summary:
+          "Ballistic Ventures 拟募 3.6 亿美元主基金和 1.3 亿美元副基金。",
+        href: "https://techcrunch.com/2026/11/03/ted-schleins-ballistic-ventures-seeks-490m-for-new-funds-amid-ai-driven-cybersecurity-boom/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.04",
+        title: "Palantir 美国商业收入首超政府",
+        summary:
+          "美国商业收入首次超过政府收入，AI 需求推高增长。",
+        href: "https://techcrunch.com/2026/11/03/hiding-inside-palantirs-skyrocketing-quarter-is-a-foreboding-signal/",
+        source: "TechCrunch",
+      },
       {
         date: "11.03",
         title: "Anthropic 警告已接近 RSI 能力",
@@ -74,30 +106,6 @@ export const briefs: Brief[] = [
           "《华尔街日报》把递归自我改进（RSI）的曲线摆上台面：如果 AI 能改进 AI，进展速度可能超出常规预测。",
         href: "https://www.wsj.com/tech/ai/ai-anthropic-rsi-recursive-self-improvement-bff4e815",
         source: "WSJ",
-      },
-      {
-        date: "11.01",
-        title: "苹果新 CEO：不为 AI 而 AI",
-        summary:
-          "苹果新任 CEO 为公司的 AI 路线辩护，称不会为了贴标签而堆功能，体验才是前提。",
-        href: "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.01",
-        title: "法官放行 NAACP 诉 xAI 数据中心污染案",
-        summary:
-          "原告指 xAI 违反《清洁空气法》，法院允许这起环境诉讼继续推进。",
-        href: "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.01",
-        title: "OpenAI 据报下调新一轮融资目标",
-        summary:
-          "新一轮融资不及预期，算力开支与估值之间的张力开始显现。",
-        href: "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
-        source: "TechCrunch",
       },
     ],
   },
