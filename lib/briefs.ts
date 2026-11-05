@@ -12,13 +12,45 @@ export interface Brief {
   items: BriefItem[];
 }
 
-export const briefsUpdatedAt = "2026.11.04";
+export const briefsUpdatedAt = "2026.11.05";
 
 export const briefs: Brief[] = [
   {
     key: "daily",
     label: "日报",
     items: [
+      {
+        date: "11.05",
+        title: "高通加码数据中心，手机业务下滑",
+        summary:
+          "手机销量下滑约 20%，高通把增长押在 AI 数据中心。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers",
+        source: "The Verge",
+      },
+      {
+        date: "11.05",
+        title: "Uber：上季度仅 4 单由 AI 代订",
+        summary:
+          "Uber 称第三季度只有四单由第三方 AI 代理完成。",
+        href: "https://techcrunch.com/2026/11/04/almost-no-one-uses-ai-agents-to-book-their-uber-company-says/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.05",
+        title: "AI 政治行动委员会砸钱影响中期选举",
+        summary:
+          "AI 行业 PAC 投入数百万美元，中期选举结果参差。",
+        href: "https://techcrunch.com/2026/11/04/ai-pacs-spent-millions-trying-to-shape-congress-heres-how-they-fared/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.05",
+        title: "Nothing 下月发布 AI 优先设备",
+        summary:
+          "Nothing CEO 称新品用 AI 提升生产力，细节未公布。",
+        href: "https://techcrunch.com/2026/11/04/nothing-ceo-says-companys-mysterious-ai-first-device-is-dropping-next-month/",
+        source: "TechCrunch",
+      },
       {
         date: "11.04",
         title: "Anthropic 推出模型身份验证系统",
@@ -33,14 +65,6 @@ export const briefs: Brief[] = [
         summary:
           "电网接入要等数年，数据中心转向退役喷气发动机供电。",
         href: "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.04",
-        title: "Ballistic 募资 4.9 亿美元投 AI 安全",
-        summary:
-          "Ballistic Ventures 拟募 3.6 亿美元主基金和 1.3 亿美元副基金。",
-        href: "https://techcrunch.com/2026/11/03/ted-schleins-ballistic-ventures-seeks-490m-for-new-funds-amid-ai-driven-cybersecurity-boom/",
         source: "TechCrunch",
       },
       {
@@ -74,38 +98,6 @@ export const briefs: Brief[] = [
           "OpenAI 在佐治亚州试点，极端天气时让出最多 1000 兆瓦电力。",
         href: "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
         source: "The Verge",
-      },
-      {
-        date: "11.03",
-        title: "OpenAI 合并聊天与工作标签",
-        summary:
-          "ChatGPT 与 Codex 合并用量池，聊天和工作标签不再分开计费。",
-        href: "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.02",
-        title: "OpenAI 想把数据中心改叫「AI 算力园区」",
-        summary:
-          "数据中心越来越不受欢迎，据报道 OpenAI 正考虑换个说法，把数据中心包装成「AI compute campus」。",
-        href: "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.02",
-        title: "AI 让 CEO 更轻松，普通员工呢？",
-        summary:
-          "Equity 播客讨论：为什么高管谈 AI 红利时总显得不接地气，效率收益到底落在谁手里。",
-        href: "https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.02",
-        title: "AI 圈最聪明的人都在看这张图",
-        summary:
-          "《华尔街日报》把递归自我改进（RSI）的曲线摆上台面：如果 AI 能改进 AI，进展速度可能超出常规预测。",
-        href: "https://www.wsj.com/tech/ai/ai-anthropic-rsi-recursive-self-improvement-bff4e815",
-        source: "WSJ",
       },
     ],
   },
