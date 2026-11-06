@@ -12,13 +12,45 @@ export interface Brief {
   items: BriefItem[];
 }
 
-export const briefsUpdatedAt = "2026.11.05";
+export const briefsUpdatedAt = "2026.11.06";
 
 export const briefs: Brief[] = [
   {
     key: "daily",
     label: "日报",
     items: [
+      {
+        date: "11.06",
+        title: "OpenAI 放弃数据中心项目保密协议",
+        summary:
+          "中期选举后 OpenAI 承诺不再对数据中心项目使用保密协议，并公布社区条款。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
+        source: "The Verge",
+      },
+      {
+        date: "11.06",
+        title: "Meta 警告数据中心反弹拖慢 AI 扩张",
+        summary:
+          "Meta 称社区与政治层面对数据中心的反对，可能威胁后续 AI 基础设施投资。",
+        href: "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/",
+        source: "TechCrunch",
+      },
+      {
+        date: "11.06",
+        title: "Perplexity 推出办公 AI 代理 Teammates",
+        summary:
+          "常驻式 Teammates 可在工作区内承担多个角色，并复用既有项目、技能和记忆。",
+        href: "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
+        source: "The Verge",
+      },
+      {
+        date: "11.06",
+        title: "Airbnb 明年上半年上线 AI 旅行代理",
+        summary:
+          "该代理将帮用户规划行程、比较选项、管理预订，并在入住期间提供协助。",
+        href: "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+        source: "TechCrunch",
+      },
       {
         date: "11.05",
         title: "高通加码数据中心，手机业务下滑",
@@ -44,14 +76,6 @@ export const briefs: Brief[] = [
         source: "TechCrunch",
       },
       {
-        date: "11.05",
-        title: "Nothing 下月发布 AI 优先设备",
-        summary:
-          "Nothing CEO 称新品用 AI 提升生产力，细节未公布。",
-        href: "https://techcrunch.com/2026/11/04/nothing-ceo-says-companys-mysterious-ai-first-device-is-dropping-next-month/",
-        source: "TechCrunch",
-      },
-      {
         date: "11.04",
         title: "Anthropic 推出模型身份验证系统",
         summary:
@@ -74,30 +98,6 @@ export const briefs: Brief[] = [
           "美国商业收入首次超过政府收入，AI 需求推高增长。",
         href: "https://techcrunch.com/2026/11/03/hiding-inside-palantirs-skyrocketing-quarter-is-a-foreboding-signal/",
         source: "TechCrunch",
-      },
-      {
-        date: "11.03",
-        title: "Anthropic 警告已接近 RSI 能力",
-        summary:
-          "Anthropic 称已非常接近能自我改进的 RSI，AI 能力可能进入加速期。",
-        href: "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.03",
-        title: "纽约时报等起诉 Brave 抓取内容",
-        summary:
-          "媒体指 Brave 抓取受版权保护内容，并分发给 Anthropic、Perplexity 等客户。",
-        href: "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
-        source: "TechCrunch",
-      },
-      {
-        date: "11.03",
-        title: "OpenAI 试点数据中心让电计划",
-        summary:
-          "OpenAI 在佐治亚州试点，极端天气时让出最多 1000 兆瓦电力。",
-        href: "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
-        source: "The Verge",
       },
     ],
   },
