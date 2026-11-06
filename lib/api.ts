@@ -1,3 +1,4 @@
+import { pricesCheckedShort } from "./meta";
 import { extraTokenPrices } from "./models-extra";
 
 export interface ApiSpec {
@@ -39,7 +40,7 @@ export const apiChannels: ApiChannel[] = [
       { label: "加价", value: "无" },
     ],
     source: "https://opencode.ai/v2/docs/console/models/",
-    updated: "11/02",
+    updated: pricesCheckedShort,
     coversAll: true,
   },
   {
@@ -58,7 +59,7 @@ export const apiChannels: ApiChannel[] = [
       { label: "加价", value: "无" },
     ],
     source: "https://commandcode.ai/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
     coversAll: true,
   },
   {
@@ -77,7 +78,7 @@ export const apiChannels: ApiChannel[] = [
       { label: "加价", value: "无" },
     ],
     source: "https://platform.deepseek.com/",
-    updated: "11/02",
+    updated: pricesCheckedShort,
     modelSlugs: ["deepseek-v4-1-flash"],
   },
 ];

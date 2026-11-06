@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { pricesCheckedAt } from "@/lib/meta";
 
 export function SiteFooter() {
   const pathname = usePathname();
@@ -17,8 +18,8 @@ export function SiteFooter() {
       >
         <span>
           {isSponsor
-            ? "Plan-Radar 是一个人维护的小站。数据来自各官网，价格与额度以官网为准，最后核对时间 2026.11.02"
-            : "最后核对 2026.11.02"}
+            ? `Plan-Radar 是一个人维护的小站。数据来自各官网，价格与额度以官网为准，最后核对时间 ${pricesCheckedAt}`
+            : `最后核对 ${pricesCheckedAt}`}
         </span>
       </div>
     </footer>

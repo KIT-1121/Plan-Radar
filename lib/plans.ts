@@ -1,5 +1,6 @@
-export type Region = "cn" | "global";
+import { pricesCheckedShort } from "./meta";
 
+export type Region = "cn" | "global";
 export type FilterKind = "usd" | "window" | "request" | "credits" | "free";
 
 export interface PlanModel {
@@ -69,7 +70,7 @@ export const globalPlans: Plan[] = [
     ],
     moreModels: "+28 个",
     source: "https://opencode.ai/v2/docs/console/go/",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "opencode-go-plus",
@@ -92,7 +93,7 @@ export const globalPlans: Plan[] = [
     models: [],
     moreModels: "+28 个",
     source: "https://opencode.ai/v2/docs/console/go/",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "opencode-go-teams",
@@ -120,7 +121,7 @@ export const globalPlans: Plan[] = [
     ],
     moreModels: "+28 个",
     source: "https://opencode.ai/v2/docs/console/go/",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "commandcode-goat",
@@ -148,7 +149,7 @@ export const globalPlans: Plan[] = [
     ],
     moreModels: "+33 个",
     source: "https://commandcode.ai/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "commandcode-max",
@@ -176,7 +177,7 @@ export const globalPlans: Plan[] = [
     ],
     moreModels: "+36 个",
     source: "https://commandcode.ai/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "commandcode-go",
@@ -204,7 +205,7 @@ export const globalPlans: Plan[] = [
     ],
     moreModels: "+19 个",
     source: "https://commandcode.ai/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "claude-max",
@@ -231,7 +232,7 @@ export const globalPlans: Plan[] = [
       { name: "Claude Haiku 5.5" },
     ],
     source: "https://claude.com/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "chatgpt-plus",
@@ -258,7 +259,7 @@ export const globalPlans: Plan[] = [
       { name: "GPT-5.6" },
     ],
     source: "https://chatgpt.com/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "copilot-pro-plus",
@@ -281,7 +282,7 @@ export const globalPlans: Plan[] = [
     ],
     models: [{ name: "GPT-6.1 Sol" }, { name: "Claude" }, { name: "Gemini" }],
     source: "https://github.com/features/copilot/plans",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
 ];
 
@@ -308,7 +309,7 @@ export const cnPlans: Plan[] = [
     ],
     models: [{ name: "GLM-5.3" }, { name: "GLM-5.3-Flash" }],
     source: "https://docs.z.ai/devpack/overview",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "trae-lite",
@@ -334,7 +335,7 @@ export const cnPlans: Plan[] = [
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "trae-pro",
@@ -360,7 +361,7 @@ export const cnPlans: Plan[] = [
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "trae-pro-plus",
@@ -386,7 +387,7 @@ export const cnPlans: Plan[] = [
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "trae-ultra",
@@ -412,7 +413,7 @@ export const cnPlans: Plan[] = [
     ],
     models: [{ name: "Seed-2.1" }, { name: "GLM" }, { name: "DeepSeek V4.1" }],
     source: "https://www.trae.cn/pricing",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
   {
     id: "qwen-code",
@@ -436,7 +437,7 @@ export const cnPlans: Plan[] = [
     ],
     models: [{ name: "Qwen3.8" }],
     source: "https://qwen.ai/",
-    updated: "11/02",
+    updated: pricesCheckedShort,
   },
 ];
 
@@ -447,7 +448,7 @@ type PlanSeed = Omit<Plan, "specs" | "models" | "updated"> & {
 };
 
 function makePlan(seed: PlanSeed): Plan {
-  return { specs: [], models: [], updated: "11/02", ...seed };
+  return { specs: [], models: [], updated: pricesCheckedShort, ...seed };
 }
 
 /**
